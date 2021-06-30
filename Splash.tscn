@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/fonts/custom.tres" type="DynamicFont" id=1]
+[ext_resource path="res://HUD.gd" type="Script" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+func _on_BG_gui_input(event):
+	if(event.is_pressed()):
+		$HUD.setMessage();
+#		$PressMessage.text = \"Bem vindo!\"
+"
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.156863, 0.196078, 0.411765, 1 )
+
+[sub_resource type="Theme" id=3]
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = null
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/fonts/Xolonium-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 100
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/fonts/Xolonium-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 30
+font_data = SubResource( 7 )
+
+[node name="Splash" type="Node2D"]
+position = Vector2( 8, 0 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 2 )
+
+[node name="BG" type="ColorRect" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.247059, 0.647059, 0.654902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubTitle" type="Label" parent="HUD"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -476.0
+margin_top = 232.0
+margin_right = 476.0
+margin_bottom = 323.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+text = "Brasil"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="HUD"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -476.0
+margin_top = -60.0
+margin_right = 476.0
+margin_bottom = 169.0
+theme = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.156863, 0.196078, 0.411765, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "3MPL4K3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PressMessage" type="Label" parent="HUD"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -46.0
+custom_fonts/font = SubResource( 8 )
+text = "Toque na tela para prosseguir..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Test" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="HUD/BG" to="." method="_on_BG_gui_input"]
