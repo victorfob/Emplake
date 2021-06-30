@@ -1,7 +1,9 @@
 # Emplake
 ## Descrição
 Esse projeto conta com a finalidade de implementar o jogo Emplake criado por Walter Carnielli para dispositivos móveis, sendo o foco principal em celulares com uso do sistema operacional Android.
+
 O programa está sendo desenvolvido em Godot.
+
 No momento atual, o projeto conta apenas com a tela inicial funcional e com o sistema de apresentar números aleatórios implementado.
 
 ## Instalação e execução
