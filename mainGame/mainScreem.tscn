@@ -1,11 +1,12 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://AreaNumeros.gd" type="Script" id=1]
+[ext_resource path="res://mainGame/AreaNumeros.gd" type="Script" id=1]
 [ext_resource path="res://mainGame/Restart.gd" type="Script" id=2]
 [ext_resource path="res://assets/imgs/vermelho.png" type="Texture" id=3]
 [ext_resource path="res://mainGame/ButtonSummon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/imgs/+.png" type="Texture" id=5]
 [ext_resource path="res://assets/imgs/-.png" type="Texture" id=6]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 540, 50 )
