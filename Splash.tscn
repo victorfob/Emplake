@@ -18,7 +18,7 @@ func _ready():
 
 func _on_BG_gui_input(event):
 	if(event.is_pressed()):
-		$HUD.setMessage();
+		get_tree().change_scene(\"res://mainGame/mainScreem.tscn\")
 #		$PressMessage.text = \"Bem vindo!\"
 "
 
@@ -127,5 +127,4 @@ margin_bottom = 14.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="gui_input" from="HUD/BG" to="." method="_on_BG_gui_input"]

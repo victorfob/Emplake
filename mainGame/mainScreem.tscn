@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://AreaNumeros.gd" type="Script" id=1]
+[ext_resource path="res://mainGame/Restart.gd" type="Script" id=2]
+[ext_resource path="res://assets/imgs/vermelho.png" type="Texture" id=3]
+[ext_resource path="res://mainGame/ButtonSummon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/imgs/+.png" type="Texture" id=5]
+[ext_resource path="res://assets/imgs/-.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 540, 50 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 50, 50 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+margin_right = 1080.0
+margin_bottom = 766.0
+color = Color( 0.247059, 0.647059, 0.654902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="HUD"]
+margin_top = 233.0
+margin_right = 1080.0
+margin_bottom = 333.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AreaNumeros" type="Node2D" parent="."]
+position = Vector2( 540, 283 )
+script = ExtResource( 1 )
+deslocamento = 100
+
+[node name="ANumeros" type="Area2D" parent="AreaNumeros"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaNumeros/ANumeros"]
+shape = SubResource( 1 )
+
+[node name="Restart" type="TouchScreenButton" parent="."]
+position = Vector2( 872, 456 )
+normal = ExtResource( 3 )
+shape = SubResource( 2 )
+script = ExtResource( 2 )
+
+[node name="ButtonSummon" parent="." instance=ExtResource( 4 )]
+position = Vector2( 113.871, 605.316 )
+imagem = ExtResource( 5 )
+
+[node name="ButtonSummon2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 281.682, 605.316 )
+normal = ExtResource( 6 )
+nome = "-"
+imagem = ExtResource( 6 )
+[connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
+[connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
