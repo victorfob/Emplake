@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/imgs/+.png" type="Texture" id=5]
 [ext_resource path="res://assets/imgs/-.png" type="Texture" id=6]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 540, 50 )
 
@@ -51,14 +50,15 @@ normal = ExtResource( 3 )
 shape = SubResource( 2 )
 script = ExtResource( 2 )
 
-[node name="ButtonSummon" parent="." instance=ExtResource( 4 )]
-position = Vector2( 113.871, 605.316 )
+[node name="Mais" parent="." instance=ExtResource( 4 )]
+position = Vector2( 64.1041, 630.863 )
 imagem = ExtResource( 5 )
 
-[node name="ButtonSummon2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 281.682, 605.316 )
+[node name="Menos" parent="." instance=ExtResource( 4 )]
+position = Vector2( 165.259, 630.855 )
 normal = ExtResource( 6 )
 nome = "-"
 imagem = ExtResource( 6 )
+
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
