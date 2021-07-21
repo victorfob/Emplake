@@ -17,6 +17,5 @@ imagem = SubResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 50, 50 )
-
 [connection signal="pressed" from="." to="." method="_on_ButtonSummon_pressed"]
 [connection signal="released" from="." to="." method="_on_ButtonSummon_released"]

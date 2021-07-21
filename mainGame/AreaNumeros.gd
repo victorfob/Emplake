@@ -8,6 +8,7 @@ class valoresEquacao:
 	var nome: String
 	var x: float
 
+onready var expression = Expression.new()
 var equacao = []
 var total = 0
 var mudou = 0
@@ -117,3 +118,30 @@ func limpar():
 	total = 0
 	return true
 
+func printEqua():
+	var equa1 = ""
+	var equa2 = ""
+	var parte = 1
+	var i = 0
+	while i < total:
+		if equacao[i].nome == "=":
+			parte = 2
+		elif parte == 1:
+			equa1 = str(equa1 + equacao[i].nome)
+		elif parte == 2:
+			equa2 = str(equa2 + equacao[i].nome)
+		i += 1
+		
+	print(equa1)
+	print(equa2)
+	print(resolve(equa1))
+	print(resolve(equa2))
+
+func resolve(command):
+	var error = expression.parse(command, [])
+	if error != OK:
+		print(expression.get_error_text())
+		return
+	var result = expression.execute([], null, true)
+	if not expression.has_execute_failed():
+		return str(result)

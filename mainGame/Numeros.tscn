@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://mainGame/Numeros.gd" type="Script" id=1]
-
+[ext_resource path="res://assets/imgs/dois.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 50, 50 )
+extents = Vector2( 27, 25 )
 
 [node name="Numeros" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,3 +15,6 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Numero_Sprite" type="Sprite" parent="."]
+position = Vector2( -0.0278728, 0.0305481 )
+scale = Vector2( 0.980228, 0.998324 )
+texture = ExtResource( 2 )
