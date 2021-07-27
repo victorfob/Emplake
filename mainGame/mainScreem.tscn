@@ -69,7 +69,7 @@ __meta__ = {
 }
 
 [node name="Restart" type="TouchScreenButton" parent="."]
-position = Vector2( 680, 384 )
+position = Vector2( 752, 16 )
 normal = ExtResource( 11 )
 shape = SubResource( 2 )
 script = ExtResource( 2 )
@@ -77,92 +77,93 @@ script = ExtResource( 2 )
 [node name="Operacoes" type="Node" parent="."]
 
 [node name="ChaoA" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 504, 320 )
+position = Vector2( 112, 408 )
 normal = ExtResource( 12 )
 nome = "{"
 imagem = ExtResource( 12 )
 
 [node name="ParentA" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 320, 312 )
+position = Vector2( 304, 408 )
 normal = ExtResource( 15 )
 nome = "("
 imagem = ExtResource( 15 )
 
 [node name="ParentB" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 423.896, 313.137 )
+position = Vector2( 400, 408 )
 normal = ExtResource( 14 )
 nome = ")"
 imagem = ExtResource( 14 )
 
 [node name="Raiz" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 584, 320 )
+position = Vector2( 416, 336 )
 normal = ExtResource( 13 )
 nome = "Raiz"
 imagem = ExtResource( 13 )
 
 [node name="Fatorial" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 223.896, 313.137 )
+position = Vector2( 512, 336 )
 normal = ExtResource( 7 )
 nome = "!"
 imagem = ExtResource( 7 )
 
 [node name="ChaoB" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 320.104, 390.863 )
+position = Vector2( 208, 408 )
 normal = ExtResource( 3 )
 nome = "}"
 imagem = ExtResource( 3 )
 
 [node name="Igual" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 424, 392 )
+position = Vector2( 688, 376 )
 normal = ExtResource( 16 )
 nome = "="
 imagem = ExtResource( 16 )
 
 [node name="Modulo" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 504, 392 )
+position = Vector2( 16, 408 )
 normal = ExtResource( 6 )
 nome = "|"
 imagem = ExtResource( 6 )
 
 [node name="Mais" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 8, 384 )
+position = Vector2( 32, 336 )
 normal = ExtResource( 17 )
 imagem = ExtResource( 17 )
 
 [node name="Menos" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 136, 392 )
+position = Vector2( 128, 336 )
 normal = ExtResource( 5 )
 nome = "-"
 imagem = ExtResource( 5 )
 
 [node name="Vezes" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 224, 392 )
+position = Vector2( 320, 336 )
 normal = ExtResource( 10 )
 nome = "*"
 imagem = ExtResource( 10 )
 
 [node name="Divisao" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 8, 312 )
+position = Vector2( 224, 336 )
 normal = ExtResource( 9 )
 nome = "/"
 imagem = ExtResource( 9 )
 
 [node name="TetoB" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 72, 392 )
+position = Vector2( 592, 408 )
 normal = ExtResource( 19 )
 nome = "]"
 imagem = ExtResource( 19 )
 
 [node name="TetoA" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 71.8959, 312 )
+position = Vector2( 496, 408 )
 normal = ExtResource( 18 )
 nome = "["
 imagem = ExtResource( 18 )
 
 [node name="Elevado" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 135.896, 313.137 )
+position = Vector2( 608, 336 )
 normal = ExtResource( 8 )
 nome = "^"
 imagem = ExtResource( 8 )
+
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
