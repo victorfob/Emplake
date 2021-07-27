@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://mainGame/AreaNumeros.gd" type="Script" id=1]
 [ext_resource path="res://mainGame/Restart.gd" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://assets/imgs/mais.png" type="Texture" id=17]
 [ext_resource path="res://assets/imgs/teto_a.png" type="Texture" id=18]
 [ext_resource path="res://assets/imgs/teto_b.png" type="Texture" id=19]
+[ext_resource path="res://assets/imgs/config.png" type="Texture" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 320, 88 )
@@ -159,6 +160,11 @@ position = Vector2( 608, 312 )
 normal = ExtResource( 8 )
 nome = "^"
 imagem = ExtResource( 8 )
+
+[node name="config" type="TouchScreenButton" parent="."]
+position = Vector2( 16, 16 )
+scale = Vector2( 0.727273, 0.8 )
+normal = ExtResource( 20 )
 
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
