@@ -16,7 +16,7 @@ _global_script_class_icons={
 
 config/name="emplake"
 run/main_scene="res://Splash.tscn"
-config/icon="res://icon.png"
+config/icon="res://emplake_ico.png"
 
 [display]
 
