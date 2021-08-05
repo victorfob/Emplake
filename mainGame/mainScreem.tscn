@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://mainGame/AreaNumeros.gd" type="Script" id=1]
 [ext_resource path="res://mainGame/Restart.gd" type="Script" id=2]
@@ -19,10 +19,11 @@
 [ext_resource path="res://assets/imgs/mais.png" type="Texture" id=17]
 [ext_resource path="res://assets/imgs/teto_a.png" type="Texture" id=18]
 [ext_resource path="res://assets/imgs/teto_b.png" type="Texture" id=19]
-[ext_resource path="res://assets/imgs/config.png" type="Texture" id=20]
 [ext_resource path="res://mainGame/Enviar.gd" type="Script" id=20]
 [ext_resource path="res://assets/imgs/confirma.png" type="Texture" id=21]
 [ext_resource path="res://mainGame/GerarJogo.gd" type="Script" id=22]
+[ext_resource path="res://assets/imgs/config.png" type="Texture" id=23]
+[ext_resource path="res://mainGame/config.gd" type="Script" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 728, 88 )
@@ -180,10 +181,11 @@ complexidade = 1
 [node name="config" type="TouchScreenButton" parent="."]
 position = Vector2( 16, 16 )
 scale = Vector2( 0.727273, 0.8 )
-normal = ExtResource( 20 )
-
+normal = ExtResource( 23 )
+script = ExtResource( 24 )
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
 [connection signal="pressed" from="Enviar" to="Enviar" method="_on_Restart_pressed"]
-[connection signal="released" from="Enviar" to="Enviar" method="_on_Enviar_released"]
 [connection signal="released" from="Enviar" to="Enviar" method="_on_Restart_released"]
+[connection signal="released" from="Enviar" to="Enviar" method="_on_Enviar_released"]
+[connection signal="pressed" from="config" to="config" method="_on_config_pressed"]
