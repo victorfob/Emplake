@@ -15,7 +15,7 @@ func _ready():
 	gerarNumero = 0
 	var i = 0
 	
-	while i <= 4:
+	while i <= 3:
 		num = int(Load.numeros[i])
 		var numeroIns = numero.instance()
 		match num:

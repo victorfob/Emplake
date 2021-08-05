@@ -7,7 +7,7 @@ extends ColorRect
 var loadScript
 var modo
 var num
-var formatNum = "%d%d%d%d%d%d"
+var formatNum = "%d%d%d%d"
 var numUser
 var dif
 # Called when the node enters the scene tree for the first time.
@@ -29,7 +29,7 @@ func _on_BG_botao_gui_input(event):
 	var valido = 0
 	if event is InputEventScreenTouch:
 		if modo == 0:
-			num = formatNum % [randi() % 10,randi() % 10,randi() % 10,randi() % 10,randi() % 10,randi() % 10]
+			num = formatNum % [randi() % 10,randi() % 10,randi() % 10,randi() % 10]
 			Load.numeros = num
 			valido = 1
 		elif modo == 1:
