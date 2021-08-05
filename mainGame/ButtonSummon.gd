@@ -5,11 +5,13 @@ var checaMouse = 1
 var operacao = preload("res://mainGame/Operacao.tscn")
 export (String) var nome = "+"
 export (Texture) var imagem
+export var complexidade = 0
 
 #export var Imagem = preload("res://pixil-frame-2.png")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	if Load.dif < complexidade:
+		visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

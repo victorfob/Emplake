@@ -12,10 +12,12 @@ onready var expression = Expression.new()
 var equacao = []
 var total = 0
 var mudou = 0
+var regex = RegEx.new()
 export (int) var deslocamento = 60
  
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	regex.compile("^[0-9]*$")
 	pass # Replace with function body.
 
 
@@ -110,32 +112,126 @@ func reposicionamento(var inicio, var final):
 
 func limpar():
 	var i = total-1
+	var numPosi = 4
 	while i >= 0:
-		equacao[i].patch.free()
-		equacao.remove(i)
-		equacao.resize(i)
+		if !regex.search(equacao[i].nome):
+			equacao[i].patch.free()
+			equacao.remove(i)
 		i-= 1
-	total = 0
+	equacao.resize(4)
+	total = 4
+	mudou = 1
 	return true
 
 func printEqua():
-	var equa1 = ""
-	var equa2 = ""
-	var parte = 1
+	var equa = []
+	var equaAnt
+	var equaDps
+	equa.append("")
+	var parte = 0
+	var numSeguido = 0
+	var igual = 0
+	var parent = 0
+	var modulo = 0
+	var fecharPow = -1
+	var partes = 0
 	var i = 0
 	while i < total:
-		if equacao[i].nome == "=":
-			parte = 2
-		elif parte == 1:
-			equa1 = str(equa1 + equacao[i].nome)
-		elif parte == 2:
-			equa2 = str(equa2 + equacao[i].nome)
+		match equacao[i].nome:
+			"=":
+				if parent > 0 or modulo == 1:
+					return false
+				while parte > 0:
+					equa[parte - 1] = str(equa[parte-1] + equa[parte])
+					parte -= 1
+				equaAnt = equa[parte]
+				igual = 1
+				equa.resize(1)
+				equa[0] = ""
+			"(":
+				parte += 1
+				equa.append("")
+				equa[parte] = ""
+				equa[parte] = str(equa[parte] + equacao[i].nome)
+				parent += 1
+			")":
+				if parent < 0:
+					return false
+				equa[parte] = str(equa[parte] + equacao[i].nome)
+				equa[parte-1] = str(equa[parte-1] + resolve(equa[parte]))
+				equa.resize(parte)
+				parte -= 1
+				parent -= 1
+				if fecharPow == parent:
+					equa[parte] = str(equa[parte] + equacao[i].nome)
+					fecharPow = -1
+			"|":
+				if modulo == 0:
+					parte += 1
+					equa.append("")
+					equa[parte] = ""
+					modulo = 1
+					parent += 1
+				else:
+					modulo = 0
+					equa[parte] = resolve(equa[parte])
+					if(int(equa[parte]) < 0):
+						equa[parte] = str(int(equa[parte]) * -1)
+					equa[parte - 1] = str(equa[parte-1] + equa[parte])
+					equa.resize(parte)
+					parte -= 1
+					parent -= 1
+					if parent < 0:
+						return false
+				if fecharPow == parent:
+					equa[parte] = str(equa[parte] + ")")
+			"^":
+				var pow1
+				var pow2 
+				if regex.search(equacao[i-1].nome):
+					var text = equa[parte]
+					text.erase(text.length() - 1, 1)
+					equa[parte] = str(text)
+					pow1 = equacao[i-1].nome
+				elif equacao[i-1].nome == ")":
+					var text = equa[parte]
+					text.erase(0, text.length())
+					pow1 = equa[parte]
+					equa[parte] = str(text)
+				if regex.search(equacao[i+1].nome):
+					pow2 = equacao[i+1].nome
+					i += 1
+					equa[parte] = str(equa[parte] + "pow(%s,%s)" % [pow1, pow2])
+				elif equacao[i+1].nome == "(" or equacao[i+1].nome == "|":
+					equa[parte] = str(equa[parte] + "pow(%s," % [pow1])
+					fecharPow = parent
+			_:
+#				if regex.search(equacao[i].nome) and numSeguido == 1:
+#					return false
+#				elif regex.search(equacao[i].nome):
+#					numSeguido = 1
+#				else:
+#					numSeguido = 0
+				equa[parte] = str(equa[parte] + equacao[i].nome)
+				while parent < parte:
+					equa[parte - 1] = str(equa[parte-1] + equa[parte])
+					equa.resize(parte)
+					parte -= 1
 		i += 1
-		
-	print(equa1)
-	print(equa2)
-	print(resolve(equa1))
-	print(resolve(equa2))
+	
+	if igual == 0:
+		return false
+	if parent > 0 or modulo == 1:
+		return false
+	while parte > 0:
+		equa[parte - 1] = str(equa[parte-1] + equa[parte])
+		parte -= 1
+	equaDps = equa[parte]
+	
+	print(equaAnt)
+	print(equaDps)
+	print(resolve(equaAnt))
+	print(resolve(equaDps))
 
 func resolve(command):
 	var error = expression.parse(command, [])

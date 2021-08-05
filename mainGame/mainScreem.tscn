@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://mainGame/AreaNumeros.gd" type="Script" id=1]
 [ext_resource path="res://mainGame/Restart.gd" type="Script" id=2]
@@ -19,14 +19,18 @@
 [ext_resource path="res://assets/imgs/mais.png" type="Texture" id=17]
 [ext_resource path="res://assets/imgs/teto_a.png" type="Texture" id=18]
 [ext_resource path="res://assets/imgs/teto_b.png" type="Texture" id=19]
+[ext_resource path="res://mainGame/Enviar.gd" type="Script" id=20]
+[ext_resource path="res://assets/imgs/confirma.png" type="Texture" id=21]
+[ext_resource path="res://mainGame/GerarJogo.gd" type="Script" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 320, 88 )
+extents = Vector2( 728, 88 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 17, 25 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 22 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = -1
@@ -74,6 +78,12 @@ normal = ExtResource( 11 )
 shape = SubResource( 2 )
 script = ExtResource( 2 )
 
+[node name="Enviar" type="TouchScreenButton" parent="."]
+position = Vector2( 680, 304 )
+normal = ExtResource( 21 )
+shape = SubResource( 2 )
+script = ExtResource( 20 )
+
 [node name="Operacoes" type="Node" parent="."]
 
 [node name="ChaoA" parent="Operacoes" instance=ExtResource( 4 )]
@@ -81,6 +91,7 @@ position = Vector2( 504, 320 )
 normal = ExtResource( 12 )
 nome = "{"
 imagem = ExtResource( 12 )
+complexidade = 2
 
 [node name="ParentA" parent="Operacoes" instance=ExtResource( 4 )]
 position = Vector2( 320, 312 )
@@ -111,6 +122,7 @@ position = Vector2( 320.104, 390.863 )
 normal = ExtResource( 3 )
 nome = "}"
 imagem = ExtResource( 3 )
+complexidade = 2
 
 [node name="Igual" parent="Operacoes" instance=ExtResource( 4 )]
 position = Vector2( 424, 392 )
@@ -123,6 +135,7 @@ position = Vector2( 504, 392 )
 normal = ExtResource( 6 )
 nome = "|"
 imagem = ExtResource( 6 )
+complexidade = 1
 
 [node name="Mais" parent="Operacoes" instance=ExtResource( 4 )]
 position = Vector2( 8, 384 )
@@ -152,17 +165,23 @@ position = Vector2( 72, 392 )
 normal = ExtResource( 19 )
 nome = "]"
 imagem = ExtResource( 19 )
+complexidade = 2
 
 [node name="TetoA" parent="Operacoes" instance=ExtResource( 4 )]
 position = Vector2( 71.8959, 312 )
 normal = ExtResource( 18 )
 nome = "["
 imagem = ExtResource( 18 )
+complexidade = 2
 
 [node name="Elevado" parent="Operacoes" instance=ExtResource( 4 )]
 position = Vector2( 135.896, 313.137 )
 normal = ExtResource( 8 )
 nome = "^"
 imagem = ExtResource( 8 )
+complexidade = 1
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
+[connection signal="pressed" from="Enviar" to="Enviar" method="_on_Restart_pressed"]
+[connection signal="released" from="Enviar" to="Enviar" method="_on_Enviar_released"]
+[connection signal="released" from="Enviar" to="Enviar" method="_on_Restart_released"]
