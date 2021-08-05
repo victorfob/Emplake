@@ -1,1 +1,2 @@
-.import/*
+# Godot-specific ignores
+.import/

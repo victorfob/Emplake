@@ -10,14 +10,13 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
 
 config/name="emplake"
 run/main_scene="res://Splash.tscn"
-config/icon="res://icon.png"
+config/icon="res://emplake_ico.png"
 
 [audio]
 

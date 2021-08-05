@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/imgs/elevado.png" type="Texture" id=8]
 [ext_resource path="res://assets/imgs/div.png" type="Texture" id=9]
 [ext_resource path="res://assets/imgs/vezes.png" type="Texture" id=10]
-[ext_resource path="res://assets/imgs/lixeira.png" type="Texture" id=11]
+[ext_resource path="res://assets/imgs/reset.png" type="Texture" id=11]
 [ext_resource path="res://assets/imgs/chao_a.png" type="Texture" id=12]
 [ext_resource path="res://assets/imgs/raiz.png" type="Texture" id=13]
 [ext_resource path="res://assets/imgs/parentese_b.png" type="Texture" id=14]
@@ -19,6 +19,7 @@
 [ext_resource path="res://assets/imgs/mais.png" type="Texture" id=17]
 [ext_resource path="res://assets/imgs/teto_a.png" type="Texture" id=18]
 [ext_resource path="res://assets/imgs/teto_b.png" type="Texture" id=19]
+[ext_resource path="res://assets/imgs/config.png" type="Texture" id=20]
 [ext_resource path="res://mainGame/Enviar.gd" type="Script" id=20]
 [ext_resource path="res://assets/imgs/confirma.png" type="Texture" id=21]
 [ext_resource path="res://mainGame/GerarJogo.gd" type="Script" id=22]
@@ -26,8 +27,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 728, 88 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 17, 25 )
+[sub_resource type="CircleShape2D" id=2]
+radius = 25.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 22 )
@@ -49,31 +50,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -312.0
-margin_top = -144.0
-margin_right = 328.0
-margin_bottom = 32.0
+margin_left = -336.0
+margin_top = -168.0
+margin_right = 304.0
+margin_bottom = 8.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AreaNumeros" type="Node2D" parent="."]
-position = Vector2( 408, 184 )
+position = Vector2( 384, 160 )
 script = ExtResource( 1 )
 
 [node name="ANumeros" type="Area2D" parent="AreaNumeros"]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaNumeros/ANumeros"]
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Restart" type="TouchScreenButton" parent="."]
-position = Vector2( 680, 384 )
+position = Vector2( 728, 8 )
+scale = Vector2( 1.16364, 1.12 )
 normal = ExtResource( 11 )
 shape = SubResource( 2 )
 script = ExtResource( 2 )
@@ -87,99 +83,105 @@ script = ExtResource( 20 )
 [node name="Operacoes" type="Node" parent="."]
 
 [node name="ChaoA" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 504, 320 )
+position = Vector2( 128, 392 )
 normal = ExtResource( 12 )
 nome = "{"
 imagem = ExtResource( 12 )
 complexidade = 2
 
 [node name="ParentA" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 320, 312 )
+position = Vector2( 320, 392 )
 normal = ExtResource( 15 )
 nome = "("
 imagem = ExtResource( 15 )
 
 [node name="ParentB" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 423.896, 313.137 )
+position = Vector2( 416, 392 )
 normal = ExtResource( 14 )
 nome = ")"
 imagem = ExtResource( 14 )
 
 [node name="Raiz" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 584, 320 )
+position = Vector2( 416, 312 )
 normal = ExtResource( 13 )
 nome = "Raiz"
 imagem = ExtResource( 13 )
 
 [node name="Fatorial" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 223.896, 313.137 )
+position = Vector2( 512, 312 )
 normal = ExtResource( 7 )
 nome = "!"
 imagem = ExtResource( 7 )
 
 [node name="ChaoB" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 320.104, 390.863 )
+position = Vector2( 224, 392 )
 normal = ExtResource( 3 )
 nome = "}"
 imagem = ExtResource( 3 )
 complexidade = 2
 
 [node name="Igual" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 424, 392 )
+position = Vector2( 704, 352 )
 normal = ExtResource( 16 )
 nome = "="
 imagem = ExtResource( 16 )
 
 [node name="Modulo" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 504, 392 )
+position = Vector2( 32, 392 )
 normal = ExtResource( 6 )
 nome = "|"
 imagem = ExtResource( 6 )
 complexidade = 1
 
 [node name="Mais" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 8, 384 )
+position = Vector2( 32, 312 )
 normal = ExtResource( 17 )
 imagem = ExtResource( 17 )
 
 [node name="Menos" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 136, 392 )
+position = Vector2( 128, 312 )
 normal = ExtResource( 5 )
 nome = "-"
 imagem = ExtResource( 5 )
 
 [node name="Vezes" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 224, 392 )
+position = Vector2( 320, 312 )
 normal = ExtResource( 10 )
 nome = "*"
 imagem = ExtResource( 10 )
 
 [node name="Divisao" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 8, 312 )
+position = Vector2( 224, 312 )
 normal = ExtResource( 9 )
 nome = "/"
 imagem = ExtResource( 9 )
 
 [node name="TetoB" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 72, 392 )
+position = Vector2( 608, 392 )
 normal = ExtResource( 19 )
 nome = "]"
 imagem = ExtResource( 19 )
 complexidade = 2
 
 [node name="TetoA" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 71.8959, 312 )
+position = Vector2( 512, 392 )
 normal = ExtResource( 18 )
 nome = "["
 imagem = ExtResource( 18 )
 complexidade = 2
 
 [node name="Elevado" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 135.896, 313.137 )
+position = Vector2( 608, 312 )
 normal = ExtResource( 8 )
 nome = "^"
 imagem = ExtResource( 8 )
 complexidade = 1
+
+[node name="config" type="TouchScreenButton" parent="."]
+position = Vector2( 16, 16 )
+scale = Vector2( 0.727273, 0.8 )
+normal = ExtResource( 20 )
+
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
 [connection signal="pressed" from="Enviar" to="Enviar" method="_on_Restart_pressed"]
