@@ -257,6 +257,7 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="HUD/Modo/Aleatorio" to="HUD/BG_botao" method="_on_Aleatorio_pressed"]
 [connection signal="pressed" from="HUD/Modo/Especifico" to="HUD/BG_botao" method="_on_Especifico_pressed"]
 [connection signal="text_changed" from="HUD/Modo/Numeros" to="HUD/Modo/Numeros" method="_on_TextEdit_text_changed"]

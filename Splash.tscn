@@ -128,4 +128,6 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+autoplay = true
+
 [connection signal="gui_input" from="HUD/BG" to="." method="_on_BG_gui_input"]

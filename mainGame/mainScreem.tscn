@@ -183,6 +183,7 @@ position = Vector2( 16, 16 )
 scale = Vector2( 0.727273, 0.8 )
 normal = ExtResource( 23 )
 script = ExtResource( 24 )
+
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
 [connection signal="pressed" from="Enviar" to="Enviar" method="_on_Restart_pressed"]
