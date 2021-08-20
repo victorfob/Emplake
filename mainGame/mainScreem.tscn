@@ -76,7 +76,7 @@ shape = SubResource( 2 )
 script = ExtResource( 2 )
 
 [node name="Enviar" type="TouchScreenButton" parent="."]
-position = Vector2( 680, 304 )
+position = Vector2( 704, 312 )
 normal = ExtResource( 21 )
 shape = SubResource( 2 )
 script = ExtResource( 20 )
@@ -105,7 +105,7 @@ imagem = ExtResource( 14 )
 [node name="Raiz" parent="Operacoes" instance=ExtResource( 4 )]
 position = Vector2( 416, 312 )
 normal = ExtResource( 13 )
-nome = "Raiz"
+nome = "R"
 imagem = ExtResource( 13 )
 
 [node name="Fatorial" parent="Operacoes" instance=ExtResource( 4 )]
@@ -122,7 +122,7 @@ imagem = ExtResource( 3 )
 complexidade = 2
 
 [node name="Igual" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 704, 352 )
+position = Vector2( 704, 392 )
 normal = ExtResource( 16 )
 nome = "="
 imagem = ExtResource( 16 )
@@ -131,6 +131,13 @@ imagem = ExtResource( 16 )
 position = Vector2( 32, 392 )
 normal = ExtResource( 6 )
 nome = "|"
+imagem = ExtResource( 6 )
+complexidade = 1
+
+[node name="Modulo2" parent="Operacoes" instance=ExtResource( 4 )]
+position = Vector2( 712, 256 )
+normal = ExtResource( 6 )
+nome = "I"
 imagem = ExtResource( 6 )
 complexidade = 1
 
@@ -184,9 +191,17 @@ scale = Vector2( 0.727273, 0.8 )
 normal = ExtResource( 23 )
 script = ExtResource( 24 )
 
+[node name="ResultadoTemp" type="ColorRect" parent="."]
+visible = false
+margin_left = 648.0
+margin_top = 264.0
+margin_right = 688.0
+margin_bottom = 304.0
+color = Color( 0, 1, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
 [connection signal="pressed" from="Enviar" to="Enviar" method="_on_Restart_pressed"]
-[connection signal="released" from="Enviar" to="Enviar" method="_on_Restart_released"]
-[connection signal="released" from="Enviar" to="Enviar" method="_on_Enviar_released"]
 [connection signal="pressed" from="config" to="config" method="_on_config_pressed"]

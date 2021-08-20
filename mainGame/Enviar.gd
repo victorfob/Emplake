@@ -18,4 +18,10 @@ func _ready():
 
 
 func _on_Restart_pressed():
-	print(mainArea.printEqua())
+	var resultado = get_parent().get_node("ResultadoTemp")
+	if mainArea.comecarPrint() == true:
+		resultado.visible = true
+		resultado.color = "00ff00"
+	else:
+		resultado.visible = true
+		resultado.color = "ff0000"
