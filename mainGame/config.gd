@@ -17,4 +17,23 @@ func _ready():
 
 
 func _on_config_pressed():
+	
+	if get_parent().get_node("MenuLayer/BackOP").visible == true:
+		get_parent().get_node("MenuLayer/BackOP").visible = false
+		Load.pause = false
+	else:
+		get_parent().get_node("MenuLayer/BackOP").visible = true
+		Load.pause = true
+
+func _on_FecharM_pressed():
+	Load.pause = false
+	get_parent().get_node("MenuLayer/BackOP").visible = false
+
+
+func _on_VoltarMenu_pressed():
+	Load.pause = false
 	get_tree().change_scene("res://MainMenu.tscn")
+
+
+func _on_AbrirTutorial_pressed():
+	get_parent().get_node("TutorialLayer/Tutorial").visible = true

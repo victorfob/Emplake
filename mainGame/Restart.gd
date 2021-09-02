@@ -13,4 +13,5 @@ func _ready():
 
 
 func _on_Restart_pressed():
-	mainArea.limpar()
+	if Load.pause == false:
+		mainArea.limpar()

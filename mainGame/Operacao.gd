@@ -70,8 +70,9 @@ func _on_AreaOperacao_area_exited(area):
 			situacaoAtual = situacao.DELET
 
 func _input(event):
-	if event is InputEventScreenDrag and click == 1:
-		# While dragging, move the sprite with the mouse.
-		position = event.position
-	if event is InputEventScreenTouch and event.is_pressed() == false:
-		click = 0
+	if Load.pause == false:
+		if event is InputEventScreenDrag and click == 1:
+			# While dragging, move the sprite with the mouse.
+			position = event.position
+		if event is InputEventScreenTouch and event.is_pressed() == false:
+			click = 0

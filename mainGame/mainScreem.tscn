@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://mainGame/AreaNumeros.gd" type="Script" id=1]
 [ext_resource path="res://mainGame/Restart.gd" type="Script" id=2]
@@ -24,12 +24,70 @@
 [ext_resource path="res://mainGame/GerarJogo.gd" type="Script" id=22]
 [ext_resource path="res://assets/imgs/config.png" type="Texture" id=23]
 [ext_resource path="res://mainGame/config.gd" type="Script" id=24]
+[ext_resource path="res://assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=25]
+[ext_resource path="res://mainGame/Tutorial.gd" type="Script" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 728, 88 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 25.0
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.109589, 0.438856, 0.445313, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 33
+font_data = ExtResource( 25 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 127, 25 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 25, 25 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.510254, 0.810519, 0.816406, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.596078, 0.843137, 0.85098, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.509804, 0.811765, 0.815686, 1 )
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 20
+extra_spacing_top = 5
+font_data = ExtResource( 25 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 22 )
@@ -56,6 +114,7 @@ margin_top = -168.0
 margin_right = 304.0
 margin_bottom = 8.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -80,6 +139,12 @@ position = Vector2( 704, 312 )
 normal = ExtResource( 21 )
 shape = SubResource( 2 )
 script = ExtResource( 20 )
+
+[node name="config" type="TouchScreenButton" parent="."]
+position = Vector2( 16, 16 )
+scale = Vector2( 0.727273, 0.8 )
+normal = ExtResource( 23 )
+script = ExtResource( 24 )
 
 [node name="Operacoes" type="Node" parent="."]
 
@@ -185,12 +250,6 @@ nome = "^"
 imagem = ExtResource( 8 )
 complexidade = 1
 
-[node name="config" type="TouchScreenButton" parent="."]
-position = Vector2( 16, 16 )
-scale = Vector2( 0.727273, 0.8 )
-normal = ExtResource( 23 )
-script = ExtResource( 24 )
-
 [node name="ResultadoTemp" type="ColorRect" parent="."]
 visible = false
 margin_left = 648.0
@@ -201,7 +260,176 @@ color = Color( 0, 1, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MenuLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="BackOP" type="Panel" parent="MenuLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -104.0
+margin_right = 144.0
+margin_bottom = 104.0
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoltarMenuText" type="Label" parent="MenuLayer/BackOP"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -55.0
+margin_right = -5.0
+margin_bottom = -5.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "Menu Principal"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoltarMenu" type="TouchScreenButton" parent="MenuLayer/BackOP/VoltarMenuText"]
+shape = SubResource( 7 )
+
+[node name="Tutorial" type="Label" parent="MenuLayer/BackOP"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 5.0
+margin_top = -25.0
+margin_right = -5.0
+margin_bottom = 25.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "Tutorial"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AbrirTutorial" type="TouchScreenButton" parent="MenuLayer/BackOP/Tutorial"]
+shape = SubResource( 7 )
+
+[node name="MutarMusica" type="Label" parent="MenuLayer/BackOP"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 56.0
+margin_bottom = 56.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "M"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FecharMText" type="Label" parent="MenuLayer/BackOP"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -56.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = 56.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "X"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FecharM" type="TouchScreenButton" parent="MenuLayer/BackOP/FecharMText"]
+shape = SubResource( 6 )
+
+[node name="TutorialLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Tutorial" type="Panel" parent="TutorialLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -368.0
+margin_top = -208.0
+margin_right = 368.0
+margin_bottom = 208.0
+custom_styles/panel = SubResource( 9 )
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BgIcons" type="Panel" parent="TutorialLayer/Tutorial"]
+margin_left = 40.0
+margin_top = 64.0
+margin_right = 160.0
+margin_bottom = 384.0
+custom_styles/panel = SubResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="TutorialLayer/Tutorial/BgIcons"]
+margin_left = 30.0
+margin_top = 10.0
+margin_right = 90.0
+margin_bottom = 310.0
+custom_styles/selected_focus = SubResource( 13 )
+custom_styles/selected = SubResource( 13 )
+custom_styles/bg = SubResource( 12 )
+items = [ "+", ExtResource( 17 ), false, "-", ExtResource( 5 ), false, "*", ExtResource( 10 ), false, "/", ExtResource( 9 ), false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextTutorial" type="RichTextLabel" parent="TutorialLayer/Tutorial"]
+margin_left = 192.0
+margin_top = 64.0
+margin_right = 688.0
+margin_bottom = 384.0
+custom_styles/normal = SubResource( 15 )
+custom_fonts/normal_font = SubResource( 14 )
+text = "	Selecione um dos simbolos ao lado."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FecharTuText2" type="Label" parent="TutorialLayer/Tutorial"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -64.0
+margin_top = 8.0
+margin_right = -13.0
+margin_bottom = 59.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "X"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FecharTuM" type="TouchScreenButton" parent="TutorialLayer/Tutorial/FecharTuText2"]
+shape = SubResource( 6 )
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
 [connection signal="pressed" from="Enviar" to="Enviar" method="_on_Restart_pressed"]
 [connection signal="pressed" from="config" to="config" method="_on_config_pressed"]
+[connection signal="pressed" from="MenuLayer/BackOP/VoltarMenuText/VoltarMenu" to="config" method="_on_VoltarMenu_pressed"]
+[connection signal="pressed" from="MenuLayer/BackOP/Tutorial/AbrirTutorial" to="config" method="_on_AbrirTutorial_pressed"]
+[connection signal="pressed" from="MenuLayer/BackOP/FecharMText/FecharM" to="config" method="_on_FecharM_pressed"]
+[connection signal="item_selected" from="TutorialLayer/Tutorial/BgIcons/ItemList" to="TutorialLayer/Tutorial" method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="TutorialLayer/Tutorial/FecharTuText2/FecharTuM" to="TutorialLayer/Tutorial" method="_on_FecharTuM_pressed"]

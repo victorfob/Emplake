@@ -14,6 +14,7 @@ var dif
 
 func _ready():
 	randomize()
+	Load.pause = false
 	numUser = get_parent().get_node("Modo/Numeros")
 	modo = 0
 	dif = Load.dificuldade.Facil

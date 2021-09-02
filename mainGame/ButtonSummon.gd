@@ -20,7 +20,7 @@ func _process(delta):
 
 
 func _on_ButtonSummon_pressed():
-	if checaMouse == 1:
+	if checaMouse == 1 and Load.pause == false:
 		checaMouse = 0
 		var operacaoInst = operacao.instance()
 		operacaoInst.nome = nome

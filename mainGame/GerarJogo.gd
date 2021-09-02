@@ -51,6 +51,7 @@ func _ready():
 				numeroIns.get_node("Numero_Sprite").set_texture(preload("res://assets/imgs/nove.png"))
 		
 		numeroIns.global_position = mainArea.get_global_position()
+		numeroIns.global_position.x += mainArea.deslocamento*i
 		numeroIns.nodeArea = mainArea
 		add_child(numeroIns)
 		mainArea.novoElem(numeroIns)
