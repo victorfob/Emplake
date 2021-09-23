@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://mainGame/AreaNumeros.gd" type="Script" id=1]
 [ext_resource path="res://mainGame/Restart.gd" type="Script" id=2]
@@ -26,34 +26,50 @@
 [ext_resource path="res://mainGame/config.gd" type="Script" id=24]
 [ext_resource path="res://assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=25]
 [ext_resource path="res://mainGame/Tutorial.gd" type="Script" id=26]
+[ext_resource path="res://assets/imgs/musica.png" type="Texture" id=27]
+[ext_resource path="res://assets/imgs/modulo_a.png" type="Texture" id=28]
+[ext_resource path="res://assets/imgs/modulo_b.png" type="Texture" id=29]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
+draw_center = false
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+extra_spacing_top = 5
+font_data = ExtResource( 25 )
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 728, 88 )
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=4]
 radius = 25.0
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.109589, 0.438856, 0.445313, 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=6]
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=7]
 size = 33
 font_data = ExtResource( 25 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 127, 25 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 25, 25 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 27, 25 )
+
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.510254, 0.810519, 0.816406, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -61,7 +77,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -72,22 +88,9 @@ border_color = Color( 0, 0, 0, 1 )
 [sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.596078, 0.843137, 0.85098, 1 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.509804, 0.811765, 0.815686, 1 )
 draw_center = false
-
-[sub_resource type="StyleBoxFlat" id=15]
-bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="DynamicFont" id=14]
-size = 20
-extra_spacing_top = 5
-font_data = ExtResource( 25 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 22 )
@@ -118,26 +121,61 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ScoreHud" type="CanvasLayer" parent="HUD"]
+
+[node name="ScoreTxt" type="RichTextLabel" parent="HUD/ScoreHud"]
+margin_left = 392.0
+margin_top = 8.0
+margin_right = 688.0
+margin_bottom = 40.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Score:"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerHud" type="CanvasLayer" parent="HUD"]
+
+[node name="TimerTxt" type="RichTextLabel" parent="HUD/TimerHud"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 370.0
+margin_bottom = 40.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Timer:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="HUD/TimerHud"]
+
 [node name="AreaNumeros" type="Node2D" parent="."]
 position = Vector2( 384, 160 )
 script = ExtResource( 1 )
+deslocamento = 50
 
 [node name="ANumeros" type="Area2D" parent="AreaNumeros"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaNumeros/ANumeros"]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Restart" type="TouchScreenButton" parent="."]
 position = Vector2( 728, 8 )
 scale = Vector2( 1.16364, 1.12 )
 normal = ExtResource( 11 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 script = ExtResource( 2 )
 
 [node name="Enviar" type="TouchScreenButton" parent="."]
 position = Vector2( 704, 312 )
 normal = ExtResource( 21 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 script = ExtResource( 20 )
 
 [node name="config" type="TouchScreenButton" parent="."]
@@ -192,18 +230,18 @@ normal = ExtResource( 16 )
 nome = "="
 imagem = ExtResource( 16 )
 
-[node name="Modulo" parent="Operacoes" instance=ExtResource( 4 )]
+[node name="ModuloA" parent="Operacoes" instance=ExtResource( 4 )]
 position = Vector2( 32, 392 )
-normal = ExtResource( 6 )
+normal = ExtResource( 28 )
 nome = "|"
-imagem = ExtResource( 6 )
+imagem = ExtResource( 28 )
 complexidade = 1
 
-[node name="Modulo2" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 712, 256 )
-normal = ExtResource( 6 )
+[node name="ModuloB" parent="Operacoes" instance=ExtResource( 4 )]
+position = Vector2( 704, 248 )
+normal = ExtResource( 29 )
 nome = "I"
-imagem = ExtResource( 6 )
+imagem = ExtResource( 29 )
 complexidade = 1
 
 [node name="Mais" parent="Operacoes" instance=ExtResource( 4 )]
@@ -274,7 +312,7 @@ margin_left = -120.0
 margin_top = -104.0
 margin_right = 144.0
 margin_bottom = 104.0
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -287,8 +325,8 @@ margin_left = 5.0
 margin_top = -55.0
 margin_right = -5.0
 margin_bottom = -5.0
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Menu Principal"
 align = 1
 valign = 1
@@ -297,7 +335,7 @@ __meta__ = {
 }
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="MenuLayer/BackOP/VoltarMenuText"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Tutorial" type="Label" parent="MenuLayer/BackOP"]
 anchor_top = 0.5
@@ -307,8 +345,8 @@ margin_left = 5.0
 margin_top = -25.0
 margin_right = -5.0
 margin_bottom = 25.0
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Tutorial"
 align = 1
 valign = 1
@@ -317,21 +355,7 @@ __meta__ = {
 }
 
 [node name="AbrirTutorial" type="TouchScreenButton" parent="MenuLayer/BackOP/Tutorial"]
-shape = SubResource( 7 )
-
-[node name="MutarMusica" type="Label" parent="MenuLayer/BackOP"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 56.0
-margin_bottom = 56.0
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
-text = "M"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+shape = SubResource( 8 )
 
 [node name="FecharMText" type="Label" parent="MenuLayer/BackOP"]
 anchor_left = 1.0
@@ -340,8 +364,8 @@ margin_left = -56.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = 56.0
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "X"
 align = 1
 valign = 1
@@ -350,7 +374,12 @@ __meta__ = {
 }
 
 [node name="FecharM" type="TouchScreenButton" parent="MenuLayer/BackOP/FecharMText"]
-shape = SubResource( 6 )
+shape = SubResource( 9 )
+
+[node name="MutarMusica" type="TouchScreenButton" parent="MenuLayer/BackOP"]
+position = Vector2( 5, 5 )
+normal = ExtResource( 27 )
+shape = SubResource( 10 )
 
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
 layer = 3
@@ -365,7 +394,7 @@ margin_left = -368.0
 margin_top = -208.0
 margin_right = 368.0
 margin_bottom = 208.0
-custom_styles/panel = SubResource( 9 )
+custom_styles/panel = SubResource( 11 )
 script = ExtResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -376,7 +405,7 @@ margin_left = 40.0
 margin_top = 64.0
 margin_right = 160.0
 margin_bottom = 384.0
-custom_styles/panel = SubResource( 10 )
+custom_styles/panel = SubResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -388,8 +417,8 @@ margin_right = 90.0
 margin_bottom = 310.0
 custom_styles/selected_focus = SubResource( 13 )
 custom_styles/selected = SubResource( 13 )
-custom_styles/bg = SubResource( 12 )
-items = [ "+", ExtResource( 17 ), false, "-", ExtResource( 5 ), false, "*", ExtResource( 10 ), false, "/", ExtResource( 9 ), false ]
+custom_styles/bg = SubResource( 14 )
+items = [ "+", ExtResource( 17 ), false, "-", ExtResource( 5 ), false, "*", ExtResource( 10 ), false, "/", ExtResource( 9 ), false, "Item 4", ExtResource( 6 ), false, "Item 5", ExtResource( 13 ), false, "Item 6", ExtResource( 14 ), false, "Item 7", ExtResource( 15 ), false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -399,8 +428,8 @@ margin_left = 192.0
 margin_top = 64.0
 margin_right = 688.0
 margin_bottom = 384.0
-custom_styles/normal = SubResource( 15 )
-custom_fonts/normal_font = SubResource( 14 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "	Selecione um dos simbolos ao lado."
 __meta__ = {
 "_edit_use_anchors_": false
@@ -413,8 +442,8 @@ margin_left = -64.0
 margin_top = 8.0
 margin_right = -13.0
 margin_bottom = 59.0
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "X"
 align = 1
 valign = 1
@@ -423,7 +452,8 @@ __meta__ = {
 }
 
 [node name="FecharTuM" type="TouchScreenButton" parent="TutorialLayer/Tutorial/FecharTuText2"]
-shape = SubResource( 6 )
+shape = SubResource( 9 )
+[connection signal="timeout" from="HUD/TimerHud/Timer" to="AreaNumeros" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
 [connection signal="pressed" from="Enviar" to="Enviar" method="_on_Restart_pressed"]
@@ -431,5 +461,6 @@ shape = SubResource( 6 )
 [connection signal="pressed" from="MenuLayer/BackOP/VoltarMenuText/VoltarMenu" to="config" method="_on_VoltarMenu_pressed"]
 [connection signal="pressed" from="MenuLayer/BackOP/Tutorial/AbrirTutorial" to="config" method="_on_AbrirTutorial_pressed"]
 [connection signal="pressed" from="MenuLayer/BackOP/FecharMText/FecharM" to="config" method="_on_FecharM_pressed"]
+[connection signal="pressed" from="MenuLayer/BackOP/MutarMusica" to="config" method="_on_MutarMusica_pressed"]
 [connection signal="item_selected" from="TutorialLayer/Tutorial/BgIcons/ItemList" to="TutorialLayer/Tutorial" method="_on_ItemList_item_selected"]
 [connection signal="pressed" from="TutorialLayer/Tutorial/FecharTuText2/FecharTuM" to="TutorialLayer/Tutorial" method="_on_FecharTuM_pressed"]

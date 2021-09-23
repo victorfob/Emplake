@@ -4,7 +4,8 @@ extends TouchScreenButton
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var musicaON = preload("res://assets/imgs/musica.png")
+var musicaOFF = preload("res://assets/imgs/no_musica.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,3 +38,11 @@ func _on_VoltarMenu_pressed():
 
 func _on_AbrirTutorial_pressed():
 	get_parent().get_node("TutorialLayer/Tutorial").visible = true
+
+
+func _on_MutarMusica_pressed():
+	var imgMusica = get_parent().get_node("MenuLayer/BackOP/MutarMusica")
+	if imgMusica.normal == musicaON:
+		imgMusica.normal = musicaOFF
+	else:
+		imgMusica.normal = musicaON

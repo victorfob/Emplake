@@ -22,12 +22,27 @@ var total = 0
 var regex = RegEx.new()
 #varivel que guarda o espaçamento entre elementos da equação
 export (int) var deslocamento = 60
- 
+#timer
+var timer
+#timer txt
+var timerText
+#valor base do score
+var scoreBase = 0
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	timer = get_parent().get_node("HUD/TimerHud/Timer")
+	timer.start(30)
+
+	timerText = get_parent().get_node("HUD/TimerHud/TimerTxt")
+	
 	#faz o regex aceitar apenas numeros
 	regex.compile("^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$")
 	pass # Replace with function body.
+
+func _process(delta):
+	timerText.text = str("Tempo: "+ str(round(timer.time_left)))
 
 #função que reajusta a posição de todos os elementos da função na tela
 #usa as posição do vetor equação[] para determinar as posições
@@ -44,6 +59,7 @@ func atualizarFunc():
 		#atualiza a posição na tela
 		equacao[i].patch.change_position(equacao[i].x)
 		i += 1
+	calcScore()
 
 #função que adiciona elementos a equação
 func novoElem(node):
@@ -446,6 +462,7 @@ func printEqua(var inicio, var estado):
 	
 	#checa se ambos os lados do igual são iguais
 	if result1 == result2:
+		timer.stop()
 		return true
 	else:
 		return false
@@ -478,3 +495,22 @@ func fatorial(n):
 		result = result * i
 		i += 1
 	return str(result)
+
+
+func calcScore():
+	var i = 0
+	var score = scoreBase
+	while i < equacao.size():
+		match equacao[i].nome:
+			"*", "+", "-", "/":
+				score += 100
+			"R", "^", "!":
+				score += 200
+			"{","[":
+				score -= 200
+		i += 1
+	get_parent().get_node("HUD/ScoreHud/ScoreTxt").text = str("Score: " + str(score))
+
+
+func _on_Timer_timeout():
+	scoreBase -= 50

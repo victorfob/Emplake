@@ -50,11 +50,13 @@ func _on_TouchScreenButton_pressed():
 	click = 1
 
 func _on_TouchScreenButton_released():
+	z_index = 0
 	click = 0
 
 func _on_AreaOperacao_area_entered(area):
 	if area.name == "ANumeros":
 		posiIni = area.get_global_position()
+		z_index = 1000
 		if situacaoAtual == situacao.NOVO:
 			situacaoAtual = situacao.INSERINDO
 		else:
