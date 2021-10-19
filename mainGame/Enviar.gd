@@ -19,10 +19,11 @@ func _ready():
 
 func _on_Restart_pressed():
 	if Load.pause == false:
-		var resultado = get_parent().get_node("ResultadoTemp")
-		if mainArea.comecarPrint() == true:
+		var resultado = get_parent().get_node("resultado")
+		if mainArea.comecarPrint() != true:
 			resultado.visible = true
-			resultado.color = "00ff00"
+			resultado.texture = load("res://assets/imgs/errado.png")
 		else:
 			resultado.visible = true
-			resultado.color = "ff0000"
+			resultado.texture = load("res://assets/imgs/certo.png")
+
