@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://mainGame/AreaNumeros.gd" type="Script" id=1]
 [ext_resource path="res://mainGame/Restart.gd" type="Script" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://assets/imgs/musica.png" type="Texture" id=27]
 [ext_resource path="res://assets/imgs/modulo_a.png" type="Texture" id=28]
 [ext_resource path="res://assets/imgs/modulo_b.png" type="Texture" id=29]
+[ext_resource path="res://mainGame/nomeCidade.gd" type="Script" id=30]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
@@ -43,33 +44,40 @@ font_data = ExtResource( 25 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 728, 88 )
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.156863, 0.196078, 0.411765, 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 20
+font_data = ExtResource( 25 )
+
+[sub_resource type="CircleShape2D" id=5]
 radius = 25.0
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.109589, 0.438856, 0.445313, 1 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=7]
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 size = 33
 font_data = ExtResource( 25 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 127, 25 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 25, 25 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 27, 25 )
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.510254, 0.810519, 0.816406, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -77,7 +85,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -85,10 +93,10 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.596078, 0.843137, 0.85098, 1 )
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0.509804, 0.811765, 0.815686, 1 )
 draw_center = false
 
@@ -158,6 +166,9 @@ script = ExtResource( 1 )
 deslocamento = 50
 
 [node name="ANumeros" type="Area2D" parent="AreaNumeros"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaNumeros/ANumeros"]
 shape = SubResource( 3 )
@@ -165,17 +176,42 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Panel" type="Panel" parent="AreaNumeros"]
+margin_left = -320.0
+margin_top = -88.0
+margin_right = 320.0
+margin_bottom = -48.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="nomeCidade" type="RichTextLabel" parent="AreaNumeros/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 8.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/normal_font = SubResource( 16 )
+bbcode_enabled = true
+scroll_active = false
+script = ExtResource( 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Restart" type="TouchScreenButton" parent="."]
 position = Vector2( 728, 8 )
 scale = Vector2( 1.16364, 1.12 )
 normal = ExtResource( 11 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 script = ExtResource( 2 )
 
 [node name="Enviar" type="TouchScreenButton" parent="."]
 position = Vector2( 704, 312 )
 normal = ExtResource( 21 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 script = ExtResource( 20 )
 
 [node name="config" type="TouchScreenButton" parent="."]
@@ -312,7 +348,7 @@ margin_left = -120.0
 margin_top = -104.0
 margin_right = 144.0
 margin_bottom = 104.0
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -325,8 +361,8 @@ margin_left = 5.0
 margin_top = -55.0
 margin_right = -5.0
 margin_bottom = -5.0
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Menu Principal"
 align = 1
 valign = 1
@@ -335,7 +371,7 @@ __meta__ = {
 }
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="MenuLayer/BackOP/VoltarMenuText"]
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Tutorial" type="Label" parent="MenuLayer/BackOP"]
 anchor_top = 0.5
@@ -345,8 +381,8 @@ margin_left = 5.0
 margin_top = -25.0
 margin_right = -5.0
 margin_bottom = 25.0
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Tutorial"
 align = 1
 valign = 1
@@ -355,7 +391,7 @@ __meta__ = {
 }
 
 [node name="AbrirTutorial" type="TouchScreenButton" parent="MenuLayer/BackOP/Tutorial"]
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="FecharMText" type="Label" parent="MenuLayer/BackOP"]
 anchor_left = 1.0
@@ -364,8 +400,8 @@ margin_left = -56.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = 56.0
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "X"
 align = 1
 valign = 1
@@ -374,12 +410,12 @@ __meta__ = {
 }
 
 [node name="FecharM" type="TouchScreenButton" parent="MenuLayer/BackOP/FecharMText"]
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="MutarMusica" type="TouchScreenButton" parent="MenuLayer/BackOP"]
 position = Vector2( 5, 5 )
 normal = ExtResource( 27 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
 layer = 3
@@ -394,7 +430,7 @@ margin_left = -368.0
 margin_top = -208.0
 margin_right = 368.0
 margin_bottom = 208.0
-custom_styles/panel = SubResource( 11 )
+custom_styles/panel = SubResource( 12 )
 script = ExtResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -405,7 +441,7 @@ margin_left = 40.0
 margin_top = 64.0
 margin_right = 160.0
 margin_bottom = 384.0
-custom_styles/panel = SubResource( 12 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -415,9 +451,9 @@ margin_left = 30.0
 margin_top = 10.0
 margin_right = 90.0
 margin_bottom = 310.0
-custom_styles/selected_focus = SubResource( 13 )
-custom_styles/selected = SubResource( 13 )
-custom_styles/bg = SubResource( 14 )
+custom_styles/selected_focus = SubResource( 14 )
+custom_styles/selected = SubResource( 14 )
+custom_styles/bg = SubResource( 15 )
 items = [ "+", ExtResource( 17 ), false, "-", ExtResource( 5 ), false, "*", ExtResource( 10 ), false, "/", ExtResource( 9 ), false, "Item 4", ExtResource( 6 ), false, "Item 5", ExtResource( 13 ), false, "Item 6", ExtResource( 14 ), false, "Item 7", ExtResource( 15 ), false ]
 __meta__ = {
 "_edit_use_anchors_": false
@@ -442,8 +478,8 @@ margin_left = -64.0
 margin_top = 8.0
 margin_right = -13.0
 margin_bottom = 59.0
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "X"
 align = 1
 valign = 1
@@ -452,7 +488,8 @@ __meta__ = {
 }
 
 [node name="FecharTuM" type="TouchScreenButton" parent="TutorialLayer/Tutorial/FecharTuText2"]
-shape = SubResource( 9 )
+shape = SubResource( 10 )
+
 [connection signal="timeout" from="HUD/TimerHud/Timer" to="AreaNumeros" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
