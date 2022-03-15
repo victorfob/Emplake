@@ -17,13 +17,13 @@ func _ready():
 #	pass
 
 
-func _on_Restart_pressed():
-	if Load.pause == false:
-		var resultado = get_parent().get_node("resultado")
-		if mainArea.comecarPrint() != true:
-			resultado.visible = true
-			resultado.texture = load("res://assets/imgs/errado.png")
-		else:
-			resultado.visible = true
-			resultado.texture = load("res://assets/imgs/certo.png")
 
+func _on_Enviar_pressed():
+	if Load.pause == false:
+		var resultado = get_parent().get_node("VioriaLayer/TelaVitoria")
+		if mainArea.comecarPrint() == true:
+			resultado.visible = true
+			var result = mainArea.getFinalResult()
+			var score = mainArea.getFinalScore()
+			resultado.get_node("ValorVitoria").text = result
+			resultado.get_node("ValorPontuacao").text = String(score)

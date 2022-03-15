@@ -19,10 +19,9 @@ func _ready():
 func _on_ItemList_item_selected(index):
 	var f = File.new()
 	var textoFile
-	var simbolo = $BgIcons/ItemList.get_item_text(index)
-	
+	var simbolo = $ItemList.get_item_text(index)
 	f.open(file, File.READ)
-	
+
 	while not f.eof_reached():
 		textoFile = f.get_line()
 		if textoFile == simbolo:
@@ -33,7 +32,7 @@ func _on_ItemList_item_selected(index):
 				textoFile = f.get_line()
 				textoLabel = str(textoLabel + "\n")
 			get_node("TextTutorial").text = textoLabel
-		break;
+			break;
 	f.close()
 
 

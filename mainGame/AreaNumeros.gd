@@ -28,6 +28,7 @@ var timer
 var timerText
 #valor base do score
 var scoreBase = 0
+var finalResult = null
 
 
 # Called when the node enters the scene tree for the first time.
@@ -463,6 +464,7 @@ func printEqua(var inicio, var estado):
 	#checa se ambos os lados do igual são iguais
 	if result1 == result2:
 		timer.stop()
+		finalResult = result1
 		return true
 	else:
 		return false
@@ -510,7 +512,14 @@ func calcScore():
 				score -= 200
 		i += 1
 	get_parent().get_node("HUD/ScoreHud/ScoreTxt").text = str("Score: " + str(score))
-
+	return score
 
 func _on_Timer_timeout():
 	scoreBase -= 50
+
+func getFinalResult():
+	return finalResult
+	
+func getFinalScore():
+	var score = calcScore()
+	return score

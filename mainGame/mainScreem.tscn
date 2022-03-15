@@ -1,35 +1,37 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=55 format=2]
 
-[ext_resource path="res://mainGame/AreaNumeros.gd" type="Script" id=1]
-[ext_resource path="res://mainGame/Restart.gd" type="Script" id=2]
-[ext_resource path="res://assets/imgs/chao_b.png" type="Texture" id=3]
-[ext_resource path="res://mainGame/ButtonSummon.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/imgs/menos.png" type="Texture" id=5]
-[ext_resource path="res://assets/imgs/modulo.png" type="Texture" id=6]
-[ext_resource path="res://assets/imgs/fatorial.png" type="Texture" id=7]
-[ext_resource path="res://assets/imgs/elevado.png" type="Texture" id=8]
-[ext_resource path="res://assets/imgs/div.png" type="Texture" id=9]
-[ext_resource path="res://assets/imgs/vezes.png" type="Texture" id=10]
-[ext_resource path="res://assets/imgs/reset.png" type="Texture" id=11]
-[ext_resource path="res://assets/imgs/chao_a.png" type="Texture" id=12]
-[ext_resource path="res://assets/imgs/raiz.png" type="Texture" id=13]
-[ext_resource path="res://assets/imgs/parentese_b.png" type="Texture" id=14]
-[ext_resource path="res://assets/imgs/parentese_a.png" type="Texture" id=15]
-[ext_resource path="res://assets/imgs/igual.png" type="Texture" id=16]
-[ext_resource path="res://assets/imgs/mais.png" type="Texture" id=17]
-[ext_resource path="res://assets/imgs/teto_a.png" type="Texture" id=18]
-[ext_resource path="res://assets/imgs/teto_b.png" type="Texture" id=19]
-[ext_resource path="res://mainGame/Enviar.gd" type="Script" id=20]
-[ext_resource path="res://assets/imgs/confirma.png" type="Texture" id=21]
-[ext_resource path="res://mainGame/GerarJogo.gd" type="Script" id=22]
-[ext_resource path="res://assets/imgs/config.png" type="Texture" id=23]
-[ext_resource path="res://mainGame/config.gd" type="Script" id=24]
-[ext_resource path="res://assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=25]
-[ext_resource path="res://mainGame/Tutorial.gd" type="Script" id=26]
-[ext_resource path="res://assets/imgs/musica.png" type="Texture" id=27]
-[ext_resource path="res://assets/imgs/modulo_a.png" type="Texture" id=28]
-[ext_resource path="res://assets/imgs/modulo_b.png" type="Texture" id=29]
-[ext_resource path="res://mainGame/nomeCidade.gd" type="Script" id=30]
+[ext_resource path="res://mainGame/GerarJogo.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://mainGame/AreaNumeros.gd" type="Script" id=3]
+[ext_resource path="res://mainGame/nomeCidade.gd" type="Script" id=4]
+[ext_resource path="res://assets/imgs/reset.png" type="Texture" id=5]
+[ext_resource path="res://mainGame/Restart.gd" type="Script" id=6]
+[ext_resource path="res://assets/imgs/confirma.png" type="Texture" id=7]
+[ext_resource path="res://mainGame/Enviar.gd" type="Script" id=8]
+[ext_resource path="res://assets/imgs/config.png" type="Texture" id=9]
+[ext_resource path="res://mainGame/config.gd" type="Script" id=10]
+[ext_resource path="res://assets/imgs/lamapada_acesa.png" type="Texture" id=11]
+[ext_resource path="res://mainGame/ButtonSummon.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/imgs/chao_a.png" type="Texture" id=13]
+[ext_resource path="res://assets/imgs/parentese_a.png" type="Texture" id=14]
+[ext_resource path="res://assets/imgs/parentese_b.png" type="Texture" id=15]
+[ext_resource path="res://assets/imgs/raiz.png" type="Texture" id=16]
+[ext_resource path="res://assets/imgs/fatorial.png" type="Texture" id=17]
+[ext_resource path="res://assets/imgs/chao_b.png" type="Texture" id=18]
+[ext_resource path="res://assets/imgs/igual.png" type="Texture" id=19]
+[ext_resource path="res://assets/imgs/modulo_a.png" type="Texture" id=20]
+[ext_resource path="res://assets/imgs/modulo_b.png" type="Texture" id=21]
+[ext_resource path="res://assets/imgs/mais.png" type="Texture" id=22]
+[ext_resource path="res://assets/imgs/menos.png" type="Texture" id=23]
+[ext_resource path="res://assets/imgs/vezes.png" type="Texture" id=24]
+[ext_resource path="res://assets/imgs/div.png" type="Texture" id=25]
+[ext_resource path="res://assets/imgs/teto_b.png" type="Texture" id=26]
+[ext_resource path="res://assets/imgs/teto_a.png" type="Texture" id=27]
+[ext_resource path="res://assets/imgs/elevado.png" type="Texture" id=28]
+[ext_resource path="res://assets/imgs/musica.png" type="Texture" id=29]
+[ext_resource path="res://mainGame/Tutorial.gd" type="Script" id=30]
+[ext_resource path="res://assets/imgs/modulo.png" type="Texture" id=31]
+[ext_resource path="res://mainGame/DicaFundo.gd" type="Script" id=32]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
@@ -39,7 +41,7 @@ border_color = Color( 0, 0, 0, 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 20
 extra_spacing_top = 5
-font_data = ExtResource( 25 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 728, 88 )
@@ -48,8 +50,8 @@ extents = Vector2( 728, 88 )
 bg_color = Color( 0.156863, 0.196078, 0.411765, 1 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 20
-font_data = ExtResource( 25 )
+size = 26
+font_data = ExtResource( 2 )
 
 [sub_resource type="CircleShape2D" id=6]
 radius = 25.0
@@ -58,6 +60,7 @@ radius = 25.0
 bg_color = Color( 0.109589, 0.438856, 0.445313, 1 )
 
 [sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.470588, 0.733333, 0.447059, 1 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -65,11 +68,11 @@ border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=9]
-size = 33
-font_data = ExtResource( 25 )
+size = 25
+font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 127, 25 )
+extents = Vector2( 125, 25 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 25, 25 )
@@ -86,24 +89,43 @@ border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=14]
-bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 0.0470588, 0.239216, 0.247059, 1 )
 
 [sub_resource type="StyleBoxFlat" id=15]
-bg_color = Color( 0.596078, 0.843137, 0.85098, 1 )
-
-[sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0.509804, 0.811765, 0.815686, 1 )
 draw_center = false
 
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.470588, 0.733333, 0.447059, 1 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 125, 25 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 20
+font_data = ExtResource( 2 )
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 22 )
+script = ExtResource( 1 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="HUD"]
@@ -147,10 +169,10 @@ __meta__ = {
 [node name="TimerHud" type="CanvasLayer" parent="HUD"]
 
 [node name="TimerTxt" type="RichTextLabel" parent="HUD/TimerHud"]
-margin_left = 80.0
-margin_top = 8.0
-margin_right = 370.0
-margin_bottom = 40.0
+margin_left = 170.19
+margin_top = 11.3404
+margin_right = 387.19
+margin_bottom = 43.3404
 custom_styles/normal = SubResource( 1 )
 custom_fonts/normal_font = SubResource( 2 )
 text = "Timer:"
@@ -161,9 +183,9 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="HUD/TimerHud"]
 
 [node name="AreaNumeros" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 384, 160 )
-script = ExtResource( 1 )
-deslocamento = 50
+script = ExtResource( 3 )
 
 [node name="ANumeros" type="Area2D" parent="AreaNumeros"]
 __meta__ = {
@@ -196,7 +218,7 @@ size_flags_vertical = 0
 custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
 scroll_active = false
-script = ExtResource( 30 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -204,124 +226,130 @@ __meta__ = {
 [node name="Restart" type="TouchScreenButton" parent="."]
 position = Vector2( 728, 8 )
 scale = Vector2( 1.16364, 1.12 )
-normal = ExtResource( 11 )
+normal = ExtResource( 5 )
 shape = SubResource( 6 )
-script = ExtResource( 2 )
+script = ExtResource( 6 )
 
 [node name="Enviar" type="TouchScreenButton" parent="."]
 position = Vector2( 704, 312 )
-normal = ExtResource( 21 )
+normal = ExtResource( 7 )
 shape = SubResource( 6 )
-script = ExtResource( 20 )
+script = ExtResource( 8 )
 
-[node name="config" type="TouchScreenButton" parent="."]
+[node name="Config" type="TouchScreenButton" parent="."]
 position = Vector2( 16, 16 )
 scale = Vector2( 0.727273, 0.8 )
-normal = ExtResource( 23 )
-script = ExtResource( 24 )
+normal = ExtResource( 9 )
+script = ExtResource( 10 )
+
+[node name="Dica" type="TouchScreenButton" parent="."]
+position = Vector2( 72.7862, 16 )
+scale = Vector2( 0.727273, 0.8 )
+normal = ExtResource( 11 )
 
 [node name="Operacoes" type="Node" parent="."]
+editor/display_folded = true
 
-[node name="ChaoA" parent="Operacoes" instance=ExtResource( 4 )]
+[node name="ChaoA" parent="Operacoes" instance=ExtResource( 12 )]
 position = Vector2( 128, 392 )
-normal = ExtResource( 12 )
+normal = ExtResource( 13 )
 nome = "{"
-imagem = ExtResource( 12 )
+imagem = ExtResource( 13 )
 complexidade = 2
 
-[node name="ParentA" parent="Operacoes" instance=ExtResource( 4 )]
+[node name="ParentA" parent="Operacoes" instance=ExtResource( 12 )]
 position = Vector2( 320, 392 )
-normal = ExtResource( 15 )
-nome = "("
-imagem = ExtResource( 15 )
-
-[node name="ParentB" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 416, 392 )
 normal = ExtResource( 14 )
-nome = ")"
+nome = "("
 imagem = ExtResource( 14 )
 
-[node name="Raiz" parent="Operacoes" instance=ExtResource( 4 )]
+[node name="ParentB" parent="Operacoes" instance=ExtResource( 12 )]
+position = Vector2( 416, 392 )
+normal = ExtResource( 15 )
+nome = ")"
+imagem = ExtResource( 15 )
+
+[node name="Raiz" parent="Operacoes" instance=ExtResource( 12 )]
 position = Vector2( 416, 312 )
-normal = ExtResource( 13 )
-nome = "R"
-imagem = ExtResource( 13 )
-
-[node name="Fatorial" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 512, 312 )
-normal = ExtResource( 7 )
-nome = "!"
-imagem = ExtResource( 7 )
-
-[node name="ChaoB" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 224, 392 )
-normal = ExtResource( 3 )
-nome = "}"
-imagem = ExtResource( 3 )
-complexidade = 2
-
-[node name="Igual" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 704, 392 )
 normal = ExtResource( 16 )
-nome = "="
+nome = "R"
 imagem = ExtResource( 16 )
 
-[node name="ModuloA" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 32, 392 )
-normal = ExtResource( 28 )
-nome = "|"
-imagem = ExtResource( 28 )
-complexidade = 1
-
-[node name="ModuloB" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 704, 248 )
-normal = ExtResource( 29 )
-nome = "I"
-imagem = ExtResource( 29 )
-complexidade = 1
-
-[node name="Mais" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 32, 312 )
+[node name="Fatorial" parent="Operacoes" instance=ExtResource( 12 )]
+position = Vector2( 512, 312 )
 normal = ExtResource( 17 )
+nome = "!"
 imagem = ExtResource( 17 )
 
-[node name="Menos" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 128, 312 )
-normal = ExtResource( 5 )
-nome = "-"
-imagem = ExtResource( 5 )
-
-[node name="Vezes" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 320, 312 )
-normal = ExtResource( 10 )
-nome = "*"
-imagem = ExtResource( 10 )
-
-[node name="Divisao" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 224, 312 )
-normal = ExtResource( 9 )
-nome = "/"
-imagem = ExtResource( 9 )
-
-[node name="TetoB" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 608, 392 )
-normal = ExtResource( 19 )
-nome = "]"
-imagem = ExtResource( 19 )
-complexidade = 2
-
-[node name="TetoA" parent="Operacoes" instance=ExtResource( 4 )]
-position = Vector2( 512, 392 )
+[node name="ChaoB" parent="Operacoes" instance=ExtResource( 12 )]
+position = Vector2( 224, 392 )
 normal = ExtResource( 18 )
-nome = "["
+nome = "}"
 imagem = ExtResource( 18 )
 complexidade = 2
 
-[node name="Elevado" parent="Operacoes" instance=ExtResource( 4 )]
+[node name="Igual" parent="Operacoes" instance=ExtResource( 12 )]
+position = Vector2( 704, 392 )
+normal = ExtResource( 19 )
+nome = "="
+imagem = ExtResource( 19 )
+
+[node name="ModuloA" parent="Operacoes" instance=ExtResource( 12 )]
+position = Vector2( 32, 392 )
+normal = ExtResource( 20 )
+nome = "|"
+imagem = ExtResource( 20 )
+complexidade = 1
+
+[node name="ModuloB" parent="Operacoes" instance=ExtResource( 12 )]
+position = Vector2( 704, 248 )
+normal = ExtResource( 21 )
+nome = "I"
+imagem = ExtResource( 21 )
+complexidade = 1
+
+[node name="Mais" parent="Operacoes" instance=ExtResource( 12 )]
+position = Vector2( 32, 312 )
+normal = ExtResource( 22 )
+imagem = ExtResource( 22 )
+
+[node name="Menos" parent="Operacoes" instance=ExtResource( 12 )]
+position = Vector2( 128, 312 )
+normal = ExtResource( 23 )
+nome = "-"
+imagem = ExtResource( 23 )
+
+[node name="Vezes" parent="Operacoes" instance=ExtResource( 12 )]
+position = Vector2( 320, 312 )
+normal = ExtResource( 24 )
+nome = "*"
+imagem = ExtResource( 24 )
+
+[node name="Divisao" parent="Operacoes" instance=ExtResource( 12 )]
+position = Vector2( 224, 312 )
+normal = ExtResource( 25 )
+nome = "/"
+imagem = ExtResource( 25 )
+
+[node name="TetoB" parent="Operacoes" instance=ExtResource( 12 )]
+position = Vector2( 608, 392 )
+normal = ExtResource( 26 )
+nome = "]"
+imagem = ExtResource( 26 )
+complexidade = 2
+
+[node name="TetoA" parent="Operacoes" instance=ExtResource( 12 )]
+position = Vector2( 512, 392 )
+normal = ExtResource( 27 )
+nome = "["
+imagem = ExtResource( 27 )
+complexidade = 2
+
+[node name="Elevado" parent="Operacoes" instance=ExtResource( 12 )]
 position = Vector2( 608, 312 )
-normal = ExtResource( 8 )
+normal = ExtResource( 28 )
 nome = "^"
-imagem = ExtResource( 8 )
+imagem = ExtResource( 28 )
 complexidade = 1
 
 [node name="resultado" type="TextureRect" parent="."]
@@ -346,9 +374,11 @@ __meta__ = {
 }
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 2
 
 [node name="BackOP" type="Panel" parent="MenuLayer"]
+editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -364,13 +394,11 @@ __meta__ = {
 }
 
 [node name="VoltarMenuText" type="Label" parent="MenuLayer/BackOP"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
+editor/display_folded = true
 margin_left = 5.0
-margin_top = -55.0
-margin_right = -5.0
-margin_bottom = -5.0
+margin_top = 153.0
+margin_right = 259.0
+margin_bottom = 203.0
 custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 9 )
 text = "Menu Principal"
@@ -381,9 +409,11 @@ __meta__ = {
 }
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="MenuLayer/BackOP/VoltarMenuText"]
+position = Vector2( 127.243, 24.805 )
 shape = SubResource( 10 )
 
 [node name="Tutorial" type="Label" parent="MenuLayer/BackOP"]
+editor/display_folded = true
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -401,9 +431,11 @@ __meta__ = {
 }
 
 [node name="AbrirTutorial" type="TouchScreenButton" parent="MenuLayer/BackOP/Tutorial"]
+position = Vector2( 126.805, 25 )
 shape = SubResource( 10 )
 
 [node name="FecharMText" type="Label" parent="MenuLayer/BackOP"]
+editor/display_folded = true
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -56.0
@@ -420,14 +452,16 @@ __meta__ = {
 }
 
 [node name="FecharM" type="TouchScreenButton" parent="MenuLayer/BackOP/FecharMText"]
+position = Vector2( 25.805, 25.415 )
 shape = SubResource( 11 )
 
 [node name="MutarMusica" type="TouchScreenButton" parent="MenuLayer/BackOP"]
 position = Vector2( 5, 5 )
-normal = ExtResource( 27 )
+normal = ExtResource( 29 )
 shape = SubResource( 12 )
 
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 3
 
 [node name="Tutorial" type="Panel" parent="TutorialLayer"]
@@ -441,30 +475,22 @@ margin_top = -208.0
 margin_right = 368.0
 margin_bottom = 208.0
 custom_styles/panel = SubResource( 13 )
-script = ExtResource( 26 )
+script = ExtResource( 30 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BgIcons" type="Panel" parent="TutorialLayer/Tutorial"]
-margin_left = 40.0
-margin_top = 64.0
-margin_right = 160.0
-margin_bottom = 384.0
-custom_styles/panel = SubResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ItemList" type="ItemList" parent="TutorialLayer/Tutorial/BgIcons"]
-margin_left = 30.0
-margin_top = 10.0
-margin_right = 90.0
-margin_bottom = 310.0
-custom_styles/selected_focus = SubResource( 15 )
-custom_styles/selected = SubResource( 15 )
-custom_styles/bg = SubResource( 16 )
-items = [ "+", ExtResource( 17 ), false, "-", ExtResource( 5 ), false, "*", ExtResource( 10 ), false, "/", ExtResource( 9 ), false, "Item 4", ExtResource( 6 ), false, "Item 5", ExtResource( 13 ), false, "Item 6", ExtResource( 14 ), false, "Item 7", ExtResource( 15 ), false ]
+[node name="ItemList" type="ItemList" parent="TutorialLayer/Tutorial"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 3.17334
+margin_top = -200.0
+margin_right = 71.1733
+margin_bottom = 200.0
+custom_styles/selected_focus = SubResource( 14 )
+custom_styles/selected = SubResource( 14 )
+custom_styles/bg = SubResource( 15 )
+items = [ "+", ExtResource( 22 ), false, "-", ExtResource( 23 ), false, "*", ExtResource( 24 ), false, "/", ExtResource( 25 ), false, "Item 4", ExtResource( 31 ), false, "Item 5", ExtResource( 16 ), false, "Item 6", ExtResource( 15 ), false, "Item 7", ExtResource( 14 ), false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -498,16 +524,209 @@ __meta__ = {
 }
 
 [node name="FecharTuM" type="TouchScreenButton" parent="TutorialLayer/Tutorial/FecharTuText2"]
+position = Vector2( 25.3867, 25.3868 )
 shape = SubResource( 11 )
 
+[node name="VioriaLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="TelaVitoria" type="Panel" parent="VioriaLayer"]
+editor/display_folded = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -296.0
+margin_top = -149.0
+margin_right = 227.0
+margin_bottom = -42.0
+custom_styles/panel = SubResource( 16 )
+
+[node name="TestoVitoria" type="RichTextLabel" parent="VioriaLayer/TelaVitoria"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -119.0
+rect_pivot_offset = Vector2( 435, 28.415 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/normal_font = SubResource( 17 )
+bbcode_enabled = true
+text = "Pontuacao:
+Resultado Correto:
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ValorVitoria" type="RichTextLabel" parent="VioriaLayer/TelaVitoria"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 397.827
+margin_top = 57.1202
+margin_right = -3.1734
+margin_bottom = -2.87976
+rect_pivot_offset = Vector2( 435, 28.415 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/normal_font = SubResource( 18 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ValorPontuacao" type="RichTextLabel" parent="VioriaLayer/TelaVitoria"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 248.679
+margin_top = 6.34668
+margin_right = -152.321
+margin_bottom = -53.6533
+rect_pivot_offset = Vector2( 435, 28.415 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/normal_font = SubResource( 18 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoltarMenuText2" type="Label" parent="VioriaLayer/TelaVitoria"]
+editor/display_folded = true
+margin_left = 156.846
+margin_top = 104.84
+margin_right = 385.846
+margin_bottom = 151.84
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "Voltar ao Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoltarMenu" type="TouchScreenButton" parent="VioriaLayer/TelaVitoria/VoltarMenuText2"]
+position = Vector2( 114.55, 24.805 )
+shape = SubResource( 10 )
+
+[node name="DicaLayer" type="CanvasLayer" parent="."]
+
+[node name="DicaFundo" type="Panel" parent="DicaLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -104.0
+margin_right = 144.0
+margin_bottom = 164.0
+custom_styles/panel = SubResource( 7 )
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dica1" type="Label" parent="DicaLayer/DicaFundo"]
+editor/display_folded = true
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 5.0
+margin_top = -56.0
+margin_right = -5.0
+margin_bottom = -1.0
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 19 )
+text = "Mostrar um resultado possivel"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AbrirTutorial" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica1"]
+position = Vector2( 126.805, 25 )
+shape = SubResource( 10 )
+
+[node name="Dica2" type="Label" parent="DicaLayer/DicaFundo"]
+editor/display_folded = true
+margin_left = 6.0
+margin_top = 143.0
+margin_right = 260.0
+margin_bottom = 193.0
+rect_pivot_offset = Vector2( -40, 73 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 20 )
+text = "Completar primeira metade"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoltarMenu" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica2"]
+position = Vector2( 127.243, 24.805 )
+shape = SubResource( 21 )
+
+[node name="Dica3" type="Label" parent="DicaLayer/DicaFundo"]
+editor/display_folded = true
+margin_left = 6.0
+margin_top = 211.0
+margin_right = 260.0
+margin_bottom = 261.0
+rect_pivot_offset = Vector2( -40, 73 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 22 )
+text = "Completar segunda metade"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoltarMenu" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica3"]
+position = Vector2( 127.243, 24.805 )
+shape = SubResource( 10 )
+
+[node name="FecharMText" type="Label" parent="DicaLayer/DicaFundo"]
+editor/display_folded = true
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -56.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = 56.0
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "X"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FecharM" type="TouchScreenButton" parent="DicaLayer/DicaFundo/FecharMText"]
+position = Vector2( 25.805, 25.415 )
+shape = SubResource( 11 )
 [connection signal="timeout" from="HUD/TimerHud/Timer" to="AreaNumeros" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
-[connection signal="pressed" from="Enviar" to="Enviar" method="_on_Restart_pressed"]
-[connection signal="pressed" from="config" to="config" method="_on_config_pressed"]
-[connection signal="pressed" from="MenuLayer/BackOP/VoltarMenuText/VoltarMenu" to="config" method="_on_VoltarMenu_pressed"]
-[connection signal="pressed" from="MenuLayer/BackOP/Tutorial/AbrirTutorial" to="config" method="_on_AbrirTutorial_pressed"]
-[connection signal="pressed" from="MenuLayer/BackOP/FecharMText/FecharM" to="config" method="_on_FecharM_pressed"]
-[connection signal="pressed" from="MenuLayer/BackOP/MutarMusica" to="config" method="_on_MutarMusica_pressed"]
-[connection signal="item_selected" from="TutorialLayer/Tutorial/BgIcons/ItemList" to="TutorialLayer/Tutorial" method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="Enviar" to="Enviar" method="_on_Enviar_pressed"]
+[connection signal="pressed" from="Config" to="Config" method="_on_config_pressed"]
+[connection signal="pressed" from="Dica" to="DicaLayer/DicaFundo" method="_on_Dica_pressed"]
+[connection signal="pressed" from="MenuLayer/BackOP/VoltarMenuText/VoltarMenu" to="Config" method="_on_VoltarMenu_pressed"]
+[connection signal="pressed" from="MenuLayer/BackOP/Tutorial/AbrirTutorial" to="Config" method="_on_AbrirTutorial_pressed"]
+[connection signal="pressed" from="MenuLayer/BackOP/FecharMText/FecharM" to="Config" method="_on_FecharM_pressed"]
+[connection signal="pressed" from="MenuLayer/BackOP/MutarMusica" to="Config" method="_on_MutarMusica_pressed"]
+[connection signal="item_selected" from="TutorialLayer/Tutorial/ItemList" to="TutorialLayer/Tutorial" method="_on_ItemList_item_selected"]
 [connection signal="pressed" from="TutorialLayer/Tutorial/FecharTuText2/FecharTuM" to="TutorialLayer/Tutorial" method="_on_FecharTuM_pressed"]
+[connection signal="pressed" from="VioriaLayer/TelaVitoria/VoltarMenuText2/VoltarMenu" to="Config" method="_on_VoltarMenu_pressed"]
+[connection signal="pressed" from="DicaLayer/DicaFundo/FecharMText/FecharM" to="DicaLayer/DicaFundo" method="_on_FecharM_pressed"]
