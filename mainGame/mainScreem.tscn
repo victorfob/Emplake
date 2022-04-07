@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://mainGame/GerarJogo.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
@@ -32,16 +32,17 @@
 [ext_resource path="res://mainGame/Tutorial.gd" type="Script" id=30]
 [ext_resource path="res://assets/imgs/modulo.png" type="Texture" id=31]
 [ext_resource path="res://mainGame/DicaFundo.gd" type="Script" id=32]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
-draw_center = false
-border_color = Color( 0, 0, 0, 1 )
+[ext_resource path="res://assets/imgs/lamapada_apagada.png" type="Texture" id=33]
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
 extra_spacing_top = 5
 font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
+draw_center = false
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 728, 69 )
@@ -59,6 +60,10 @@ radius = 25.0
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.109589, 0.438856, 0.445313, 1 )
 
+[sub_resource type="DynamicFont" id=9]
+size = 25
+font_data = ExtResource( 2 )
+
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.156863, 0.196078, 0.411765, 1 )
 border_width_left = 1
@@ -66,10 +71,6 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 25
-font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 130, 27 )
@@ -114,8 +115,8 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 125, 25 )
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 136, 30 )
 
 [sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0.541176, 0.117647, 0.117647, 1 )
@@ -175,9 +176,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -336.0
+margin_left = -335.0
 margin_top = -168.0
-margin_right = 304.0
+margin_right = 305.0
 margin_bottom = -30.0
 __meta__ = {
 "_edit_lock_": true,
@@ -191,13 +192,10 @@ margin_left = 392.0
 margin_top = 8.0
 margin_right = 688.0
 margin_bottom = 40.0
-custom_styles/normal = SubResource( 1 )
 custom_fonts/normal_font = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
 text = "Score:"
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TimerHud" type="CanvasLayer" parent="HUD"]
 
@@ -206,22 +204,17 @@ margin_left = 170.19
 margin_top = 11.3404
 margin_right = 387.19
 margin_bottom = 43.3404
-custom_styles/normal = SubResource( 1 )
 custom_fonts/normal_font = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
 text = "Timer:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Timer" type="Timer" parent="HUD/TimerHud"]
 
 [node name="AreaNumeros" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 384, 160 )
 script = ExtResource( 3 )
 
 [node name="ANumeros" type="Area2D" parent="AreaNumeros"]
-position = Vector2( 0, -19 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -233,7 +226,6 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="AreaNumeros"]
-editor/display_folded = true
 margin_left = -320.0
 margin_top = -88.0
 margin_right = 320.0
@@ -254,9 +246,6 @@ custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
 scroll_active = false
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Restart" type="TouchScreenButton" parent="."]
 position = Vector2( 728, 8 )
@@ -278,10 +267,14 @@ scale = Vector2( 0.727273, 0.8 )
 normal = ExtResource( 9 )
 script = ExtResource( 10 )
 
-[node name="Dica" type="TouchScreenButton" parent="."]
-position = Vector2( 72.7862, 16 )
-scale = Vector2( 0.727273, 0.8 )
-normal = ExtResource( 11 )
+[node name="Dica" type="TextureButton" parent="."]
+margin_left = 73.0
+margin_top = 13.0
+margin_right = 128.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 33 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 11 )
 
 [node name="Operacoes" type="Node" parent="."]
 
@@ -324,7 +317,7 @@ imagem = ExtResource( 18 )
 complexidade = 2
 
 [node name="Igual" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 713.74, 222.522 )
+position = Vector2( 708, 256 )
 normal = ExtResource( 19 )
 nome = "="
 imagem = ExtResource( 19 )
@@ -337,7 +330,7 @@ imagem = ExtResource( 20 )
 complexidade = 1
 
 [node name="ModuloB" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 692.312, 396.049 )
+position = Vector2( 692, 390 )
 normal = ExtResource( 21 )
 nome = "I"
 imagem = ExtResource( 21 )
@@ -388,7 +381,6 @@ imagem = ExtResource( 28 )
 complexidade = 1
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 2
 
 [node name="BackOP" type="Panel" parent="MenuLayer"]
@@ -407,26 +399,21 @@ __meta__ = {
 }
 
 [node name="VoltarMenuText" type="Label" parent="MenuLayer/BackOP"]
-editor/display_folded = true
 margin_left = 5.0
 margin_top = 153.0
 margin_right = 259.0
 margin_bottom = 203.0
-custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 8 )
 text = "Menu Principal"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="MenuLayer/BackOP/VoltarMenuText"]
-position = Vector2( 127.243, 24.805 )
+position = Vector2( 1.52588e-05, -1.99999 )
 shape = SubResource( 10 )
 
 [node name="Tutorial" type="Label" parent="MenuLayer/BackOP"]
-editor/display_folded = true
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -434,29 +421,25 @@ margin_left = 5.0
 margin_top = -25.0
 margin_right = -5.0
 margin_bottom = 25.0
-custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 8 )
 text = "Tutorial"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AbrirTutorial" type="TouchScreenButton" parent="MenuLayer/BackOP/Tutorial"]
-position = Vector2( 126.805, 25 )
+position = Vector2( 2, -1 )
 shape = SubResource( 10 )
 
 [node name="FecharMText" type="Label" parent="MenuLayer/BackOP"]
-editor/display_folded = true
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -56.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = 56.0
-custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 8 )
 text = "X"
 align = 1
 valign = 1
@@ -465,7 +448,7 @@ __meta__ = {
 }
 
 [node name="FecharM" type="TouchScreenButton" parent="MenuLayer/BackOP/FecharMText"]
-position = Vector2( 25.805, 23.467 )
+position = Vector2( 7.62939e-06, 1 )
 shape = SubResource( 11 )
 
 [node name="MutarMusica" type="TouchScreenButton" parent="MenuLayer/BackOP"]
@@ -474,7 +457,6 @@ normal = ExtResource( 29 )
 shape = SubResource( 12 )
 
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 3
 
 [node name="Tutorial" type="Panel" parent="TutorialLayer"]
@@ -513,8 +495,8 @@ margin_left = 192.0
 margin_top = 64.0
 margin_right = 688.0
 margin_bottom = 384.0
-custom_styles/normal = SubResource( 1 )
 custom_fonts/normal_font = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
 text = "	Selecione um dos simbolos ao lado."
 __meta__ = {
 "_edit_use_anchors_": false
@@ -527,8 +509,8 @@ margin_left = -64.0
 margin_top = 8.0
 margin_right = -13.0
 margin_bottom = 59.0
-custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 8 )
 text = "X"
 align = 1
 valign = 1
@@ -537,11 +519,10 @@ __meta__ = {
 }
 
 [node name="FecharTuM" type="TouchScreenButton" parent="TutorialLayer/Tutorial/FecharTuText2"]
-position = Vector2( 25.3867, 25.3868 )
+position = Vector2( 0.999981, 0.999998 )
 shape = SubResource( 11 )
 
 [node name="VioriaLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="TelaVitoria" type="Panel" parent="VioriaLayer"]
 visible = false
@@ -549,35 +530,52 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -267.871
-margin_top = 18.0183
-margin_right = 255.129
-margin_bottom = 125.018
+margin_left = -298.0
+margin_top = -22.0
+margin_right = 287.0
+margin_bottom = 107.0
 custom_styles/panel = SubResource( 23 )
 
-[node name="TestoVitoria" type="RichTextLabel" parent="VioriaLayer/TelaVitoria"]
+[node name="TextoPontuacao" type="RichTextLabel" parent="VioriaLayer/TelaVitoria"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -119.0
+margin_left = 10.0
+margin_top = 1.0
+margin_right = -325.0
+margin_bottom = -78.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/normal_font = SubResource( 26 )
 bbcode_enabled = true
+tab_size = 2
 text = "Pontuação:
-Resultado Correto:"
+"
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="TextoResultado" type="RichTextLabel" parent="VioriaLayer/TelaVitoria"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 71.0
+margin_right = -175.0
+margin_bottom = -8.0
+rect_pivot_offset = Vector2( 435, 28.415 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/normal_font = SubResource( 26 )
+bbcode_enabled = true
+tab_size = 2
+text = "Resultado Correto:"
+scroll_active = false
 
 [node name="ValorVitoria" type="RichTextLabel" parent="VioriaLayer/TelaVitoria"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 397.827
-margin_top = 57.1202
-margin_right = -3.1734
-margin_bottom = -2.87976
+margin_left = 418.0
+margin_top = 71.0
+margin_right = 17.0
+margin_bottom = -8.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -591,10 +589,10 @@ __meta__ = {
 [node name="ValorPontuacao" type="RichTextLabel" parent="VioriaLayer/TelaVitoria"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 248.679
-margin_top = 6.34668
-margin_right = -152.321
-margin_bottom = -53.6533
+margin_left = 264.0
+margin_top = 2.0
+margin_right = -21.0
+margin_bottom = -77.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -606,23 +604,19 @@ __meta__ = {
 }
 
 [node name="VoltarMenuText2" type="Label" parent="VioriaLayer/TelaVitoria"]
-editor/display_folded = true
-margin_left = 156.846
-margin_top = 104.84
-margin_right = 385.846
-margin_bottom = 151.84
-custom_styles/normal = SubResource( 24 )
+margin_left = 168.0
+margin_top = 129.0
+margin_right = 440.0
+margin_bottom = 189.0
 custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 24 )
 text = "Voltar ao Menu"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="VioriaLayer/TelaVitoria/VoltarMenuText2"]
-position = Vector2( 114.55, 24.805 )
-shape = SubResource( 25 )
+position = Vector2( 0, 1 )
+shape = SubResource( 32 )
 
 [node name="DerrotaLayer" type="CanvasLayer" parent="."]
 
@@ -632,34 +626,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -284.0
+margin_left = -379.0
 margin_top = 13.0
-margin_right = 239.0
+margin_right = 383.0
 margin_bottom = 165.0
 custom_styles/panel = SubResource( 16 )
 
-[node name="TestoErro" type="RichTextLabel" parent="DerrotaLayer/TelaErro"]
+[node name="TextoErro" type="RichTextLabel" parent="DerrotaLayer/TelaErro"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -119.0
+margin_right = -445.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/normal_font = SubResource( 27 )
 bbcode_enabled = true
-text = "Resultado 1:
+text = "Esquerda do igual:
 
-Resultado 2:
+Direita do igual:
 "
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ValorMetade1" type="RichTextLabel" parent="DerrotaLayer/TelaErro"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 198.0
+margin_left = 315.0
 margin_top = 1.0
 margin_right = -2.0
 margin_bottom = -80.0
@@ -669,14 +660,11 @@ size_flags_vertical = 0
 custom_fonts/normal_font = SubResource( 29 )
 bbcode_enabled = true
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ValorMetade2" type="RichTextLabel" parent="DerrotaLayer/TelaErro"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 198.0
+margin_left = 315.0
 margin_top = 77.0
 margin_right = -2.0
 margin_bottom = -4.0
@@ -691,32 +679,23 @@ __meta__ = {
 }
 
 [node name="Fechar Erro" type="Label" parent="DerrotaLayer/TelaErro"]
-editor/display_folded = true
-margin_left = 126.554
-margin_top = 152.414
-margin_right = 382.554
-margin_bottom = 199.414
-custom_styles/normal = SubResource( 31 )
+margin_left = 244.0
+margin_top = 150.0
+margin_right = 500.0
+margin_bottom = 197.0
 custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 31 )
 text = "Fechar mensagem"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="DerrotaLayer/TelaErro/Fechar Erro"]
-position = Vector2( 128.904, 23.8555 )
+position = Vector2( -0.999985, 0 )
 shape = SubResource( 10 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="DicaLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="DicaFundo" type="Panel" parent="DicaLayer"]
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -728,12 +707,8 @@ margin_right = 144.0
 margin_bottom = 164.0
 custom_styles/panel = SubResource( 7 )
 script = ExtResource( 32 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Dica1" type="Label" parent="DicaLayer/DicaFundo"]
-editor/display_folded = true
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -741,8 +716,8 @@ margin_left = 5.0
 margin_top = -56.0
 margin_right = -5.0
 margin_bottom = -1.0
-custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 19 )
+custom_styles/normal = SubResource( 8 )
 text = "Mostrar um resultado possivel"
 align = 1
 valign = 1
@@ -752,18 +727,17 @@ __meta__ = {
 }
 
 [node name="AbrirTutorial" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica1"]
-position = Vector2( 126.805, 27 )
+position = Vector2( -1.99999, 0 )
 shape = SubResource( 10 )
 
 [node name="Dica2" type="Label" parent="DicaLayer/DicaFundo"]
-editor/display_folded = true
-margin_left = 6.0
-margin_top = 143.0
-margin_right = 260.0
-margin_bottom = 193.0
+margin_left = 7.0
+margin_top = 144.0
+margin_right = 261.0
+margin_bottom = 199.0
 rect_pivot_offset = Vector2( -40, 73 )
-custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 20 )
+custom_styles/normal = SubResource( 8 )
 text = "Completar primeira metade"
 align = 1
 valign = 1
@@ -773,18 +747,17 @@ __meta__ = {
 }
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica2"]
-position = Vector2( 126.243, 26.805 )
+position = Vector2( -1.99998, 7.62939e-06 )
 shape = SubResource( 21 )
 
 [node name="Dica3" type="Label" parent="DicaLayer/DicaFundo"]
-editor/display_folded = true
 margin_left = 6.0
 margin_top = 211.0
 margin_right = 260.0
 margin_bottom = 261.0
 rect_pivot_offset = Vector2( -40, 73 )
-custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 22 )
+custom_styles/normal = SubResource( 8 )
 text = "Completar segunda metade"
 align = 1
 valign = 1
@@ -794,19 +767,18 @@ __meta__ = {
 }
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica3"]
-position = Vector2( 125.243, 26.805 )
+position = Vector2( -2.99998, 2.00001 )
 shape = SubResource( 10 )
 
 [node name="FecharMText" type="Label" parent="DicaLayer/DicaFundo"]
-editor/display_folded = true
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -56.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = 56.0
-custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 8 )
 text = "X"
 align = 1
 valign = 1
@@ -815,8 +787,9 @@ __meta__ = {
 }
 
 [node name="FecharM" type="TouchScreenButton" parent="DicaLayer/DicaFundo/FecharMText"]
-position = Vector2( 25.805, 25.415 )
+position = Vector2( 1.00001, -7.62939e-06 )
 shape = SubResource( 11 )
+
 [connection signal="timeout" from="HUD/TimerHud/Timer" to="AreaNumeros" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
