@@ -1,14 +1,16 @@
 extends TouchScreenButton
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var mainArea
+var resultadoVitoria
+var resultadoErro 
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	mainArea = get_parent().get_node("AreaNumeros")
+	resultadoVitoria = get_parent().get_node("VioriaLayer/TelaVitoria")
+	resultadoErro = get_parent().get_node("DerrotaLayer/TelaErro")
+
 	pass # Replace with function body.
 
 
@@ -20,10 +22,19 @@ func _ready():
 
 func _on_Enviar_pressed():
 	if Load.pause == false:
-		var resultado = get_parent().get_node("VioriaLayer/TelaVitoria")
 		if mainArea.comecarPrint() == true:
-			resultado.visible = true
+			resultadoVitoria.visible = true
 			var result = mainArea.getFinalResult()
 			var score = mainArea.getFinalScore()
-			resultado.get_node("ValorVitoria").text = result
-			resultado.get_node("ValorPontuacao").text = String(score)
+			resultadoVitoria.get_node("ValorVitoria").text = result
+			resultadoVitoria.get_node("ValorPontuacao").text = String(score)
+		else:
+			resultadoErro.visible = true
+			var valorMetade1 = mainArea.getValoreMetade1()
+			var valorMetade2 = mainArea.getValoreMetade2()
+			resultadoErro.get_node("ValorMetade1").text = String(valorMetade1)
+			resultadoErro.get_node("ValorMetade2").text = String(valorMetade2)
+
+
+func _on_VoltarMenu_pressed():
+	resultadoErro.visible = false

@@ -1,15 +1,11 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var numero = preload("./Numeros.tscn")
 var gerarNumero = 0
 var mainArea
 var num
 
-# Called when the node enters the scene tree for the first time.
 func _ready():	
 	mainArea = get_node("AreaNumeros")
 	gerarNumero = 0

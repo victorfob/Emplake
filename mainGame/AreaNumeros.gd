@@ -4,10 +4,13 @@ extends Node2D
 #struct que guarda os elementos da equação
 class valoresEquacao:
 	#caminho ao objeto
+# warning-ignore:unused_class_variable
 	var patch: Node2D
 	#identificador do elemento
+# warning-ignore:unused_class_variable
 	var nome: String
 	#posição x do elemento na equação
+# warning-ignore:unused_class_variable
 	var x: float
 
 #variavel que guarda a expressao para computação final
@@ -29,7 +32,9 @@ var timerText
 #valor base do score
 var scoreBase = 0
 var finalResult = null
-
+#variaveis usadas como saida da função que resolve a operação
+var valorMetade1
+var valorMetade2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,6 +47,7 @@ func _ready():
 	regex.compile("^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$")
 	pass # Replace with function body.
 
+# warning-ignore:unused_argument
 func _process(delta):
 	timerText.text = str("Tempo: "+ str(round(timer.time_left)))
 
@@ -61,6 +67,8 @@ func atualizarFunc():
 		equacao[i].patch.change_position(equacao[i].x)
 		i += 1
 	calcScore()
+	if (comecarPrint() == true):
+		get_parent().get_node("Enviar")._on_Enviar_pressed()
 
 #função que adiciona elementos a equação
 func novoElem(node):
@@ -114,7 +122,6 @@ func novaPosiElem(node):
 
 #função que remove elementos da equação
 func removeElem(node):
-	var i = 0
 	equacao.remove(node.posicaoEqua)
 	total -= 1
 	node.free()
@@ -123,7 +130,6 @@ func removeElem(node):
 #função que deleta todos os elementos menos os numeros
 func limpar():
 	var i = total-1
-	var numPosi = 4
 	while i >= 0:
 		if !regex.search(equacao[i].nome):
 			equacao[i].patch.free()
@@ -135,37 +141,63 @@ func limpar():
 #função que começa a executar a operação
 func comecarPrint():
 	var i = 0
+	var j = 0
+	var metade = 1
+	var igual = 0
+	var resultado1
+	var resultado2
 	#while que passa todos os elementos para um vertor string
 	while i < total:
+		if(equacao[i].nome == "="):
+			igual += 1
+			if(igual > 1):
+				valorMetade1 = "Mais de um igual na operação"
+				valorMetade2 = "Mais de um igual na operação"
+				return false
+			resultado1 = printEqua(0, i, null, metade)
+			expressaoStr.clear()
+			j = 0
+			i += 1
+			metade = 2
 		expressaoStr.append("")
 		#esse vetor tera seu valor mudado ao decorrer da função
 		#por esse motivo não se pode usar equacao[].nome mesmo que os dois 
 		#comecem com os valores identicos
-		expressaoStr[i] = equacao[i].nome
+		expressaoStr[j] = equacao[i].nome
 		i += 1
-	#chama a função que realmente calcula a equação
-	return printEqua(0, null)
+		j += 1
+	if(igual == 0):
+		valorMetade1 = "Expressão sem ="
+		valorMetade2 = "Expressão sem ="
+		return false
+	else:
+		resultado2 = printEqua(0, j, null, metade)
+		
+	if (resultado1 == true && resultado2 == true):
+		if(valorMetade1 == valorMetade2):
+			finalResult = valorMetade1
+			timer.stop()
+			return true
+	return false
 
 #função recursiva que trasforma um vetor de string 
 #em uma operação matematica e calcula a mesma
 #inicio é o ponto no qual a o vetor String deve começar a trabalhar
+#fim é o ponto de parada do vetor
 #estado serve para as recursões que ocorrem quando a operação abre um tipo de separador((,{,[,|)
-func printEqua(var inicio, var estado):
+#metade determina qual metade do problema esta sendo trabalhada
+func printEqua(var inicio,var fim, var estado, var metade):
 	#variavel que diz onde o vetor string deve ler
 	var percorre = inicio
-	#variavel que salva o tamanho da string em todos os momentos
-	var fim = expressaoStr.size()
-	#variavel que salva o string da primeira metada da operação(até o =)
-	var expressao1 = ""
-	#variavel que salva o string da segunda metada da operação(depois do =)
-	var expressao2 = ""
-	#variavel que guardara a posição do igual
-	var posiIgual = 0
+
+	#variavel que salva o string da operação
+	var expressao = ""
+	
 	#variavel que detecta se dois numeros estão sem operadores entre eles
 	var numSeguido = 0
 	
 	#while que percorre o vetor string com a equação
-	while percorre < expressaoStr.size():
+	while percorre < fim:
 		#match que le o vetor
 		match expressaoStr[percorre]:
 			#se uma das operações for:
@@ -176,7 +208,7 @@ func printEqua(var inicio, var estado):
 			"(", "|", "[", "{":
 				#chama a recursão da função dizendo o tipo
 				#usar percorre+1 para ignorar o simbolo atual
-				if printEqua(percorre + 1, expressaoStr[percorre]) == false:
+				if printEqua(percorre + 1, fim, expressaoStr[percorre], metade) == false:
 					#se o retorno foi falso, ocorreu algum erro durante a recursao
 					print("Erro recurssão")
 					return false
@@ -207,27 +239,35 @@ func printEqua(var inicio, var estado):
 				if estado != tipo:
 					#se não tiverem a operação não é valida
 					print("Erro fechando expressao na hora errada")
+					if(metade == 1):
+						valorMetade1 = "Erro usando %s na hora errada" %expressaoStr[percorre]
+					else:
+						valorMetade2 = "Erro usando %s na hora errada" %expressaoStr[percorre]
 					return false
 					
 				#variavel que ira salvar a expressao que esta 
 				#entre esse setor(ex: do { ate }) da operação
-				var expressao = ""
+				var expressaoSetor = ""
 				#passa todos os simbolos desse setor(ex: do { ate }) em uma string
 				while inicio <= percorre:
 					#acressenta o string do vetor no string da expressao
-					expressao = str(str(expressaoStr[percorre])+ expressao)
+					expressaoSetor = str(str(expressaoStr[percorre])+ expressaoSetor)
 					#remove o valor do vetor
 					expressaoStr.remove(percorre)
 					#reduz o percorre
 					percorre -= 1
 				
 				#usa o resolve do godot para calcular o valor na string expressao
-				var result = resolve(expressao)
+				var result = resolve(expressaoSetor)
 				
 				#verifica se ocorreu um erro com o resolve
 				if result == "Erro":
 					#se sim, então tem algo errado nesse setor da expressão
 					print("Erro na expressao")
+					if(metade == 1):
+						valorMetade1 = "Erro de sintaxe"
+					else:
+						valorMetade2 = "Erro de sintaxe"
 					return false
 				
 				#operações realizada para os diferentes tipos que podem ser
@@ -260,7 +300,7 @@ func printEqua(var inicio, var estado):
 				or expressaoStr[percorre + 1] == "{"):
 					#se sim, então usando recursão resolve esse valor antes de
 					#calcular a elevação
-					if printEqua(percorre + 2, expressaoStr[percorre+1]) == false:
+					if printEqua(percorre + 2, fim, expressaoStr[percorre+1], metade) == false:
 						#se retornar falso, então tem um problema nesse setor da operação
 						print("Erro na recurssão durante ^")
 						return false
@@ -278,6 +318,10 @@ func printEqua(var inicio, var estado):
 				#verifica se teve problema com o elevado
 				if result == "Erro":
 					print("Erro na expressao durante ^")
+					if metade == 1:
+						valorMetade1 = "Erro na expessão ^"
+					else:
+						valorMetade2 = "Erro na expessão ^"
 					return false
 				
 				#se não teve problema, remove do vetor String os simbolos que 
@@ -325,7 +369,7 @@ func printEqua(var inicio, var estado):
 				or expressaoStr[percorre + 1] == "{"):
 					#se sim, então usando recursão resolve esse valor antes de
 					#calcular a elevação
-					if printEqua(percorre + 2, expressaoStr[percorre+1]) == false:
+					if printEqua(percorre + 2, fim, expressaoStr[percorre+1], metade) == false:
 						#se retornar falso, então tem um problema nesse setor da operação
 						print("Erro na recurssão durante a raiz")
 						return false
@@ -338,10 +382,22 @@ func printEqua(var inicio, var estado):
 				#passa os valores do vetor para um formato que pode ser calculado
 				var raiz = str("sqrt(%s)" % [expressaoStr[percorre+1]])
 				#calcula o resultado da raiz
+				if(int(expressaoStr[percorre+1]) < 0):
+					if metade == 1:
+						valorMetade1 = "Erro valor negativo na raiz"
+						return false
+					else:
+						valorMetade2 = "Erro valor negativo na raiz"
+						return false
+				
 				var result = resolve(raiz)
 				
 				#verifica se deu erro na operação
 				if result == "Erro":
+					if metade == 1:
+						valorMetade1 = "Erro na expessão de raiz"
+					else:
+						valorMetade2 = "Erro na expessão de raiz"
 					print("Erro na expressao durante raiz")
 					return false
 				
@@ -363,6 +419,10 @@ func printEqua(var inicio, var estado):
 			"!":
 				#verifica se o fatorial não esta na primeira casa
 				if percorre <= 0:
+					if metade == 1:
+						valorMetade1 = "! usado na posição errada"
+					else:
+						valorMetade2 = "! usado na posição errada"
 					print("! na posicao errada")
 					return false
 				
@@ -372,8 +432,16 @@ func printEqua(var inicio, var estado):
 				#verifica se teve erro ou overflow
 				if result == "Erro":
 					print("Erro na expressao durante !")
+					if metade == 1:
+						valorMetade1 = "Erro na expressao durante !"
+					else:
+						valorMetade2 = "Erro na expressao durante !"
 					return false
 				elif result == "Overflow":
+					if metade == 1:
+						valorMetade1 = "Overflow devido a ! muito grande"
+					else:
+						valorMetade2 = "Overflow devido a ! muito grande"
 					print("Valor muito grande no !")
 					return false
 				
@@ -387,35 +455,17 @@ func printEqua(var inicio, var estado):
 				expressaoStr.insert(percorre-1, result)
 				#atualiza o percorre e o tamanho da operação
 				percorre -= 1
-				fim = expressaoStr.size()
-			
-			#se o operado for o =
-			"=":
-				#checa se ja existe um outro igual na operação
-				if posiIgual != 0:
-					print("Erro mais de um igual")
-					return false
-				#checa se faltou fechar alguma reursão((,{,|,[)
-				elif estado != null:
-					print ("Erro na expressao antes do =")
-					return false
-				
-				#zera a flag que detecta numeros seguidos
-				numSeguido = 0
-				#salva a posição do igual
-				posiIgual = percorre
-				#passa toda a expressão de antes do igual para expressao1
-				var j = 0
-				while j < posiIgual:
-					expressao1 = str(expressao1 + str(expressaoStr[j]))
-					j += 1
-			
+				fim = expressaoStr.size()			
 			#se for qualquer outro simbolo
 			_:
 				#verifica se o simbolo é um numero
 				if regex.search(expressaoStr[percorre]) != null and numSeguido == 1:
 					#se for um numero e esta depois de outro numero retorna falso
 					print("Erro dois numeros sem operação")
+					if metade == 1:
+						valorMetade1 = "Erro dois numeros sem operação"
+					else:
+						valorMetade2 = "Erro dois numeros sem operação"
 					return false
 				elif regex.search(expressaoStr[percorre]) != null:
 					#se for um numero e não esta depois de outro numero muda a flag 
@@ -427,47 +477,40 @@ func printEqua(var inicio, var estado):
 		#avança o while que le o vetor String
 		percorre += 1
 	
-	#verifica se tem um igual na operação
-	if posiIgual == 0:
-		print("Erro operação sem igual")
-		return false
-	#verifica se não foram fechadas todas as recursões
-	elif estado != null:
-		print("Erro na expressao depois do =")
+	if estado != null:
+		if metade == 1:
+			valorMetade1 = "Erro faltou fechar %s" % estado
+		else:
+			valorMetade2 = "Erro faltou fechar %s" % estado
+		print("Erro na expressao")
 		return false
 	
-	#passa a operação de depois do igual para expressao2
-	var j = posiIgual+1
-	while j < expressaoStr.size():
-		expressao2 = str(expressao2 + str(expressaoStr[j]))
+	var j = 0
+	while j < fim:
+		expressao = str(expressao + str(expressaoStr[j]))
 		j += 1
 	
-	#prints temporarios
-	print("expressão 1 final: %s" % [expressao1])
-	print("expressão 2 final: %s" % [expressao2])
+	#print temporario
+	print("expressão final: %s" % [expressao])
 	
 	#resolve as operações
-	var result1 = resolve(expressao1)
-	var result2 = resolve(expressao2)
-	#verifica se houve um erro nas operações
-	if result1 == "Erro":
-		print("Erro na primeira expressão")
-		return false
-	elif result2 == "Erro":
-		print("Erro na segunda expressão")
-		return false
+	var result = resolve(expressao)
 	
-	#print temporario
-	print("Resultado 1: %s" % [result1])
-	print("Resultado 2: %s" % [result2])
-	
-	#checa se ambos os lados do igual são iguais
-	if result1 == result2:
-		timer.stop()
-		finalResult = result1
-		return true
+	#verifica se houve um erro na operação
+	if result == "Erro":
+		if metade == 1:
+			valorMetade1 = "Erro de sintaxe"
+		else:
+			valorMetade2 = "Erro de sintaxe"
+		return false
+
+	if(metade == 1):
+		valorMetade1 = result
+		print("Resultado primeira metade: %s" % [result])
 	else:
-		return false
+		valorMetade2 = result
+		print("Resultado segunda metade: %s" % [result])
+	return true
 
 #função copiada do manual godot para executar as operações
 func resolve(command):
@@ -516,6 +559,7 @@ func calcScore():
 
 func _on_Timer_timeout():
 	scoreBase -= 50
+	calcScore()
 
 func getFinalResult():
 	return finalResult
@@ -523,3 +567,9 @@ func getFinalResult():
 func getFinalScore():
 	var score = calcScore()
 	return score
+
+func getValoreMetade1():
+	return valorMetade1
+	
+func getValoreMetade2():
+	return valorMetade2

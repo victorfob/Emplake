@@ -1,16 +1,13 @@
 extends ColorRect
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var loadScript
 var modo
 var num
 var formatNum = "%d%d%d%d"
 var numUser
 var dif
-# Called when the node enters the scene tree for the first time.
+
 
 func _ready():
 	randomize()
@@ -18,12 +15,7 @@ func _ready():
 	numUser = get_parent().get_node("Modo/Numeros")
 	modo = 0
 	dif = Load.dificuldade.Facil
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	pass 
 
 
 func _on_BG_botao_gui_input(event):
