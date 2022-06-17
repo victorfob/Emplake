@@ -4,45 +4,45 @@
 [ext_resource path="res://assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://mainGame/AreaNumeros.gd" type="Script" id=3]
 [ext_resource path="res://mainGame/nomeCidade.gd" type="Script" id=4]
-[ext_resource path="res://assets/imgs/reset.png" type="Texture" id=5]
+[ext_resource path="res://assets/imgs/broom.png" type="Texture" id=5]
 [ext_resource path="res://mainGame/Restart.gd" type="Script" id=6]
 [ext_resource path="res://assets/imgs/confirma.png" type="Texture" id=7]
 [ext_resource path="res://mainGame/Enviar.gd" type="Script" id=8]
 [ext_resource path="res://assets/imgs/config.png" type="Texture" id=9]
 [ext_resource path="res://mainGame/config.gd" type="Script" id=10]
-[ext_resource path="res://assets/imgs/lamapada_acesa.png" type="Texture" id=11]
-[ext_resource path="res://mainGame/ButtonSummon.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/imgs/chao_a.png" type="Texture" id=13]
-[ext_resource path="res://assets/imgs/parentese_a.png" type="Texture" id=14]
-[ext_resource path="res://assets/imgs/parentese_b.png" type="Texture" id=15]
-[ext_resource path="res://assets/imgs/raiz.png" type="Texture" id=16]
-[ext_resource path="res://assets/imgs/fatorial.png" type="Texture" id=17]
-[ext_resource path="res://assets/imgs/chao_b.png" type="Texture" id=18]
-[ext_resource path="res://assets/imgs/igual.png" type="Texture" id=19]
-[ext_resource path="res://assets/imgs/modulo_a.png" type="Texture" id=20]
-[ext_resource path="res://assets/imgs/modulo_b.png" type="Texture" id=21]
-[ext_resource path="res://assets/imgs/mais.png" type="Texture" id=22]
-[ext_resource path="res://assets/imgs/menos.png" type="Texture" id=23]
-[ext_resource path="res://assets/imgs/vezes.png" type="Texture" id=24]
-[ext_resource path="res://assets/imgs/div.png" type="Texture" id=25]
-[ext_resource path="res://assets/imgs/teto_b.png" type="Texture" id=26]
-[ext_resource path="res://assets/imgs/teto_a.png" type="Texture" id=27]
-[ext_resource path="res://assets/imgs/elevado.png" type="Texture" id=28]
-[ext_resource path="res://assets/imgs/musica.png" type="Texture" id=29]
-[ext_resource path="res://mainGame/Tutorial.gd" type="Script" id=30]
-[ext_resource path="res://assets/imgs/modulo.png" type="Texture" id=31]
-[ext_resource path="res://mainGame/DicaFundo.gd" type="Script" id=32]
-[ext_resource path="res://assets/imgs/lamapada_apagada.png" type="Texture" id=33]
-
-[sub_resource type="DynamicFont" id=2]
-size = 20
-extra_spacing_top = 5
-font_data = ExtResource( 2 )
+[ext_resource path="res://assets/imgs/lamapada_apagada.png" type="Texture" id=11]
+[ext_resource path="res://assets/imgs/lamapada_acesa.png" type="Texture" id=12]
+[ext_resource path="res://mainGame/ButtonSummon.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/imgs/chao_a.png" type="Texture" id=14]
+[ext_resource path="res://assets/imgs/parentese_a.png" type="Texture" id=15]
+[ext_resource path="res://assets/imgs/parentese_b.png" type="Texture" id=16]
+[ext_resource path="res://assets/imgs/raiz.png" type="Texture" id=17]
+[ext_resource path="res://assets/imgs/fatorial.png" type="Texture" id=18]
+[ext_resource path="res://assets/imgs/chao_b.png" type="Texture" id=19]
+[ext_resource path="res://assets/imgs/igual.png" type="Texture" id=20]
+[ext_resource path="res://assets/imgs/modulo_a.png" type="Texture" id=21]
+[ext_resource path="res://assets/imgs/modulo_b.png" type="Texture" id=22]
+[ext_resource path="res://assets/imgs/mais.png" type="Texture" id=23]
+[ext_resource path="res://assets/imgs/menos.png" type="Texture" id=24]
+[ext_resource path="res://assets/imgs/vezes.png" type="Texture" id=25]
+[ext_resource path="res://assets/imgs/div.png" type="Texture" id=26]
+[ext_resource path="res://assets/imgs/teto_b.png" type="Texture" id=27]
+[ext_resource path="res://assets/imgs/teto_a.png" type="Texture" id=28]
+[ext_resource path="res://assets/imgs/elevado.png" type="Texture" id=29]
+[ext_resource path="res://assets/imgs/musica.png" type="Texture" id=30]
+[ext_resource path="res://mainGame/Tutorial.gd" type="Script" id=31]
+[ext_resource path="res://assets/imgs/modulo.png" type="Texture" id=32]
+[ext_resource path="res://mainGame/DicaFundo.gd" type="Script" id=33]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
 draw_center = false
 border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+extra_spacing_top = 5
+font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 728, 69 )
@@ -60,10 +60,6 @@ radius = 25.0
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.109589, 0.438856, 0.445313, 1 )
 
-[sub_resource type="DynamicFont" id=9]
-size = 25
-font_data = ExtResource( 2 )
-
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.156863, 0.196078, 0.411765, 1 )
 border_width_left = 1
@@ -71,6 +67,10 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 25
+font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 130, 27 )
@@ -96,10 +96,10 @@ bg_color = Color( 0.0470588, 0.239216, 0.247059, 1 )
 bg_color = Color( 0.509804, 0.811765, 0.815686, 1 )
 draw_center = false
 
-[sub_resource type="StyleBoxFlat" id=23]
+[sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0.266667, 0.639216, 0.282353, 1 )
 
-[sub_resource type="DynamicFont" id=26]
+[sub_resource type="DynamicFont" id=17]
 size = 40
 font_data = ExtResource( 2 )
 
@@ -107,7 +107,7 @@ font_data = ExtResource( 2 )
 size = 40
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=24]
+[sub_resource type="StyleBoxFlat" id=19]
 bg_color = Color( 0.266667, 0.639216, 0.282353, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -115,25 +115,25 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 136, 30 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=21]
 bg_color = Color( 0.541176, 0.117647, 0.117647, 1 )
 
-[sub_resource type="DynamicFont" id=27]
+[sub_resource type="DynamicFont" id=22]
 size = 30
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=29]
+[sub_resource type="DynamicFont" id=23]
 size = 30
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=30]
+[sub_resource type="DynamicFont" id=24]
 size = 30
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=31]
+[sub_resource type="StyleBoxFlat" id=25]
 bg_color = Color( 0.541176, 0.117647, 0.117647, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -141,18 +141,18 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=26]
 size = 20
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=27]
 size = 20
 font_data = ExtResource( 2 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 127, 27 )
 
-[sub_resource type="DynamicFont" id=22]
+[sub_resource type="DynamicFont" id=29]
 size = 20
 font_data = ExtResource( 2 )
 
@@ -192,8 +192,8 @@ margin_left = 392.0
 margin_top = 8.0
 margin_right = 688.0
 margin_bottom = 40.0
-custom_fonts/normal_font = SubResource( 2 )
 custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Score:"
 scroll_active = false
 
@@ -204,8 +204,8 @@ margin_left = 170.19
 margin_top = 11.3404
 margin_right = 387.19
 margin_bottom = 43.3404
-custom_fonts/normal_font = SubResource( 2 )
 custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Timer:"
 
 [node name="Timer" type="Timer" parent="HUD/TimerHud"]
@@ -272,112 +272,112 @@ margin_left = 73.0
 margin_top = 13.0
 margin_right = 128.0
 margin_bottom = 63.0
-texture_normal = ExtResource( 33 )
-texture_pressed = ExtResource( 11 )
-texture_hover = ExtResource( 11 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
 
 [node name="Operacoes" type="Node" parent="."]
 
-[node name="ChaoA" parent="Operacoes" instance=ExtResource( 12 )]
+[node name="ChaoA" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 128, 392 )
-normal = ExtResource( 13 )
+normal = ExtResource( 14 )
 nome = "{"
-imagem = ExtResource( 13 )
+imagem = ExtResource( 14 )
 complexidade = 2
 
-[node name="ParentA" parent="Operacoes" instance=ExtResource( 12 )]
+[node name="ParentA" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 320, 392 )
-normal = ExtResource( 14 )
-nome = "("
-imagem = ExtResource( 14 )
-
-[node name="ParentB" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 416, 392 )
 normal = ExtResource( 15 )
-nome = ")"
+nome = "("
 imagem = ExtResource( 15 )
 
-[node name="Raiz" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 416, 312 )
+[node name="ParentB" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 416, 392 )
 normal = ExtResource( 16 )
-nome = "R"
+nome = ")"
 imagem = ExtResource( 16 )
 
-[node name="Fatorial" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 512, 312 )
+[node name="Raiz" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 416, 312 )
 normal = ExtResource( 17 )
-nome = "!"
+nome = "R"
 imagem = ExtResource( 17 )
 
-[node name="ChaoB" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 224, 392 )
+[node name="Fatorial" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 512, 312 )
 normal = ExtResource( 18 )
-nome = "}"
+nome = "!"
 imagem = ExtResource( 18 )
+
+[node name="ChaoB" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 224, 392 )
+normal = ExtResource( 19 )
+nome = "}"
+imagem = ExtResource( 19 )
 complexidade = 2
 
-[node name="Igual" parent="Operacoes" instance=ExtResource( 12 )]
+[node name="Igual" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 708, 256 )
-normal = ExtResource( 19 )
-nome = "="
-imagem = ExtResource( 19 )
-
-[node name="ModuloA" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 32, 392 )
 normal = ExtResource( 20 )
-nome = "|"
+nome = "="
 imagem = ExtResource( 20 )
-complexidade = 1
 
-[node name="ModuloB" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 692, 390 )
+[node name="ModuloA" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 32, 392 )
 normal = ExtResource( 21 )
-nome = "I"
+nome = "|"
 imagem = ExtResource( 21 )
 complexidade = 1
 
-[node name="Mais" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 32, 312 )
+[node name="ModuloB" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 692, 390 )
 normal = ExtResource( 22 )
+nome = "I"
 imagem = ExtResource( 22 )
+complexidade = 1
 
-[node name="Menos" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 128, 312 )
+[node name="Mais" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 32, 312 )
 normal = ExtResource( 23 )
-nome = "-"
 imagem = ExtResource( 23 )
 
-[node name="Vezes" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 320, 312 )
+[node name="Menos" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 128, 312 )
 normal = ExtResource( 24 )
-nome = "*"
+nome = "-"
 imagem = ExtResource( 24 )
 
-[node name="Divisao" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 224, 312 )
+[node name="Vezes" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 320, 312 )
 normal = ExtResource( 25 )
-nome = "/"
+nome = "*"
 imagem = ExtResource( 25 )
 
-[node name="TetoB" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 608, 392 )
+[node name="Divisao" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 224, 312 )
 normal = ExtResource( 26 )
-nome = "]"
+nome = "/"
 imagem = ExtResource( 26 )
-complexidade = 2
 
-[node name="TetoA" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 512, 392 )
+[node name="TetoB" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 608, 392 )
 normal = ExtResource( 27 )
-nome = "["
+nome = "]"
 imagem = ExtResource( 27 )
 complexidade = 2
 
-[node name="Elevado" parent="Operacoes" instance=ExtResource( 12 )]
-position = Vector2( 608, 312 )
+[node name="TetoA" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 512, 392 )
 normal = ExtResource( 28 )
-nome = "^"
+nome = "["
 imagem = ExtResource( 28 )
+complexidade = 2
+
+[node name="Elevado" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 608, 312 )
+normal = ExtResource( 29 )
+nome = "^"
+imagem = ExtResource( 29 )
 complexidade = 1
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
@@ -403,14 +403,14 @@ margin_left = 5.0
 margin_top = 153.0
 margin_right = 259.0
 margin_bottom = 203.0
-custom_fonts/font = SubResource( 9 )
 custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "Menu Principal"
 align = 1
 valign = 1
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="MenuLayer/BackOP/VoltarMenuText"]
-position = Vector2( 1.52588e-05, -1.99999 )
+position = Vector2( 1.52588e-005, -1.99999 )
 shape = SubResource( 10 )
 
 [node name="Tutorial" type="Label" parent="MenuLayer/BackOP"]
@@ -421,8 +421,8 @@ margin_left = 5.0
 margin_top = -25.0
 margin_right = -5.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 9 )
 custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "Tutorial"
 align = 1
 valign = 1
@@ -438,8 +438,8 @@ margin_left = -56.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = 56.0
-custom_fonts/font = SubResource( 9 )
 custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "X"
 align = 1
 valign = 1
@@ -448,12 +448,12 @@ __meta__ = {
 }
 
 [node name="FecharM" type="TouchScreenButton" parent="MenuLayer/BackOP/FecharMText"]
-position = Vector2( 7.62939e-06, 1 )
+position = Vector2( 7.62939e-006, 1 )
 shape = SubResource( 11 )
 
 [node name="MutarMusica" type="TouchScreenButton" parent="MenuLayer/BackOP"]
 position = Vector2( 5, 5 )
-normal = ExtResource( 29 )
+normal = ExtResource( 30 )
 shape = SubResource( 12 )
 
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
@@ -470,7 +470,7 @@ margin_top = -208.0
 margin_right = 368.0
 margin_bottom = 208.0
 custom_styles/panel = SubResource( 13 )
-script = ExtResource( 30 )
+script = ExtResource( 31 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -485,7 +485,7 @@ margin_bottom = 200.0
 custom_styles/selected_focus = SubResource( 14 )
 custom_styles/selected = SubResource( 14 )
 custom_styles/bg = SubResource( 15 )
-items = [ "+", ExtResource( 22 ), false, "-", ExtResource( 23 ), false, "*", ExtResource( 24 ), false, "/", ExtResource( 25 ), false, "Item 4", ExtResource( 31 ), false, "Item 5", ExtResource( 16 ), false, "Item 6", ExtResource( 15 ), false, "Item 7", ExtResource( 14 ), false ]
+items = [ "+", ExtResource( 23 ), false, "-", ExtResource( 24 ), false, "*", ExtResource( 25 ), false, "/", ExtResource( 26 ), false, "Item 4", ExtResource( 32 ), false, "Item 5", ExtResource( 17 ), false, "Item 6", ExtResource( 16 ), false, "Item 7", ExtResource( 15 ), false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -495,8 +495,8 @@ margin_left = 192.0
 margin_top = 64.0
 margin_right = 688.0
 margin_bottom = 384.0
-custom_fonts/normal_font = SubResource( 2 )
 custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "	Selecione um dos simbolos ao lado."
 __meta__ = {
 "_edit_use_anchors_": false
@@ -509,8 +509,8 @@ margin_left = -64.0
 margin_top = 8.0
 margin_right = -13.0
 margin_bottom = 59.0
-custom_fonts/font = SubResource( 9 )
 custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "X"
 align = 1
 valign = 1
@@ -534,7 +534,7 @@ margin_left = -298.0
 margin_top = -22.0
 margin_right = 287.0
 margin_bottom = 107.0
-custom_styles/panel = SubResource( 23 )
+custom_styles/panel = SubResource( 16 )
 
 [node name="TextoPontuacao" type="RichTextLabel" parent="VioriaLayer/TelaVitoria"]
 anchor_right = 1.0
@@ -546,7 +546,7 @@ margin_bottom = -78.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 26 )
+custom_fonts/normal_font = SubResource( 17 )
 bbcode_enabled = true
 tab_size = 2
 text = "Pontuação:
@@ -563,7 +563,7 @@ margin_bottom = -8.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 26 )
+custom_fonts/normal_font = SubResource( 17 )
 bbcode_enabled = true
 tab_size = 2
 text = "Resultado Correto:"
@@ -608,15 +608,15 @@ margin_left = 168.0
 margin_top = 129.0
 margin_right = 440.0
 margin_bottom = 189.0
+custom_styles/normal = SubResource( 19 )
 custom_fonts/font = SubResource( 9 )
-custom_styles/normal = SubResource( 24 )
 text = "Voltar ao Menu"
 align = 1
 valign = 1
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="VioriaLayer/TelaVitoria/VoltarMenuText2"]
 position = Vector2( 0, 1 )
-shape = SubResource( 32 )
+shape = SubResource( 20 )
 
 [node name="DerrotaLayer" type="CanvasLayer" parent="."]
 
@@ -630,7 +630,7 @@ margin_left = -379.0
 margin_top = 13.0
 margin_right = 383.0
 margin_bottom = 165.0
-custom_styles/panel = SubResource( 16 )
+custom_styles/panel = SubResource( 21 )
 
 [node name="TextoErro" type="RichTextLabel" parent="DerrotaLayer/TelaErro"]
 anchor_right = 1.0
@@ -639,7 +639,7 @@ margin_right = -445.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 27 )
+custom_fonts/normal_font = SubResource( 22 )
 bbcode_enabled = true
 text = "Esquerda do igual:
 
@@ -657,7 +657,7 @@ margin_bottom = -80.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 29 )
+custom_fonts/normal_font = SubResource( 23 )
 bbcode_enabled = true
 scroll_active = false
 
@@ -671,7 +671,7 @@ margin_bottom = -4.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 30 )
+custom_fonts/normal_font = SubResource( 24 )
 bbcode_enabled = true
 scroll_active = false
 __meta__ = {
@@ -683,8 +683,8 @@ margin_left = 244.0
 margin_top = 150.0
 margin_right = 500.0
 margin_bottom = 197.0
+custom_styles/normal = SubResource( 25 )
 custom_fonts/font = SubResource( 9 )
-custom_styles/normal = SubResource( 31 )
 text = "Fechar mensagem"
 align = 1
 valign = 1
@@ -706,7 +706,7 @@ margin_top = -104.0
 margin_right = 144.0
 margin_bottom = 164.0
 custom_styles/panel = SubResource( 7 )
-script = ExtResource( 32 )
+script = ExtResource( 33 )
 
 [node name="Dica1" type="Label" parent="DicaLayer/DicaFundo"]
 anchor_top = 0.5
@@ -716,8 +716,8 @@ margin_left = 5.0
 margin_top = -56.0
 margin_right = -5.0
 margin_bottom = -1.0
-custom_fonts/font = SubResource( 19 )
 custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 26 )
 text = "Mostrar um resultado possivel"
 align = 1
 valign = 1
@@ -736,8 +736,8 @@ margin_top = 144.0
 margin_right = 261.0
 margin_bottom = 199.0
 rect_pivot_offset = Vector2( -40, 73 )
-custom_fonts/font = SubResource( 20 )
 custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 27 )
 text = "Completar primeira metade"
 align = 1
 valign = 1
@@ -747,8 +747,8 @@ __meta__ = {
 }
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica2"]
-position = Vector2( -1.99998, 7.62939e-06 )
-shape = SubResource( 21 )
+position = Vector2( -1.99998, 7.62939e-006 )
+shape = SubResource( 28 )
 
 [node name="Dica3" type="Label" parent="DicaLayer/DicaFundo"]
 margin_left = 6.0
@@ -756,8 +756,8 @@ margin_top = 211.0
 margin_right = 260.0
 margin_bottom = 261.0
 rect_pivot_offset = Vector2( -40, 73 )
-custom_fonts/font = SubResource( 22 )
 custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 29 )
 text = "Completar segunda metade"
 align = 1
 valign = 1
@@ -777,8 +777,8 @@ margin_left = -56.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = 56.0
-custom_fonts/font = SubResource( 9 )
 custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "X"
 align = 1
 valign = 1
@@ -787,9 +787,8 @@ __meta__ = {
 }
 
 [node name="FecharM" type="TouchScreenButton" parent="DicaLayer/DicaFundo/FecharMText"]
-position = Vector2( 1.00001, -7.62939e-06 )
+position = Vector2( 1.00001, -7.62939e-006 )
 shape = SubResource( 11 )
-
 [connection signal="timeout" from="HUD/TimerHud/Timer" to="AreaNumeros" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
