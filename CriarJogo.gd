@@ -1,59 +1,33 @@
 extends ColorRect
 
 
-var loadScript
 var modo
-var num
-var formatNum = "%d%d%d%d"
-var numUser
 var dif
-
+var descricao
 
 func _ready():
 	randomize()
 	Load.pause = false
-	numUser = get_parent().get_node("Modo/Numeros")
 	modo = 0
 	dif = Load.dificuldade.Facil
+	descricao = get_parent().get_node("Descricao/Descricao")
+	_on_Aleatorio_pressed()
 	pass 
 
 
 func _on_BG_botao_gui_input(event):
 	var valido = 0
 	if event is InputEventScreenTouch:
-		if modo == 0:
-			num = formatNum % [randi() % 10,randi() % 10,randi() % 10,randi() % 10]
-			Load.numeros = num
-			valido = 1
-		elif modo == 1:
-			if numUser.current_text.length() == 4:
-				Load.numeros = numUser.current_text
-				valido = 1
-			else:
-				get_parent().get_node("Modo/Erro").visible = true
-				numUser.grab_focus()
-				valido = 0
-		Load.dif = dif
-		if valido == 1:
-			get_tree().change_scene("res://mainGame/mainScreem.tscn")
+		Load.modo = modo
+		get_tree().change_scene("res://Dificuldade.tscn")
 
 
 func _on_Aleatorio_pressed():
 	get_parent().get_node("Modo/Erro").visible = false
+	descricao.text = "Os numeros serão escolhidos de forma aleatoria";
 	modo = 0
 
 
 func _on_Especifico_pressed():
+	descricao.text = "Os numeros serão escolhidos pelo usuario";
 	modo = 1
-
-
-func _on_Facil_pressed():
-	dif = Load.dificuldade.Facil
-
-
-func _on_Medio_pressed():
-	dif = Load.dificuldade.Medio
-
-
-func _on_Dificil_pressed():
-	dif = Load.dificuldade.Dificil

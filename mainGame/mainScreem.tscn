@@ -278,6 +278,7 @@ texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 12 )
 
 [node name="Operacoes" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="ChaoA" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 128, 392 )

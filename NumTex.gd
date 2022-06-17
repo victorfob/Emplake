@@ -18,12 +18,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if get_node("../Especifico").pressed == true:
-		readonly = false
-	else:
-		readonly = true
 
 func _on_TextEdit_text_changed():
 	var new_text : String = text
