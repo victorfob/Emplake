@@ -36,15 +36,15 @@ Label/constants/shadow_offset_y = 1
 Label/fonts/font = null
 Label/styles/normal = null
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
-
 [sub_resource type="DynamicFontData" id=5]
 font_path = "res://assets/fonts/Xolonium-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=6]
 size = 100
 font_data = SubResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
 
 [sub_resource type="DynamicFontData" id=7]
 font_path = "res://assets/fonts/Xolonium-Regular.ttf"
@@ -75,9 +75,9 @@ margin_left = -312.0
 margin_top = 56.0
 margin_right = 304.0
 margin_bottom = 147.0
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/normal = SubResource( 2 )
 text = "Brasil"
 align = 1
 valign = 1
@@ -95,10 +95,10 @@ margin_top = -96.0
 margin_right = 304.0
 margin_bottom = 133.0
 theme = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.156863, 0.196078, 0.411765, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_styles/normal = SubResource( 4 )
 text = "3MPL4K3"
 align = 1
 valign = 1
@@ -128,4 +128,5 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
 [connection signal="gui_input" from="HUD/BG" to="." method="_on_BG_gui_input"]
