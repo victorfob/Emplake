@@ -160,6 +160,7 @@ font_data = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="HUD"]
@@ -228,7 +229,7 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="AreaNumeros"]
 margin_left = -320.0
 margin_top = -88.0
-margin_right = 320.0
+margin_right = 321.0
 margin_bottom = -48.0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
@@ -381,6 +382,7 @@ imagem = ExtResource( 29 )
 complexidade = 1
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 2
 
 [node name="BackOP" type="Panel" parent="MenuLayer"]
@@ -410,7 +412,7 @@ align = 1
 valign = 1
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="MenuLayer/BackOP/VoltarMenuText"]
-position = Vector2( 1.52588e-005, -1.99999 )
+position = Vector2( 128, 25 )
 shape = SubResource( 10 )
 
 [node name="Tutorial" type="Label" parent="MenuLayer/BackOP"]
@@ -428,7 +430,7 @@ align = 1
 valign = 1
 
 [node name="AbrirTutorial" type="TouchScreenButton" parent="MenuLayer/BackOP/Tutorial"]
-position = Vector2( 2, -1 )
+position = Vector2( 128, 25 )
 shape = SubResource( 10 )
 
 [node name="FecharMText" type="Label" parent="MenuLayer/BackOP"]
@@ -448,7 +450,7 @@ __meta__ = {
 }
 
 [node name="FecharM" type="TouchScreenButton" parent="MenuLayer/BackOP/FecharMText"]
-position = Vector2( 7.62939e-006, 1 )
+position = Vector2( 25, 25 )
 shape = SubResource( 11 )
 
 [node name="MutarMusica" type="TouchScreenButton" parent="MenuLayer/BackOP"]
@@ -457,6 +459,7 @@ normal = ExtResource( 30 )
 shape = SubResource( 12 )
 
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 3
 
 [node name="Tutorial" type="Panel" parent="TutorialLayer"]
@@ -519,10 +522,11 @@ __meta__ = {
 }
 
 [node name="FecharTuM" type="TouchScreenButton" parent="TutorialLayer/Tutorial/FecharTuText2"]
-position = Vector2( 0.999981, 0.999998 )
+position = Vector2( 25, 25 )
 shape = SubResource( 11 )
 
 [node name="VioriaLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="TelaVitoria" type="Panel" parent="VioriaLayer"]
 visible = false
@@ -615,10 +619,11 @@ align = 1
 valign = 1
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="VioriaLayer/TelaVitoria/VoltarMenuText2"]
-position = Vector2( 0, 1 )
+position = Vector2( 135, 30 )
 shape = SubResource( 20 )
 
 [node name="DerrotaLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="TelaErro" type="Panel" parent="DerrotaLayer"]
 visible = false
@@ -690,10 +695,11 @@ align = 1
 valign = 1
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="DerrotaLayer/TelaErro/Fechar Erro"]
-position = Vector2( -0.999985, 0 )
+position = Vector2( 128, 25 )
 shape = SubResource( 10 )
 
 [node name="DicaLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="DicaFundo" type="Panel" parent="DicaLayer"]
 visible = false
@@ -727,7 +733,7 @@ __meta__ = {
 }
 
 [node name="AbrirTutorial" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica1"]
-position = Vector2( -1.99999, 0 )
+position = Vector2( 130, 27 )
 shape = SubResource( 10 )
 
 [node name="Dica2" type="Label" parent="DicaLayer/DicaFundo"]
@@ -747,7 +753,7 @@ __meta__ = {
 }
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica2"]
-position = Vector2( -1.99998, 7.62939e-006 )
+position = Vector2( 127, 27 )
 shape = SubResource( 28 )
 
 [node name="Dica3" type="Label" parent="DicaLayer/DicaFundo"]
@@ -767,7 +773,7 @@ __meta__ = {
 }
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica3"]
-position = Vector2( -2.99998, 2.00001 )
+position = Vector2( 127, 28 )
 shape = SubResource( 10 )
 
 [node name="FecharMText" type="Label" parent="DicaLayer/DicaFundo"]
@@ -787,7 +793,7 @@ __meta__ = {
 }
 
 [node name="FecharM" type="TouchScreenButton" parent="DicaLayer/DicaFundo/FecharMText"]
-position = Vector2( 1.00001, -7.62939e-006 )
+position = Vector2( 25, 25 )
 shape = SubResource( 11 )
 [connection signal="timeout" from="HUD/TimerHud/Timer" to="AreaNumeros" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
