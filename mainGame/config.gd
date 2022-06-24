@@ -35,7 +35,6 @@ func _on_VoltarMenu_pressed():
 	Load.pause = false
 	get_tree().change_scene("res://MainMenu.tscn")
 
-
 func _on_AbrirTutorial_pressed():
 	get_parent().get_node("TutorialLayer/Tutorial").visible = true
 

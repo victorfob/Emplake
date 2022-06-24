@@ -51,17 +51,17 @@ font_path = "res://assets/fonts/Xolonium-Regular.ttf"
 size = 19
 font_data = SubResource( 9 )
 
-[sub_resource type="StyleBoxFlat" id=11]
-
-[sub_resource type="StyleBoxFlat" id=12]
-bg_color = Color( 0.247059, 0.32549, 0.654902, 1 )
-
 [sub_resource type="DynamicFontData" id=13]
 font_path = "res://assets/fonts/Xolonium-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=14]
 size = 27
 font_data = SubResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.247059, 0.32549, 0.654902, 1 )
 
 [node name="MainMenu" type="Node2D"]
 
@@ -91,8 +91,8 @@ margin_left = 8.46399
 margin_top = 2.118
 margin_right = 292.464
 margin_bottom = 231.118
-custom_fonts/normal_font = SubResource( 16 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 16 )
 
 [node name="Titulo2" type="Label" parent="HUD/Descricao"]
 margin_left = 337.358
@@ -100,9 +100,9 @@ margin_top = 41.1346
 margin_right = 765.358
 margin_bottom = 129.135
 theme = SubResource( 1 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Descrição"
 align = 1
 valign = 1
@@ -111,10 +111,8 @@ __meta__ = {
 }
 
 [node name="Dificuldade" type="CanvasLayer" parent="HUD"]
-editor/display_folded = true
 
 [node name="BG" type="ColorRect" parent="HUD/Dificuldade"]
-editor/display_folded = true
 margin_left = 83.9052
 margin_top = 104.882
 margin_right = 383.905
@@ -128,31 +126,28 @@ margin_left = 9.90096
 margin_top = 11.4139
 margin_right = 292.901
 margin_bottom = 71.4139
-custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
 pressed = true
 group = SubResource( 5 )
-text = "Facil"
+text = "Básico"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Medio" type="CheckBox" parent="HUD/Dificuldade/BG"]
-margin_left = 15.6289
-margin_top = 84.0057
-margin_right = 298.629
-margin_bottom = 144.006
-custom_fonts/font = SubResource( 4 )
+margin_left = 10.0948
+margin_top = 84.118
+margin_right = 293.095
+margin_bottom = 144.118
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
 group = SubResource( 5 )
 text = "Medio"
 align = 1
@@ -161,18 +156,18 @@ __meta__ = {
 }
 
 [node name="Dificil" type="CheckBox" parent="HUD/Dificuldade/BG"]
-margin_left = 8.46901
-margin_top = 158.029
-margin_right = 291.469
-margin_bottom = 218.029
-custom_fonts/font = SubResource( 4 )
+margin_left = 10.0948
+margin_top = 158.118
+margin_right = 293.095
+margin_bottom = 218.118
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
 group = SubResource( 5 )
-text = "Dificil"
+text = "Avançado"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -184,9 +179,9 @@ margin_top = 41.1346
 margin_right = 451.756
 margin_bottom = 129.135
 theme = SubResource( 1 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Complexidade"
 align = 1
 valign = 1
@@ -195,7 +190,6 @@ __meta__ = {
 }
 
 [node name="BG_botao" type="ColorRect" parent="HUD"]
-editor/display_folded = true
 margin_left = 472.878
 margin_top = 373.976
 margin_right = 584.878
@@ -208,8 +202,8 @@ __meta__ = {
 [node name="botaoTexto" type="Label" parent="HUD/BG_botao"]
 margin_right = 112.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Entrar"
 __meta__ = {
 "_edit_lock_": true,
@@ -217,7 +211,6 @@ __meta__ = {
 }
 
 [node name="NumeroEcolha" type="CanvasLayer" parent="HUD"]
-editor/display_folded = true
 
 [node name="NumBG" type="ColorRect" parent="HUD/NumeroEcolha"]
 margin_left = 82.0
@@ -232,9 +225,9 @@ margin_top = 5.27209
 margin_right = 205.551
 margin_bottom = 96.2721
 theme = SubResource( 1 )
-custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
 text = "Escolha um numero"
 align = 1
 valign = 1
@@ -250,9 +243,9 @@ margin_top = 58.5816
 margin_right = 534.554
 margin_bottom = 82.5816
 theme = SubResource( 1 )
-custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
 text = "Digite 4 numeros"
 align = 1
 valign = 1
@@ -265,9 +258,9 @@ margin_left = 190.0
 margin_top = 26.0
 margin_right = 286.0
 margin_bottom = 68.0
+custom_fonts/font = SubResource( 14 )
 custom_styles/read_only = SubResource( 11 )
 custom_styles/normal = SubResource( 12 )
-custom_fonts/font = SubResource( 14 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -277,6 +270,7 @@ __meta__ = {
 position = Vector2( 17.5322, 21.4282 )
 normal = ExtResource( 6 )
 script = ExtResource( 7 )
+
 [connection signal="pressed" from="HUD/Dificuldade/BG/Facil" to="HUD/BG_botao" method="_on_Facil_pressed"]
 [connection signal="pressed" from="HUD/Dificuldade/BG/Medio" to="HUD/BG_botao" method="_on_Medio_pressed"]
 [connection signal="pressed" from="HUD/Dificuldade/BG/Dificil" to="HUD/BG_botao" method="_on_Dificil_pressed"]
