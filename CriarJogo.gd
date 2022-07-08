@@ -34,6 +34,7 @@ func _on_Aleatorio_pressed():
 func _on_Especifico_pressed():
 	descricao.text = "Os numeros serão escolhidos pelo usuario";
 	modo = 1
+	
 
 func _on_Especifico2_pressed():
 	get_parent().get_node("Modo/Erro").visible = false
