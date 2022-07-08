@@ -21,24 +21,24 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="ButtonGroup" id=5]
 
-[sub_resource type="DynamicFontData" id=10]
+[sub_resource type="DynamicFontData" id=6]
 font_path = "res://assets/fonts/Xolonium-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=7]
 size = 19
-font_data = SubResource( 10 )
+font_data = SubResource( 6 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=8]
 size = 30
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFontData" id=13]
+[sub_resource type="DynamicFontData" id=9]
 font_path = "res://assets/fonts/Xolonium-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=10]
 size = 33
-font_data = SubResource( 13 )
+font_data = SubResource( 9 )
 
 [node name="MainMenu" type="Node2D"]
 
@@ -100,9 +100,9 @@ __meta__ = {
 
 [node name="Especifico" type="CheckBox" parent="HUD/Modo"]
 margin_left = 93.0
-margin_top = 177.926
+margin_top = 178.0
 margin_right = 376.0
-margin_bottom = 237.926
+margin_bottom = 238.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
@@ -116,6 +116,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Especifico2" type="CheckBox" parent="HUD/Modo"]
+margin_left = 93.0
+margin_top = 244.0
+margin_right = 376.0
+margin_bottom = 304.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+group = SubResource( 5 )
+text = "Desafios"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Erro" type="Label" parent="HUD/Modo"]
 visible = false
 margin_left = 152.0
@@ -123,7 +141,7 @@ margin_top = 296.0
 margin_right = 323.0
 margin_bottom = 320.0
 theme = SubResource( 1 )
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Digite 4 numeros"
@@ -165,7 +183,7 @@ margin_left = 415.0
 margin_top = 106.0
 margin_right = 708.0
 margin_bottom = 341.0
-custom_fonts/normal_font = SubResource( 15 )
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 
@@ -182,7 +200,7 @@ __meta__ = {
 [node name="botaoTexto" type="Label" parent="HUD/BG_botao"]
 margin_right = 112.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Entrar"
 __meta__ = {
@@ -191,4 +209,5 @@ __meta__ = {
 }
 [connection signal="pressed" from="HUD/Modo/Aleatorio" to="HUD/BG_botao" method="_on_Aleatorio_pressed"]
 [connection signal="pressed" from="HUD/Modo/Especifico" to="HUD/BG_botao" method="_on_Especifico_pressed"]
+[connection signal="pressed" from="HUD/Modo/Especifico2" to="HUD/BG_botao" method="_on_Especifico2_pressed"]
 [connection signal="gui_input" from="HUD/BG_botao" to="HUD/BG_botao" method="_on_BG_botao_gui_input"]

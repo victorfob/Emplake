@@ -6,11 +6,15 @@ var operacao = preload("res://mainGame/Operacao.tscn")
 export (String) var nome = "+"
 export (Texture) var imagem
 export var complexidade = 0
+export var idOperacao = 0
 
 #export var Imagem = preload("res://pixil-frame-2.png")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if Load.dif < complexidade:
+	if Load.modo == 2:
+		if Load.operacoes[idOperacao] != 1:
+			visible = false
+	elif Load.dif < complexidade:
 		visible = false
 
 

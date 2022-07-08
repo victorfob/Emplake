@@ -146,6 +146,7 @@ func comecarPrint():
 	var igual = 0
 	var resultado1
 	var resultado2
+	expressaoStr.clear()
 	#while que passa todos os elementos para um vertor string
 	while i < total:
 		if(equacao[i].nome == "="):
@@ -154,6 +155,7 @@ func comecarPrint():
 				valorMetade1 = "Mais de um igual na operação"
 				valorMetade2 = "Mais de um igual na operação"
 				return false
+			print(expressaoStr)
 			resultado1 = printEqua(0, i, null, metade)
 			expressaoStr.clear()
 			j = 0
@@ -459,6 +461,8 @@ func printEqua(var inicio,var fim, var estado, var metade):
 			#se for qualquer outro simbolo
 			_:
 				#verifica se o simbolo é um numero
+				print(expressaoStr[percorre])
+				print(percorre)
 				if regex.search(expressaoStr[percorre]) != null and numSeguido == 1:
 					#se for um numero e esta depois de outro numero retorna falso
 					print("Erro dois numeros sem operação")

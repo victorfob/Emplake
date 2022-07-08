@@ -33,7 +33,10 @@ func _on_FecharM_pressed():
 
 func _on_VoltarMenu_pressed():
 	Load.pause = false
-	get_tree().change_scene("res://MainMenu.tscn")
+	if Load.modo == 2:
+		get_tree().change_scene("res://SelecaoNiveis.tscn")
+	else:
+		get_tree().change_scene("res://MainMenu.tscn")
 
 
 func _on_AbrirTutorial_pressed():

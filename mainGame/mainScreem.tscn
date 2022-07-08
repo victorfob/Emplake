@@ -216,6 +216,7 @@ position = Vector2( 384, 160 )
 script = ExtResource( 3 )
 
 [node name="ANumeros" type="Area2D" parent="AreaNumeros"]
+editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -227,6 +228,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="AreaNumeros"]
+editor/display_folded = true
 margin_left = -320.0
 margin_top = -88.0
 margin_right = 321.0
@@ -286,30 +288,35 @@ normal = ExtResource( 14 )
 nome = "{"
 imagem = ExtResource( 14 )
 complexidade = 2
+idOperacao = 9
 
 [node name="ParentA" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 320, 392 )
 normal = ExtResource( 15 )
 nome = "("
 imagem = ExtResource( 15 )
+idOperacao = 7
 
 [node name="ParentB" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 416, 392 )
 normal = ExtResource( 16 )
 nome = ")"
 imagem = ExtResource( 16 )
+idOperacao = 7
 
 [node name="Raiz" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 416, 312 )
 normal = ExtResource( 17 )
 nome = "R"
 imagem = ExtResource( 17 )
+idOperacao = 5
 
 [node name="Fatorial" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 512, 312 )
 normal = ExtResource( 18 )
 nome = "!"
 imagem = ExtResource( 18 )
+idOperacao = 6
 
 [node name="ChaoB" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 224, 392 )
@@ -317,12 +324,14 @@ normal = ExtResource( 19 )
 nome = "}"
 imagem = ExtResource( 19 )
 complexidade = 2
+idOperacao = 9
 
 [node name="Igual" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 708, 256 )
 normal = ExtResource( 20 )
 nome = "="
 imagem = ExtResource( 20 )
+idOperacao = 10
 
 [node name="ModuloA" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 32, 392 )
@@ -330,6 +339,7 @@ normal = ExtResource( 21 )
 nome = "|"
 imagem = ExtResource( 21 )
 complexidade = 1
+idOperacao = 8
 
 [node name="ModuloB" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 692, 390 )
@@ -337,6 +347,7 @@ normal = ExtResource( 22 )
 nome = "I"
 imagem = ExtResource( 22 )
 complexidade = 1
+idOperacao = 8
 
 [node name="Mais" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 32, 312 )
@@ -348,18 +359,21 @@ position = Vector2( 128, 312 )
 normal = ExtResource( 24 )
 nome = "-"
 imagem = ExtResource( 24 )
+idOperacao = 1
 
 [node name="Vezes" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 320, 312 )
 normal = ExtResource( 25 )
 nome = "*"
 imagem = ExtResource( 25 )
+idOperacao = 2
 
 [node name="Divisao" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 224, 312 )
 normal = ExtResource( 26 )
 nome = "/"
 imagem = ExtResource( 26 )
+idOperacao = 3
 
 [node name="TetoB" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 608, 392 )
@@ -367,6 +381,7 @@ normal = ExtResource( 27 )
 nome = "]"
 imagem = ExtResource( 27 )
 complexidade = 2
+idOperacao = 9
 
 [node name="TetoA" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 512, 392 )
@@ -374,13 +389,15 @@ normal = ExtResource( 28 )
 nome = "["
 imagem = ExtResource( 28 )
 complexidade = 2
+idOperacao = 9
 
 [node name="Elevado" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 608, 312 )
+position = Vector2( 608, 310 )
 normal = ExtResource( 29 )
 nome = "^"
 imagem = ExtResource( 29 )
 complexidade = 1
+idOperacao = 4
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
 editor/display_folded = true
@@ -527,7 +544,6 @@ position = Vector2( 25, 25 )
 shape = SubResource( 11 )
 
 [node name="VioriaLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="TelaVitoria" type="Panel" parent="VioriaLayer"]
 visible = false

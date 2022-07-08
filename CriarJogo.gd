@@ -19,7 +19,10 @@ func _on_BG_botao_gui_input(event):
 	var valido = 0
 	if event is InputEventScreenTouch:
 		Load.modo = modo
-		get_tree().change_scene("res://Dificuldade.tscn")
+		if modo == 2:
+			get_tree().change_scene("res://SelecaoNiveis.tscn")
+		else:
+			get_tree().change_scene("res://Dificuldade.tscn")
 
 
 func _on_Aleatorio_pressed():
@@ -31,3 +34,8 @@ func _on_Aleatorio_pressed():
 func _on_Especifico_pressed():
 	descricao.text = "Os numeros serão escolhidos pelo usuario";
 	modo = 1
+
+func _on_Especifico2_pressed():
+	get_parent().get_node("Modo/Erro").visible = false
+	descricao.text = "Conjunto de desafios com diferentes dificuldades";
+	modo = 2

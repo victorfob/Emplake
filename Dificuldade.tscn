@@ -8,60 +8,60 @@
 [ext_resource path="res://assets/imgs/config.png" type="Texture" id=6]
 [ext_resource path="res://Voltar.gd" type="Script" id=7]
 
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/fonts/Xolonium-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = SubResource( 1 )
+
+[sub_resource type="Theme" id=3]
+CheckBox/icons/selecionado = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/fonts/Xolonium-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 36
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 42
+font_data = ExtResource( 2 )
+
+[sub_resource type="ButtonGroup" id=7]
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://assets/fonts/Xolonium-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 33
+font_data = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 27
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://assets/fonts/Xolonium-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 19
+font_data = SubResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.247059, 0.32549, 0.654902, 1 )
+
 [sub_resource type="DynamicFontData" id=15]
 font_path = "res://assets/fonts/Xolonium-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=16]
-size = 30
+size = 27
 font_data = SubResource( 15 )
-
-[sub_resource type="Theme" id=1]
-CheckBox/icons/selecionado = ExtResource( 1 )
-
-[sub_resource type="DynamicFontData" id=2]
-font_path = "res://assets/fonts/Xolonium-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=3]
-size = 36
-outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 42
-font_data = ExtResource( 2 )
-
-[sub_resource type="ButtonGroup" id=5]
-
-[sub_resource type="DynamicFontData" id=6]
-font_path = "res://assets/fonts/Xolonium-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=7]
-size = 33
-font_data = SubResource( 6 )
-
-[sub_resource type="DynamicFont" id=8]
-size = 27
-outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 2 )
-
-[sub_resource type="DynamicFontData" id=9]
-font_path = "res://assets/fonts/Xolonium-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=10]
-size = 19
-font_data = SubResource( 9 )
-
-[sub_resource type="StyleBoxFlat" id=11]
-
-[sub_resource type="StyleBoxFlat" id=12]
-bg_color = Color( 0.247059, 0.32549, 0.654902, 1 )
-
-[sub_resource type="DynamicFontData" id=13]
-font_path = "res://assets/fonts/Xolonium-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=14]
-size = 27
-font_data = SubResource( 13 )
 
 [node name="MainMenu" type="Node2D"]
 
@@ -76,6 +76,7 @@ __meta__ = {
 }
 
 [node name="Descricao" type="CanvasLayer" parent="HUD"]
+editor/display_folded = true
 
 [node name="BG2" type="ColorRect" parent="HUD/Descricao"]
 margin_left = 410.536
@@ -91,7 +92,7 @@ margin_left = 8.46399
 margin_top = 2.118
 margin_right = 292.464
 margin_bottom = 231.118
-custom_fonts/normal_font = SubResource( 16 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 
 [node name="Titulo2" type="Label" parent="HUD/Descricao"]
@@ -99,8 +100,8 @@ margin_left = 337.358
 margin_top = 41.1346
 margin_right = 765.358
 margin_bottom = 129.135
-theme = SubResource( 1 )
-custom_fonts/font = SubResource( 3 )
+theme = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Descrição"
@@ -128,14 +129,14 @@ margin_left = 9.90096
 margin_top = 11.4139
 margin_right = 292.901
 margin_bottom = 71.4139
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 pressed = true
-group = SubResource( 5 )
+group = SubResource( 7 )
 text = "Facil"
 align = 1
 __meta__ = {
@@ -147,13 +148,13 @@ margin_left = 15.6289
 margin_top = 84.0057
 margin_right = 298.629
 margin_bottom = 144.006
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-group = SubResource( 5 )
+group = SubResource( 7 )
 text = "Medio"
 align = 1
 __meta__ = {
@@ -165,13 +166,13 @@ margin_left = 8.46901
 margin_top = 158.029
 margin_right = 291.469
 margin_bottom = 218.029
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-group = SubResource( 5 )
+group = SubResource( 7 )
 text = "Dificil"
 align = 1
 __meta__ = {
@@ -183,8 +184,8 @@ margin_left = 23.7563
 margin_top = 41.1346
 margin_right = 451.756
 margin_bottom = 129.135
-theme = SubResource( 1 )
-custom_fonts/font = SubResource( 3 )
+theme = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Complexidade"
@@ -195,7 +196,6 @@ __meta__ = {
 }
 
 [node name="BG_botao" type="ColorRect" parent="HUD"]
-editor/display_folded = true
 margin_left = 472.878
 margin_top = 373.976
 margin_right = 584.878
@@ -208,7 +208,7 @@ __meta__ = {
 [node name="botaoTexto" type="Label" parent="HUD/BG_botao"]
 margin_right = 112.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Entrar"
 __meta__ = {
@@ -231,8 +231,8 @@ margin_left = -15.449
 margin_top = 5.27209
 margin_right = 205.551
 margin_bottom = 96.2721
-theme = SubResource( 1 )
-custom_fonts/font = SubResource( 8 )
+theme = SubResource( 3 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Escolha um numero"
@@ -249,8 +249,8 @@ margin_left = 363.554
 margin_top = 58.5816
 margin_right = 534.554
 margin_bottom = 82.5816
-theme = SubResource( 1 )
-custom_fonts/font = SubResource( 10 )
+theme = SubResource( 3 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Digite 4 numeros"
@@ -265,9 +265,9 @@ margin_left = 190.0
 margin_top = 26.0
 margin_right = 286.0
 margin_bottom = 68.0
-custom_styles/read_only = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
-custom_fonts/font = SubResource( 14 )
+custom_styles/read_only = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+custom_fonts/font = SubResource( 16 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
