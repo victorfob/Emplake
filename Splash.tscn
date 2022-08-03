@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/custom.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://House_In_a_Forest_Loop.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -22,8 +23,16 @@ func _on_BG_gui_input(event):
 		get_tree().change_scene(\"res://MainMenu.tscn\")
 "
 
+[sub_resource type="Theme" id=8]
+
+[sub_resource type="DynamicFont" id=9]
+size = 85
+font_data = ExtResource( 2 )
+
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.156863, 0.196078, 0.411765, 1 )
+bg_color = Color( 0.054902, 0.27451, 0.635294, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
 
 [sub_resource type="Theme" id=3]
 Label/colors/font_color = Color( 1, 1, 1, 1 )
@@ -36,22 +45,19 @@ Label/constants/shadow_offset_y = 1
 Label/fonts/font = null
 Label/styles/normal = null
 
-[sub_resource type="DynamicFontData" id=5]
-font_path = "res://assets/fonts/Xolonium-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=6]
-size = 100
-font_data = SubResource( 5 )
+[sub_resource type="DynamicFont" id=10]
+size = 175
+font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
-[sub_resource type="DynamicFontData" id=7]
-font_path = "res://assets/fonts/Xolonium-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=8]
-size = 30
-font_data = SubResource( 7 )
+[sub_resource type="DynamicFont" id=7]
+size = 37
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
 
 [node name="Splash" type="Node2D"]
 script = SubResource( 1 )
@@ -62,7 +68,7 @@ script = ExtResource( 1 )
 [node name="BG" type="ColorRect" parent="HUD"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+color = Color( 0.654902, 0.654902, 0.654902, 1 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -75,15 +81,13 @@ margin_left = -312.0
 margin_top = 56.0
 margin_right = 304.0
 margin_bottom = 147.0
+theme = SubResource( 8 )
 custom_colors/font_color = Color( 0.866667, 0.866667, 0.866667, 1 )
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = SubResource( 9 )
 custom_styles/normal = SubResource( 2 )
 text = "Brasil"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Title" type="Label" parent="HUD"]
 anchor_left = 0.5
@@ -91,33 +95,30 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -312.0
-margin_top = -96.0
+margin_top = -100.0
 margin_right = 304.0
-margin_bottom = 133.0
+margin_bottom = 129.0
 theme = SubResource( 3 )
-custom_colors/font_color = Color( 0.156863, 0.196078, 0.411765, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 10 )
 custom_styles/normal = SubResource( 4 )
 text = "3MPL4K3"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PressMessage" type="Label" parent="HUD"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -48.0
-margin_bottom = -2.0
-custom_fonts/font = SubResource( 8 )
+margin_left = -1.0
+margin_top = -67.0
+margin_right = -1.0
+margin_bottom = -21.0
+custom_colors/font_color = Color( 0.054902, 0.27451, 0.635294, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Toque na tela para prosseguir..."
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Test" type="Label" parent="."]
 margin_right = 40.0
