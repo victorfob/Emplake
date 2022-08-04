@@ -48,3 +48,41 @@ func _on_MutarMusica_pressed():
 		imgMusica.normal = musicaOFF
 	else:
 		imgMusica.normal = musicaON
+
+
+func _on_Continuar_released():
+	if Load.modo == 3:
+		get_parent().get_node("TutorialLayer/Tutorial").visible = true
+		Load.tutorialNum = Load.tutorialNum + 1
+		get_parent().get_node("TutorialLayer/Tutorial").mostrarTutorial(Load.tutorialNum)
+		Load.numeros = Load.numerosTutorial[Load.tutorialNum]
+		Load.operacoes = Load.operacoesTutorial[Load.tutorialNum]
+		get_parent().gerar_numeros()
+		updateBotao()
+		get_parent().get_node("VioriaLayer/TelaVitoria").visible = false
+	elif Load.modo == 0:
+		var num = "%d%d%d%d" % [randi() % 10,randi() % 10,randi() % 10,randi() % 10]
+		Load.numeros = num
+		get_parent().gerar_numeros()
+		get_parent().get_node("VioriaLayer/TelaVitoria").visible = false
+	else:
+		get_parent().get_node("VioriaLayer/TelaVitoria/Continuar").visible = false
+	pass # Replace with function body.
+
+func updateBotao():
+	get_parent().get_node("Operacoes/ChaoA")._ready()
+	get_parent().get_node("Operacoes/ChaoB")._ready()
+	get_parent().get_node("Operacoes/Divisao")._ready()
+	get_parent().get_node("Operacoes/Elevado")._ready()
+	get_parent().get_node("Operacoes/Fatorial")._ready()
+	get_parent().get_node("Operacoes/Igual")._ready()
+	get_parent().get_node("Operacoes/Mais")._ready()
+	get_parent().get_node("Operacoes/Menos")._ready()
+	get_parent().get_node("Operacoes/ModuloA")._ready()
+	get_parent().get_node("Operacoes/ModuloB")._ready()
+	get_parent().get_node("Operacoes/ParentA")._ready()
+	get_parent().get_node("Operacoes/ParentB")._ready()
+	get_parent().get_node("Operacoes/Raiz")._ready()
+	get_parent().get_node("Operacoes/TetoA")._ready()
+	get_parent().get_node("Operacoes/TetoB")._ready()
+	get_parent().get_node("Operacoes/Vezes")._ready()

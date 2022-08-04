@@ -79,11 +79,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Educacional" type="CheckBox" parent="HUD/Modo"]
+margin_left = 84.2096
+margin_top = 106.87
+margin_right = 378.21
+margin_bottom = 166.87
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+group = SubResource( 5 )
+text = "Educacional"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Aleatorio" type="CheckBox" parent="HUD/Modo"]
-margin_left = 93.0
-margin_top = 112.0
-margin_right = 376.0
-margin_bottom = 172.0
+margin_left = 82.4515
+margin_top = 148.92
+margin_right = 365.452
+margin_bottom = 208.92
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
@@ -99,10 +117,10 @@ __meta__ = {
 }
 
 [node name="Especifico" type="CheckBox" parent="HUD/Modo"]
-margin_left = 93.0
-margin_top = 178.0
-margin_right = 376.0
-margin_bottom = 238.0
+margin_left = 82.4515
+margin_top = 185.033
+margin_right = 365.452
+margin_bottom = 245.033
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
@@ -116,11 +134,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Especifico2" type="CheckBox" parent="HUD/Modo"]
-margin_left = 93.0
-margin_top = 244.0
-margin_right = 376.0
-margin_bottom = 304.0
+[node name="Desafios" type="CheckBox" parent="HUD/Modo"]
+margin_left = 82.4515
+margin_top = 233.451
+margin_right = 365.452
+margin_bottom = 293.451
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
@@ -129,6 +147,24 @@ custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 group = SubResource( 5 )
 text = "Desafios"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Aventura" type="CheckBox" parent="HUD/Modo"]
+margin_left = 80.6934
+margin_top = 284.436
+margin_right = 363.694
+margin_bottom = 344.436
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+group = SubResource( 5 )
+text = "Aventura"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -152,6 +188,7 @@ __meta__ = {
 }
 
 [node name="Descricao" type="CanvasLayer" parent="HUD"]
+editor/display_folded = true
 
 [node name="BG" type="ColorRect" parent="HUD/Descricao"]
 margin_left = 410.536
@@ -188,6 +225,7 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 
 [node name="BG_botao" type="ColorRect" parent="HUD"]
+editor/display_folded = true
 margin_left = 344.0
 margin_top = 384.0
 margin_right = 456.0
@@ -207,7 +245,9 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="HUD/Modo/Educacional" to="HUD/BG_botao" method="_on_Educacional_pressed"]
 [connection signal="pressed" from="HUD/Modo/Aleatorio" to="HUD/BG_botao" method="_on_Aleatorio_pressed"]
 [connection signal="pressed" from="HUD/Modo/Especifico" to="HUD/BG_botao" method="_on_Especifico_pressed"]
-[connection signal="pressed" from="HUD/Modo/Especifico2" to="HUD/BG_botao" method="_on_Especifico2_pressed"]
+[connection signal="pressed" from="HUD/Modo/Desafios" to="HUD/BG_botao" method="_on_Especifico2_pressed"]
+[connection signal="pressed" from="HUD/Modo/Aventura" to="HUD/BG_botao" method="_on_Aventura_pressed"]
 [connection signal="gui_input" from="HUD/BG_botao" to="HUD/BG_botao" method="_on_BG_botao_gui_input"]

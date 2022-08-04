@@ -11,7 +11,8 @@ export var idOperacao = 0
 #export var Imagem = preload("res://pixil-frame-2.png")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if Load.modo == 2:
+	visible = true
+	if Load.modo == 2 or Load.modo == 3:
 		if Load.operacoes[idOperacao] != 1:
 			visible = false
 	elif Load.dif < complexidade:

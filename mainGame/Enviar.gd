@@ -28,6 +28,10 @@ func _on_Enviar_pressed():
 			var score = mainArea.getFinalScore()
 			resultadoVitoria.get_node("ValorVitoria").text = result
 			resultadoVitoria.get_node("ValorPontuacao").text = String(score)
+			if Load.modo == 3 and Load.tutorialNum != 11:
+				resultadoVitoria.get_node("Continuar").visible = true
+			elif Load.modo == 0:
+				resultadoVitoria.get_node("Continuar").visible = true
 		else:
 			resultadoErro.visible = true
 			var valorMetade1 = mainArea.getValoreMetade1()

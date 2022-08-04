@@ -138,6 +138,16 @@ func limpar():
 	total = 4
 	atualizarFunc()
 
+#função que deleta todos os elementos
+func limparTudo():
+	var i = total-1
+	while i >= 0:
+		equacao[i].patch.free()
+		equacao.remove(i)
+		i-= 1
+	total = 0
+	atualizarFunc()
+
 #função que começa a executar a operação
 func comecarPrint():
 	var i = 0

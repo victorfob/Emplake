@@ -42,15 +42,15 @@ func _on_BG_botao_gui_input(event):
 
 
 func _on_Facil_pressed():
-	descricao.text = "Apenas os sinais primarios +, -, *, /, fatoria, raiz e parenteses";
+	descricao.text = "Apenas os sinais primarios +, -, *, / e parenteses";
 	dif = Load.dificuldade.Facil
 
 
 func _on_Medio_pressed():
-	descricao.text = "Mais sinais";
+	descricao.text = "Elementar com exponencial, raiz, fatorial";
 	dif = Load.dificuldade.Medio
 
 
 func _on_Dificil_pressed():
-	descricao.text = "Mais mais sinais";
+	descricao.text = "";
 	dif = Load.dificuldade.Dificil

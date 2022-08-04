@@ -21,6 +21,10 @@ func _on_BG_botao_gui_input(event):
 		Load.modo = modo
 		if modo == 2:
 			get_tree().change_scene("res://SelecaoNiveis.tscn")
+		elif modo == 3:
+			get_tree().change_scene("res://ModoAprendizado.tscn")
+		elif modo == 4:
+			get_tree().change_scene("res://mainGame/mainScreem.tscn")
 		else:
 			get_tree().change_scene("res://Dificuldade.tscn")
 
@@ -40,3 +44,18 @@ func _on_Especifico2_pressed():
 	get_parent().get_node("Modo/Erro").visible = false
 	descricao.text = "Conjunto de desafios com diferentes dificuldades";
 	modo = 2
+
+
+func _on_Educacional_pressed():
+	get_parent().get_node("Modo/Erro").visible = false
+	descricao.text = "Modo para aprender o funcionamento do jogo e como as operações funcionam";
+	modo = 3
+	pass # Replace with function body.
+
+
+func _on_Aventura_pressed():
+	descricao.text = "Modo sobrevivencia";
+	modo = 4
+	var num = "%d%d%d%d" % [randi() % 10,randi() % 10,randi() % 10,randi() % 10]
+	Load.numeros = num
+	pass # Replace with function body.

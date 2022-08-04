@@ -6,8 +6,17 @@ var gerarNumero = 0
 var mainArea
 var num
 
-func _ready():	
+func _ready():
 	mainArea = get_node("AreaNumeros")
+	gerar_numeros();
+	if Load.modo == 3:
+		get_node("TutorialLayer/Tutorial").visible = true
+		get_node("TutorialLayer/Tutorial").mostrarTutorial(Load.tutorialNum)
+	if Load.modo == 4:
+		mostrarPreco()
+
+func gerar_numeros():
+	mainArea.limparTudo();
 	gerarNumero = 0
 	var i = 0
 	
@@ -53,7 +62,15 @@ func _ready():
 		mainArea.novoElem(numeroIns)
 		i += 1
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func mostrarPreco():
+	get_node("Operacoes/ChaoA/ComprarPeca").visible = true
+	get_node("Operacoes/ChaoB/ComprarPeca").visible = true
+	get_node("Operacoes/Elevado/ComprarPeca").visible = true
+	get_node("Operacoes/Fatorial/ComprarPeca").visible = true
+	get_node("Operacoes/ModuloA/ComprarPeca").visible = true
+	get_node("Operacoes/ModuloB/ComprarPeca").visible = true
+	get_node("Operacoes/ParentA/ComprarPeca").visible = true
+	get_node("Operacoes/ParentB/ComprarPeca").visible = true
+	get_node("Operacoes/Raiz/ComprarPeca").visible = true
+	get_node("Operacoes/TetoA/ComprarPeca").visible = true
+	get_node("Operacoes/TetoB/ComprarPeca").visible = true
