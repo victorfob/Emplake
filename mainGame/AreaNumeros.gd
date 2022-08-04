@@ -170,6 +170,10 @@ func comecarPrint():
 			expressaoStr.clear()
 			j = 0
 			i += 1
+			if i >= total:
+				valorMetade1 = "Igual em local errado"
+				valorMetade2 = "Igual em local errado"
+				return false;
 			metade = 2
 		expressaoStr.append("")
 		#esse vetor tera seu valor mudado ao decorrer da função
