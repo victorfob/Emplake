@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://level.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/custom.tres" type="DynamicFont" id=2]
-[ext_resource path="res://assets/imgs/config.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/imgs/voltar.png" type="Texture" id=3]
 [ext_resource path="res://Voltar.gd" type="Script" id=4]
 [ext_resource path="res://assets/imgs/confirma.png" type="Texture" id=5]
 
@@ -68,49 +68,73 @@ func _on_Anterior_released():
 		nivel3.visible = false
 		nivel2.visible = true
 		anterior.visible = true
+		proximo.visible = true
 		texto.text = \"Nivel 2\"
 	else:
 		texto.text = \"Difícil\"
 "
 
-[sub_resource type="DynamicFontData" id=1]
-font_path = "res://assets/fonts/Xolonium-Regular.ttf"
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.054902, 0.27451, 0.635294, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.654902, 0.654902, 0.654902, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=7]
+size = 35
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 57
-outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_top = 1
-font_data = SubResource( 1 )
+font_data = ExtResource( 2 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="BG" type="ColorRect" parent="."]
 margin_right = 800.0
 margin_bottom = 480.0
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+color = Color( 0.654902, 0.654902, 0.654902, 1 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = SubResource( 3 )
 
-[node name="Niveis" type="ColorRect" parent="HUD"]
+[node name="Panel" type="Panel" parent="HUD"]
+margin_left = 79.0
+margin_top = 29.0
+margin_right = 721.0
+margin_bottom = 99.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Niveis" type="Panel" parent="HUD"]
 margin_left = 80.0
 margin_top = 100.0
 margin_right = 720.0
 margin_bottom = 440.0
+custom_styles/panel = SubResource( 5 )
 
 [node name="Basico" type="Node2D" parent="HUD/Niveis"]
-editor/display_folded = true
 position = Vector2( -80, -100 )
 
-[node name="1" type="ColorRect" parent="HUD/Niveis/Basico"]
-editor/display_folded = true
-margin_left = 172.968
-margin_top = 142.968
-margin_right = 626.968
-margin_bottom = 182.968
+[node name="1" type="Panel" parent="HUD/Niveis/Basico"]
+margin_left = 165.0
+margin_top = 145.0
+margin_right = 619.0
+margin_bottom = 185.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Basico/1"]
@@ -118,7 +142,8 @@ margin_right = 454.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Basico 1"
 align = 1
 valign = 1
@@ -126,14 +151,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="2" type="ColorRect" parent="HUD/Niveis/Basico"]
-editor/display_folded = true
-margin_left = 169.452
-margin_top = 193.952
-margin_right = 623.452
-margin_bottom = 233.952
+[node name="2" type="Panel" parent="HUD/Niveis/Basico"]
+margin_left = 165.452
+margin_top = 195.952
+margin_right = 619.452
+margin_bottom = 235.952
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 1 )
 numTutorial = 1
 
@@ -142,7 +166,8 @@ margin_right = 454.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Basico 2"
 align = 1
 valign = 1
@@ -150,14 +175,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="3" type="ColorRect" parent="HUD/Niveis/Basico"]
-editor/display_folded = true
-margin_left = 171.21
-margin_top = 251.969
-margin_right = 625.21
-margin_bottom = 291.969
+[node name="3" type="Panel" parent="HUD/Niveis/Basico"]
+margin_left = 165.21
+margin_top = 242.969
+margin_right = 619.21
+margin_bottom = 282.969
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 1 )
 numTutorial = 2
 
@@ -166,7 +190,8 @@ margin_right = 454.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Basico 3"
 align = 1
 valign = 1
@@ -175,18 +200,16 @@ __meta__ = {
 }
 
 [node name="Nivel 1" type="Node2D" parent="HUD/Niveis"]
-editor/display_folded = true
 visible = false
 position = Vector2( -80, -100 )
 
-[node name="1" type="ColorRect" parent="HUD/Niveis/Nivel 1"]
-editor/display_folded = true
-margin_left = 172.968
-margin_top = 142.968
-margin_right = 626.968
-margin_bottom = 182.968
+[node name="1" type="Panel" parent="HUD/Niveis/Nivel 1"]
+margin_left = 165.968
+margin_top = 145.968
+margin_right = 619.968
+margin_bottom = 185.968
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 1 )
 numTutorial = 3
 
@@ -195,7 +218,8 @@ margin_right = 454.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Basico 1"
 align = 1
 valign = 1
@@ -203,14 +227,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="2" type="ColorRect" parent="HUD/Niveis/Nivel 1"]
-editor/display_folded = true
-margin_left = 174.726
-margin_top = 192.194
-margin_right = 628.726
-margin_bottom = 232.194
+[node name="2" type="Panel" parent="HUD/Niveis/Nivel 1"]
+margin_left = 165.726
+margin_top = 195.194
+margin_right = 619.726
+margin_bottom = 235.194
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 1 )
 numTutorial = 4
 
@@ -219,7 +242,8 @@ margin_right = 454.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Basico 2"
 align = 1
 valign = 1
@@ -227,14 +251,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="3" type="ColorRect" parent="HUD/Niveis/Nivel 1"]
-editor/display_folded = true
-margin_left = 169.452
-margin_top = 250.211
-margin_right = 623.452
-margin_bottom = 290.211
+[node name="3" type="Panel" parent="HUD/Niveis/Nivel 1"]
+margin_left = 165.452
+margin_top = 242.211
+margin_right = 619.452
+margin_bottom = 282.211
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 1 )
 numTutorial = 5
 
@@ -243,7 +266,8 @@ margin_right = 454.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Basico 3"
 align = 1
 valign = 1
@@ -252,18 +276,16 @@ __meta__ = {
 }
 
 [node name="Nivel 2" type="Node2D" parent="HUD/Niveis"]
-editor/display_folded = true
 visible = false
 position = Vector2( -80, -100 )
 
-[node name="1" type="ColorRect" parent="HUD/Niveis/Nivel 2"]
-editor/display_folded = true
-margin_left = 172.968
-margin_top = 142.968
-margin_right = 626.968
-margin_bottom = 182.968
+[node name="1" type="Panel" parent="HUD/Niveis/Nivel 2"]
+margin_left = 165.968
+margin_top = 145.968
+margin_right = 619.968
+margin_bottom = 185.968
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 1 )
 numTutorial = 6
 
@@ -272,7 +294,8 @@ margin_right = 454.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Basico 1"
 align = 1
 valign = 1
@@ -280,14 +303,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="2" type="ColorRect" parent="HUD/Niveis/Nivel 2"]
-editor/display_folded = true
-margin_left = 174.726
-margin_top = 192.194
-margin_right = 628.726
-margin_bottom = 232.194
+[node name="2" type="Panel" parent="HUD/Niveis/Nivel 2"]
+margin_left = 165.726
+margin_top = 195.194
+margin_right = 619.726
+margin_bottom = 235.194
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 1 )
 numTutorial = 7
 
@@ -296,7 +318,8 @@ margin_right = 454.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Basico 2"
 align = 1
 valign = 1
@@ -304,14 +327,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="3" type="ColorRect" parent="HUD/Niveis/Nivel 2"]
-editor/display_folded = true
-margin_left = 169.452
-margin_top = 250.211
-margin_right = 623.452
-margin_bottom = 290.211
+[node name="3" type="Panel" parent="HUD/Niveis/Nivel 2"]
+margin_left = 165.452
+margin_top = 242.211
+margin_right = 619.452
+margin_bottom = 282.211
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 1 )
 numTutorial = 8
 
@@ -320,7 +342,8 @@ margin_right = 454.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Basico 3"
 align = 1
 valign = 1
@@ -332,14 +355,13 @@ __meta__ = {
 visible = false
 position = Vector2( -80, -100 )
 
-[node name="1" type="ColorRect" parent="HUD/Niveis/Nivel 3"]
-editor/display_folded = true
-margin_left = 172.968
-margin_top = 142.968
-margin_right = 626.968
-margin_bottom = 182.968
+[node name="1" type="Panel" parent="HUD/Niveis/Nivel 3"]
+margin_left = 165.968
+margin_top = 145.968
+margin_right = 619.968
+margin_bottom = 185.968
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 1 )
 numTutorial = 9
 
@@ -348,7 +370,8 @@ margin_right = 454.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Basico 1"
 align = 1
 valign = 1
@@ -356,14 +379,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="2" type="ColorRect" parent="HUD/Niveis/Nivel 3"]
-editor/display_folded = true
-margin_left = 174.726
-margin_top = 192.194
-margin_right = 628.726
-margin_bottom = 232.194
+[node name="2" type="Panel" parent="HUD/Niveis/Nivel 3"]
+margin_left = 165.726
+margin_top = 195.194
+margin_right = 619.726
+margin_bottom = 235.194
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 1 )
 numTutorial = 10
 
@@ -372,7 +394,8 @@ margin_right = 454.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Basico 2"
 align = 1
 valign = 1
@@ -380,14 +403,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="3" type="ColorRect" parent="HUD/Niveis/Nivel 3"]
-editor/display_folded = true
-margin_left = 169.452
-margin_top = 250.211
-margin_right = 623.452
-margin_bottom = 290.211
+[node name="3" type="Panel" parent="HUD/Niveis/Nivel 3"]
+margin_left = 165.452
+margin_top = 242.211
+margin_right = 619.452
+margin_bottom = 282.211
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 1 )
 numTutorial = 11
 
@@ -396,7 +418,8 @@ margin_right = 454.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Basico 3"
 align = 1
 valign = 1
@@ -405,22 +428,24 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="HUD"]
-margin_left = 37.1591
-margin_top = 18.2419
-margin_right = 744.159
-margin_bottom = 89.2419
+margin_left = 37.0
+margin_top = 29.0
+margin_right = 744.0
+margin_bottom = 100.0
+custom_colors/font_color = Color( 0.866667, 0.866667, 0.866667, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Controles basicos"
 align = 1
 valign = 1
 
 [node name="Voltar" type="TouchScreenButton" parent="HUD"]
-position = Vector2( 14.2159, 16.8006 )
+position = Vector2( 2, 22 )
+scale = Vector2( 1.39607, 1.30399 )
 normal = ExtResource( 3 )
 script = ExtResource( 4 )
 
 [node name="Proximo" type="TouchScreenButton" parent="HUD"]
-position = Vector2( 733.21, 148.646 )
+position = Vector2( 739.21, 148.646 )
 scale = Vector2( 1, 4.17334 )
 normal = ExtResource( 5 )
 
@@ -430,6 +455,7 @@ position = Vector2( 71.8178, 370.78 )
 rotation = 3.14159
 scale = Vector2( 1, 4.17334 )
 normal = ExtResource( 5 )
+
 [connection signal="gui_input" from="HUD/Niveis/Basico/1" to="HUD/Niveis/Basico/1" method="_on_1_gui_input"]
 [connection signal="gui_input" from="HUD/Niveis/Basico/2" to="HUD/Niveis/Basico/2" method="_on_1_gui_input"]
 [connection signal="gui_input" from="HUD/Niveis/Basico/3" to="HUD/Niveis/Basico/3" method="_on_1_gui_input"]

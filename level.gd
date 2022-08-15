@@ -1,4 +1,4 @@
-extends ColorRect
+extends Panel
 
 export var numTutorial = 0
 

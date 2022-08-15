@@ -1,19 +1,25 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/imgs/vermelho.png" type="Texture" id=1]
-[ext_resource path="res://assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/fonts/new_dynamicfontdata.tres" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://CriarJogo.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.054902, 0.27451, 0.635294, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
 
 [sub_resource type="Theme" id=1]
 CheckBox/icons/selecionado = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=2]
-font_path = "res://assets/fonts/Xolonium-Regular.ttf"
-
 [sub_resource type="DynamicFont" id=3]
-size = 36
-font_data = SubResource( 2 )
+size = 45
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 42
@@ -28,68 +34,77 @@ font_path = "res://assets/fonts/Xolonium-Regular.ttf"
 size = 19
 font_data = SubResource( 6 )
 
-[sub_resource type="DynamicFont" id=8]
-size = 30
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 3 )
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFontData" id=9]
-font_path = "res://assets/fonts/Xolonium-Regular.ttf"
+[sub_resource type="DynamicFont" id=8]
+size = 40
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="DynamicFont" id=10]
-size = 33
-font_data = SubResource( 9 )
+size = 40
+font_data = ExtResource( 2 )
 
 [node name="MainMenu" type="Node2D"]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="BG" type="ColorRect" parent="HUD"]
-margin_right = 800.0
+margin_left = 1.0
+margin_right = 801.0
 margin_bottom = 480.0
-color = Color( 0.247059, 0.647059, 0.654902, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color( 0.654902, 0.654902, 0.654902, 1 )
 
 [node name="Modo" type="CanvasLayer" parent="HUD"]
 
-[node name="BG" type="ColorRect" parent="HUD/Modo"]
-margin_left = 83.9052
-margin_top = 104.882
-margin_right = 383.905
-margin_bottom = 344.882
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="BG" type="Panel" parent="HUD/Modo"]
+margin_left = 84.0
+margin_top = 105.0
+margin_right = 384.0
+margin_bottom = 390.0
+custom_styles/panel = SubResource( 11 )
+
+[node name="Panel" type="Panel" parent="HUD/Modo"]
+margin_left = 84.0
+margin_top = 57.0
+margin_right = 384.0
+margin_bottom = 105.0
+custom_styles/panel = SubResource( 12 )
 
 [node name="Titulo" type="Label" parent="HUD/Modo"]
-margin_left = 124.524
-margin_top = 32.8536
-margin_right = 342.524
-margin_bottom = 120.854
+margin_left = 125.0
+margin_top = 42.1748
+margin_right = 343.0
+margin_bottom = 130.175
 theme = SubResource( 1 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Modo"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Educacional" type="CheckBox" parent="HUD/Modo"]
-margin_left = 84.2096
+margin_left = 90.2096
 margin_top = 106.87
-margin_right = 378.21
+margin_right = 384.21
 margin_bottom = 166.87
-custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
 group = SubResource( 5 )
 text = "Educacional"
 align = 1
@@ -98,16 +113,16 @@ __meta__ = {
 }
 
 [node name="Aleatorio" type="CheckBox" parent="HUD/Modo"]
-margin_left = 82.4515
-margin_top = 148.92
-margin_right = 365.452
-margin_bottom = 208.92
-custom_fonts/font = SubResource( 4 )
+margin_left = 90.0
+margin_top = 163.0
+margin_right = 373.0
+margin_bottom = 223.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
 pressed = true
 group = SubResource( 5 )
 text = "Aleatorio"
@@ -117,16 +132,16 @@ __meta__ = {
 }
 
 [node name="Especifico" type="CheckBox" parent="HUD/Modo"]
-margin_left = 82.4515
-margin_top = 185.033
-margin_right = 365.452
-margin_bottom = 245.033
-custom_fonts/font = SubResource( 4 )
+margin_left = 91.0
+margin_top = 216.0
+margin_right = 374.0
+margin_bottom = 276.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
 group = SubResource( 5 )
 text = "Especifico"
 align = 1
@@ -135,16 +150,16 @@ __meta__ = {
 }
 
 [node name="Desafios" type="CheckBox" parent="HUD/Modo"]
-margin_left = 82.4515
-margin_top = 233.451
-margin_right = 365.452
-margin_bottom = 293.451
-custom_fonts/font = SubResource( 4 )
+margin_left = 90.0
+margin_top = 270.0
+margin_right = 373.0
+margin_bottom = 330.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
 group = SubResource( 5 )
 text = "Desafios"
 align = 1
@@ -153,16 +168,16 @@ __meta__ = {
 }
 
 [node name="Aventura" type="CheckBox" parent="HUD/Modo"]
-margin_left = 80.6934
-margin_top = 284.436
-margin_right = 363.694
-margin_bottom = 344.436
-custom_fonts/font = SubResource( 4 )
+margin_left = 90.0
+margin_top = 326.0
+margin_right = 373.001
+margin_bottom = 386.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
 group = SubResource( 5 )
 text = "Aventura"
 align = 1
@@ -177,9 +192,9 @@ margin_top = 296.0
 margin_right = 323.0
 margin_bottom = 320.0
 theme = SubResource( 1 )
-custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Digite 4 numeros"
 align = 1
 valign = 1
@@ -188,26 +203,30 @@ __meta__ = {
 }
 
 [node name="Descricao" type="CanvasLayer" parent="HUD"]
-editor/display_folded = true
 
-[node name="BG" type="ColorRect" parent="HUD/Descricao"]
-margin_left = 410.536
-margin_top = 104.882
-margin_right = 710.536
-margin_bottom = 344.882
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="BG" type="Panel" parent="HUD/Descricao"]
+margin_left = 411.0
+margin_top = 105.0
+margin_right = 711.0
+margin_bottom = 390.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Panel" type="Panel" parent="HUD/Descricao"]
+margin_left = 411.0
+margin_top = 57.0
+margin_right = 711.0
+margin_bottom = 105.0
+custom_styles/panel = SubResource( 12 )
 
 [node name="Titulo" type="Label" parent="HUD/Descricao"]
-margin_left = 353.11
-margin_top = 29.6788
-margin_right = 781.11
-margin_bottom = 117.679
+margin_left = 353.586
+margin_top = 39.0
+margin_right = 781.586
+margin_bottom = 127.0
 theme = SubResource( 1 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Descrição"
 align = 1
 valign = 1
@@ -219,32 +238,35 @@ __meta__ = {
 margin_left = 415.0
 margin_top = 106.0
 margin_right = 708.0
-margin_bottom = 341.0
-custom_fonts/normal_font = SubResource( 8 )
+margin_bottom = 384.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 8 )
 scroll_active = false
-
-[node name="BG_botao" type="ColorRect" parent="HUD"]
-editor/display_folded = true
-margin_left = 344.0
-margin_top = 384.0
-margin_right = 456.0
-margin_bottom = 424.0
-script = ExtResource( 4 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
+[node name="BG_botao" type="Panel" parent="HUD"]
+margin_left = 293.0
+margin_top = 399.0
+margin_right = 500.0
+margin_bottom = 439.0
+custom_styles/panel = SubResource( 14 )
+script = ExtResource( 4 )
+
 [node name="botaoTexto" type="Label" parent="HUD/BG_botao"]
-margin_right = 112.0
-margin_bottom = 40.0
-custom_fonts/font = SubResource( 10 )
+margin_left = 16.0
+margin_top = 1.0
+margin_right = 194.0
+margin_bottom = 41.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Entrar"
+custom_fonts/font = SubResource( 10 )
+text = "Selecionar"
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="HUD/Modo/Educacional" to="HUD/BG_botao" method="_on_Educacional_pressed"]
 [connection signal="pressed" from="HUD/Modo/Aleatorio" to="HUD/BG_botao" method="_on_Aleatorio_pressed"]
 [connection signal="pressed" from="HUD/Modo/Especifico" to="HUD/BG_botao" method="_on_Especifico_pressed"]

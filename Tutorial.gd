@@ -1,4 +1,4 @@
-extends ColorRect
+extends Panel
 
 var telas = []
 var anterior
