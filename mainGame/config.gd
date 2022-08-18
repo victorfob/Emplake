@@ -35,6 +35,8 @@ func _on_VoltarMenu_pressed():
 	Load.pause = false
 	if Load.modo == 2:
 		get_tree().change_scene("res://SelecaoNiveis.tscn")
+	elif Load.modo == 3:
+		get_tree().change_scene("res://ModoAprendizado.tscn")
 	else:
 		get_tree().change_scene("res://MainMenu.tscn")
 
@@ -65,6 +67,12 @@ func _on_Continuar_released():
 		Load.numeros = num
 		get_parent().gerar_numeros()
 		get_parent().get_node("VioriaLayer/TelaVitoria").visible = false
+	elif Load.modo == 4:
+		var num = "%d%d%d%d" % [randi() % 10,randi() % 10,randi() % 10,randi() % 10]
+		Load.numeros = num
+		get_parent().gerar_numeros()
+		get_parent().get_node("VioriaLayer/TelaVitoria").visible = false
+		updateBotao()
 	else:
 		get_parent().get_node("VioriaLayer/TelaVitoria/Continuar").visible = false
 	pass # Replace with function body.

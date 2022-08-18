@@ -5,9 +5,6 @@ var mainArea
 var resultadoVitoria
 var resultadoErro 
 
-# gets timer node
-onready var timer = get_parent().get_node("HUD/TimerHud/Timer")
-
 
 func _ready():
 	mainArea = get_parent().get_node("AreaNumeros")
@@ -33,7 +30,7 @@ func _on_Enviar_pressed():
 			resultadoVitoria.get_node("ValorPontuacao").text = String(score)
 			if Load.modo == 3 and Load.tutorialNum != 11:
 				resultadoVitoria.get_node("Continuar").visible = true
-			elif Load.modo == 0:
+			elif Load.modo == 0 or Load.modo == 4:
 				resultadoVitoria.get_node("Continuar").visible = true
 		else:
 			resultadoErro.visible = true
@@ -41,21 +38,7 @@ func _on_Enviar_pressed():
 			var valorMetade2 = mainArea.getValoreMetade2()
 			resultadoErro.get_node("ValorMetade1").text = String(valorMetade1)
 			resultadoErro.get_node("ValorMetade2").text = String(valorMetade2)
-			# after submtting wrong value, wait a second before timer starts running again
-			yield(get_tree().create_timer(1), "timeout")
-			timer.set_paused(0)
-
 
 
 func _on_VoltarMenu_pressed():
 	resultadoErro.visible = false
-
-
-func _on_Button_pressed():
-	# pauses timer
-	timer.set_paused(1)
-	# waits 30 secs to write answer
-	var aux_timer = get_tree().create_timer(30)
-	# once 30 seconds have passed, resume timer
-	yield(aux_timer, "timeout")
-	timer.set_paused(0)

@@ -7,6 +7,7 @@ var posicaoEqua
 export (String) var nome = '+'
 export (Vector3) var posiIni = Vector3(0,0,0)
 var click = 0
+var pathCriador
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

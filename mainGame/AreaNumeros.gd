@@ -12,6 +12,7 @@ class valoresEquacao:
 	#posição x do elemento na equação
 # warning-ignore:unused_class_variable
 	var x: float
+	var pathCriador: Node2D
 
 #variavel que guarda a expressao para computação final
 var expressaoStr = []
@@ -91,6 +92,11 @@ func novoElem(node):
 	novoEle.x = xPosi
 	#insere o elemento na equacao[]
 	equacao.insert(i,novoEle)
+	#salva o patch para o botao que criou a operacao
+	novoEle.pathCriador = node.pathCriador
+	if node.pathCriador != null: #em caso de ser um numero
+		#atualiza o numero de operacoes criadas desse tipo
+		novoEle.pathCriador.addNovoEle()
 	#aumenta o total de elementos
 	total += 1
 	#atualiza a posição na tela
@@ -122,6 +128,8 @@ func novaPosiElem(node):
 
 #função que remove elementos da equação
 func removeElem(node):
+	if node.pathCriador != null: #em caso de ser um numero
+		node.pathCriador.removeEle()
 	equacao.remove(node.posicaoEqua)
 	total -= 1
 	node.free()
@@ -132,6 +140,8 @@ func limpar():
 	var i = total-1
 	while i >= 0:
 		if !regex.search(equacao[i].nome):
+			if equacao[i].pathCriador != null: #em caso de ser um numero
+				equacao[i].pathCriador.removeEle()
 			equacao[i].patch.free()
 			equacao.remove(i)
 		i-= 1
@@ -431,6 +441,57 @@ func printEqua(var inicio,var fim, var estado, var metade):
 				#recalcula o tamanho da operação
 				fim = expressaoStr.size()
 			
+			#se o simbolo for R simboliza a realização de uma raiz cubica
+			"C":
+				#checa se o valor a frente esta desntro de algum tipo de separador
+				if (expressaoStr[percorre + 1] == "(" 
+				or expressaoStr[percorre + 1] == "|" 
+				or expressaoStr[percorre + 1] == "[" 
+				or expressaoStr[percorre + 1] == "{"):
+					#se sim, então usando recursão resolve esse valor antes de
+					#calcular a elevação
+					if printEqua(percorre + 2, fim, expressaoStr[percorre+1], metade) == false:
+						#se retornar falso, então tem um problema nesse setor da operação
+						print("Erro na recurssão durante a raiz")
+						return false
+					#se ta tudo certo, remove o simbolo que iria abrir o separador
+					#ja que o valor ja foi calculado
+					expressaoStr.remove(percorre+1)
+					#atualiza o tamanho do vetor String
+					fim = expressaoStr.size()
+				
+				var raiz
+				if int(expressaoStr[percorre+1]) < 0:
+					#passa os valores do vetor para um formato que pode ser calculado considerando raiz negativa
+					raiz = str("-pow(%d,1.0/3.0)" % [int(expressaoStr[percorre+1]) * -1])
+				else:
+					#passa os valores do vetor para um formato que pode ser calculado
+					raiz = str("pow(%s,1.0/3.0)" % [expressaoStr[percorre+1]])
+				
+				var result = resolve(raiz)
+				
+				#verifica se deu erro na operação
+				if result == "Erro":
+					if metade == 1:
+						valorMetade1 = "Erro na expessão de raiz"
+					else:
+						valorMetade2 = "Erro na expessão de raiz"
+					print("Erro na expressao durante raiz")
+					return false
+				
+				#como juntou a raiz com o proximo numero remove os valores
+				#antigos do vetor
+				expressaoStr.remove(percorre+1)
+				expressaoStr.remove(percorre)
+				
+				#print temporario
+				print("Resultado raiz: %s" % [result])
+				#insere o resultado da raiz na posição correta
+				expressaoStr.insert(percorre, result)
+				#devido a união do R e do numero anterio o percorre volta 1
+				percorre -= 1
+				#recalcula o tamanho da operação
+				fim = expressaoStr.size()
 			#se o operador for o operador de fatorial
 			"!":
 				#verifica se o fatorial não esta na primeira casa

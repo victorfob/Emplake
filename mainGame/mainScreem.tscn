@@ -1,7 +1,7 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://mainGame/GerarJogo.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://mainGame/AreaNumeros.gd" type="Script" id=3]
 [ext_resource path="res://mainGame/nomeCidade.gd" type="Script" id=4]
 [ext_resource path="res://assets/imgs/broom.png" type="Texture" id=5]
@@ -16,10 +16,10 @@
 [ext_resource path="res://assets/imgs/chao_a.png" type="Texture" id=14]
 [ext_resource path="res://assets/imgs/parentese_a.png" type="Texture" id=15]
 [ext_resource path="res://assets/imgs/parentese_b.png" type="Texture" id=16]
-[ext_resource path="res://assets/imgs/raiz.png" type="Texture" id=17]
-[ext_resource path="res://assets/imgs/fatorial.png" type="Texture" id=18]
-[ext_resource path="res://assets/imgs/chao_b.png" type="Texture" id=19]
-[ext_resource path="res://assets/imgs/igual.png" type="Texture" id=20]
+[ext_resource path="res://assets/imgs/fatorial.png" type="Texture" id=17]
+[ext_resource path="res://assets/imgs/raiz.png" type="Texture" id=18]
+[ext_resource path="res://assets/imgs/certo.png" type="Texture" id=19]
+[ext_resource path="res://assets/imgs/chao_b.png" type="Texture" id=20]
 [ext_resource path="res://assets/imgs/modulo_a.png" type="Texture" id=21]
 [ext_resource path="res://assets/imgs/modulo_b.png" type="Texture" id=22]
 [ext_resource path="res://assets/imgs/mais.png" type="Texture" id=23]
@@ -29,64 +29,85 @@
 [ext_resource path="res://assets/imgs/teto_b.png" type="Texture" id=27]
 [ext_resource path="res://assets/imgs/teto_a.png" type="Texture" id=28]
 [ext_resource path="res://assets/imgs/elevado.png" type="Texture" id=29]
-[ext_resource path="res://assets/imgs/musica.png" type="Texture" id=30]
-[ext_resource path="res://mainGame/Tutorial.gd" type="Script" id=31]
-[ext_resource path="res://assets/imgs/modulo.png" type="Texture" id=32]
-[ext_resource path="res://mainGame/DicaFundo.gd" type="Script" id=33]
-[ext_resource path="res://Tutorial.tscn" type="PackedScene" id=34]
-[ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.otf" type="DynamicFontData" id=35]
+[ext_resource path="res://assets/imgs/igual.png" type="Texture" id=30]
+[ext_resource path="res://assets/imgs/musica.png" type="Texture" id=31]
+[ext_resource path="res://mainGame/Tutorial.gd" type="Script" id=32]
+[ext_resource path="res://assets/imgs/modulo.png" type="Texture" id=33]
+[ext_resource path="res://assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=34]
+[ext_resource path="res://mainGame/DicaFundo.gd" type="Script" id=35]
+[ext_resource path="res://Tutorial.tscn" type="PackedScene" id=36]
 
-[sub_resource type="StyleBoxFlat" id=32]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=33]
-size = 25
-font_data = ExtResource( 35 )
-
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
 draw_center = false
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="DynamicFont" id=3]
+size = 25
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 728, 69 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.054902, 0.27451, 0.635294, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 30
-font_data = ExtResource( 35 )
+font_data = ExtResource( 2 )
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=7]
 radius = 25.0
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=8]
 font_path = "res://assets/fonts/Xolonium-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 size = 18
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_top = 1
-font_data = SubResource( 7 )
+font_data = SubResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 34, 13 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 34, 13 )
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 34, 13 )
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 34, 13 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 34, 13 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 34, 13 )
+
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 34, 13 )
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 34, 13 )
+
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.109804, 0.439216, 0.447059, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=11]
-size = 25
-font_data = ExtResource( 35 )
-
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.054902, 0.27451, 0.635294, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -98,16 +119,20 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 130, 27 )
+[sub_resource type="DynamicFont" id=12]
+size = 25
+font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 25, 25 )
+extents = Vector2( 130, 27 )
 
 [sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 25, 25 )
+
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 27, 25 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0.054902, 0.27451, 0.635294, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -119,34 +144,34 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0.0470588, 0.239216, 0.247059, 1 )
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 0.509804, 0.811765, 0.815686, 1 )
 draw_center = false
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=19]
 size = 28
 extra_spacing_top = 5
-font_data = ExtResource( 35 )
+font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=20]
 bg_color = Color( 0.266667, 0.639216, 0.282353, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=19]
-size = 40
-font_data = ExtResource( 35 )
-
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=21]
 size = 40
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=21]
+[sub_resource type="DynamicFont" id=22]
+size = 40
+font_data = ExtResource( 34 )
+
+[sub_resource type="StyleBoxFlat" id=23]
 bg_color = Color( 0.266667, 0.639216, 0.282353, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -158,29 +183,29 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 136, 30 )
 
-[sub_resource type="StyleBoxFlat" id=23]
+[sub_resource type="StyleBoxFlat" id=25]
 bg_color = Color( 0.541176, 0.117647, 0.117647, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="DynamicFont" id=24]
-size = 30
-font_data = ExtResource( 35 )
-
-[sub_resource type="DynamicFont" id=25]
-size = 30
-font_data = ExtResource( 35 )
 
 [sub_resource type="DynamicFont" id=26]
 size = 30
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=27]
+[sub_resource type="DynamicFont" id=27]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 30
+font_data = ExtResource( 34 )
+
+[sub_resource type="StyleBoxFlat" id=29]
 bg_color = Color( 0.541176, 0.117647, 0.117647, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -192,25 +217,26 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=28]
+[sub_resource type="DynamicFont" id=30]
 size = 20
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=29]
-size = 20
-font_data = ExtResource( 2 )
-
-[sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 127, 27 )
+font_data = ExtResource( 34 )
 
 [sub_resource type="DynamicFont" id=31]
 size = 20
-font_data = ExtResource( 2 )
+font_data = ExtResource( 34 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 127, 27 )
+
+[sub_resource type="DynamicFont" id=33]
+size = 20
+font_data = ExtResource( 34 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="HUD"]
@@ -231,7 +257,7 @@ margin_left = -335.0
 margin_top = -143.0
 margin_right = 305.0
 margin_bottom = -30.0
-custom_styles/panel = SubResource( 32 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -243,8 +269,8 @@ margin_left = 392.0
 margin_top = 8.0
 margin_right = 688.0
 margin_bottom = 40.0
-custom_fonts/normal_font = SubResource( 33 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Score:"
 scroll_active = false
 
@@ -255,13 +281,14 @@ margin_left = 170.19
 margin_top = 11.3404
 margin_right = 387.19
 margin_bottom = 43.3404
-custom_fonts/normal_font = SubResource( 33 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Timer:"
 
 [node name="Timer" type="Timer" parent="HUD/TimerHud"]
 
 [node name="AreaNumeros" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 384, 160 )
 script = ExtResource( 3 )
 
@@ -271,7 +298,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaNumeros/ANumeros"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -281,7 +308,7 @@ margin_left = -319.0
 margin_top = -88.0
 margin_right = 322.0
 margin_bottom = -48.0
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -292,7 +319,7 @@ anchor_bottom = 1.0
 margin_top = 4.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
 scroll_active = false
 script = ExtResource( 4 )
@@ -301,14 +328,14 @@ script = ExtResource( 4 )
 position = Vector2( 728, 8 )
 scale = Vector2( 1.16364, 1.12 )
 normal = ExtResource( 5 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 script = ExtResource( 6 )
 
 [node name="Enviar" type="TouchScreenButton" parent="."]
 position = Vector2( 690.364, 76.2896 )
 scale = Vector2( 2.20423, 2.75322 )
 normal = ExtResource( 7 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 script = ExtResource( 8 )
 
 [node name="Config" type="TouchScreenButton" parent="."]
@@ -329,12 +356,14 @@ texture_hover = ExtResource( 12 )
 [node name="Operacoes" type="Node2D" parent="."]
 
 [node name="ChaoA" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 127.972, 391.896 )
+editor/display_folded = true
+position = Vector2( 127.972, 393.896 )
 normal = ExtResource( 14 )
 nome = "{"
 imagem = ExtResource( 14 )
 complexidade = 2
 idOperacao = 9
+disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/ChaoA"]
 visible = false
@@ -347,18 +376,24 @@ color = Color( 0.498039, 0.8, 0.85098, 1 )
 [node name="Label" type="Label" parent="Operacoes/ChaoA/ComprarPeca"]
 margin_left = 0.161789
 margin_top = 0.838226
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "1000$"
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/ChaoA/ComprarPeca"]
+position = Vector2( 34.295, 12.0032 )
+shape = SubResource( 34 )
+
 [node name="ParentA" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 320, 392 )
 normal = ExtResource( 15 )
 nome = "("
 imagem = ExtResource( 15 )
 idOperacao = 7
+disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/ParentA"]
 visible = false
@@ -371,18 +406,24 @@ color = Color( 0.498039, 0.8, 0.85098, 1 )
 [node name="Label" type="Label" parent="Operacoes/ParentA/ComprarPeca"]
 margin_left = 0.161789
 margin_top = 0.838226
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "1000$"
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/ParentA/ComprarPeca"]
+position = Vector2( 32.6788, 12.7886 )
+shape = SubResource( 35 )
+
 [node name="ParentB" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 416, 392 )
 normal = ExtResource( 16 )
 nome = ")"
 imagem = ExtResource( 16 )
 idOperacao = 7
+disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/ParentB"]
 visible = false
@@ -395,42 +436,24 @@ color = Color( 0.498039, 0.8, 0.85098, 1 )
 [node name="Label" type="Label" parent="Operacoes/ParentB/ComprarPeca"]
 margin_left = 0.161789
 margin_top = 0.838226
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "1000$"
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Raiz" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 416, 280 )
-normal = ExtResource( 17 )
-nome = "R"
-imagem = ExtResource( 17 )
-idOperacao = 5
-
-[node name="ComprarPeca" type="ColorRect" parent="Operacoes/Raiz"]
-visible = false
-margin_left = -7.20688
-margin_top = -29.9497
-margin_right = 59.7931
-margin_bottom = -4.94968
-color = Color( 0.498039, 0.8, 0.85098, 1 )
-
-[node name="Label" type="Label" parent="Operacoes/Raiz/ComprarPeca"]
-margin_left = 0.161789
-margin_top = 0.838226
-custom_fonts/font = SubResource( 8 )
-text = "1000$"
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/ParentB/ComprarPeca"]
+position = Vector2( 33.338, 12.9868 )
+shape = SubResource( 36 )
 
 [node name="Fatorial" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 512, 280 )
-normal = ExtResource( 18 )
+normal = ExtResource( 17 )
 nome = "!"
-imagem = ExtResource( 18 )
+imagem = ExtResource( 17 )
 idOperacao = 6
+disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/Fatorial"]
 visible = false
@@ -443,19 +466,85 @@ color = Color( 0.498039, 0.8, 0.85098, 1 )
 [node name="Label" type="Label" parent="Operacoes/Fatorial/ComprarPeca"]
 margin_left = 0.161789
 margin_top = 0.838226
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "1000$"
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ChaoB" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 224, 392 )
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/Fatorial/ComprarPeca"]
+position = Vector2( 34.0657, 13.3273 )
+shape = SubResource( 37 )
+
+[node name="Raiz" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
+position = Vector2( 360.228, 283.015 )
+normal = ExtResource( 18 )
+nome = "R"
+imagem = ExtResource( 18 )
+idOperacao = 5
+disponivel = 0
+
+[node name="ComprarPeca" type="ColorRect" parent="Operacoes/Raiz"]
+visible = false
+margin_left = -7.20688
+margin_top = -29.9497
+margin_right = 59.7931
+margin_bottom = -4.94968
+color = Color( 0.498039, 0.8, 0.85098, 1 )
+
+[node name="Label" type="Label" parent="Operacoes/Raiz/ComprarPeca"]
+margin_left = 0.161789
+margin_top = 0.838226
+custom_fonts/font = SubResource( 9 )
+text = "1000$"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/Raiz/ComprarPeca"]
+position = Vector2( 34.5069, 13.327 )
+shape = SubResource( 38 )
+
+[node name="RaizCub" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
+position = Vector2( 432.581, 283.015 )
 normal = ExtResource( 19 )
-nome = "}"
+nome = "R"
 imagem = ExtResource( 19 )
+idOperacao = 10
+disponivel = 0
+
+[node name="ComprarPeca" type="ColorRect" parent="Operacoes/RaizCub"]
+visible = false
+margin_left = -7.20688
+margin_top = -29.9497
+margin_right = 59.7931
+margin_bottom = -4.94968
+color = Color( 0.498039, 0.8, 0.85098, 1 )
+
+[node name="Label" type="Label" parent="Operacoes/RaizCub/ComprarPeca"]
+margin_left = 0.161789
+margin_top = 0.838226
+custom_fonts/font = SubResource( 9 )
+text = "1000$"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/RaizCub/ComprarPeca"]
+position = Vector2( 34.1761, 13.327 )
+shape = SubResource( 39 )
+
+[node name="ChaoB" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
+position = Vector2( 224, 392 )
+normal = ExtResource( 20 )
+nome = "}"
+imagem = ExtResource( 20 )
 complexidade = 2
 idOperacao = 9
+disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/ChaoB"]
 visible = false
@@ -468,26 +557,25 @@ color = Color( 0.498039, 0.8, 0.85098, 1 )
 [node name="Label" type="Label" parent="Operacoes/ChaoB/ComprarPeca"]
 margin_left = 0.161789
 margin_top = 0.838226
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "1000$"
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Igual" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 708, 256 )
-normal = ExtResource( 20 )
-nome = "="
-imagem = ExtResource( 20 )
-idOperacao = 10
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/ChaoB/ComprarPeca"]
+position = Vector2( 34.2782, 12.1882 )
+shape = SubResource( 40 )
 
 [node name="ModuloA" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 32, 392 )
 normal = ExtResource( 21 )
 nome = "|"
 imagem = ExtResource( 21 )
 complexidade = 1
 idOperacao = 8
+disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/ModuloA"]
 visible = false
@@ -500,19 +588,25 @@ color = Color( 0.498039, 0.8, 0.85098, 1 )
 [node name="Label" type="Label" parent="Operacoes/ModuloA/ComprarPeca"]
 margin_left = 0.161789
 margin_top = 0.838226
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "1000$"
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/ModuloA/ComprarPeca"]
+position = Vector2( 34.33, 13.2963 )
+shape = SubResource( 41 )
+
 [node name="ModuloB" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 692, 390 )
 normal = ExtResource( 22 )
 nome = "I"
 imagem = ExtResource( 22 )
 complexidade = 1
 idOperacao = 8
+disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/ModuloB"]
 visible = false
@@ -525,45 +619,139 @@ color = Color( 0.498039, 0.8, 0.85098, 1 )
 [node name="Label" type="Label" parent="Operacoes/ModuloB/ComprarPeca"]
 margin_left = 0.161789
 margin_top = 0.838226
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "1000$"
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/ModuloB/ComprarPeca"]
+position = Vector2( 32.3769, 12.2781 )
+shape = SubResource( 41 )
+
 [node name="Mais" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 34, 280 )
 normal = ExtResource( 23 )
 imagem = ExtResource( 23 )
 
+[node name="ComprarPeca" type="ColorRect" parent="Operacoes/Mais"]
+visible = false
+margin_left = -6.84116
+margin_top = -24.8418
+margin_right = 60.1588
+margin_bottom = 0.158211
+color = Color( 0.498039, 0.8, 0.85098, 1 )
+
+[node name="Label" type="Label" parent="Operacoes/Mais/ComprarPeca"]
+margin_left = 0.161789
+margin_top = 0.838226
+custom_fonts/font = SubResource( 9 )
+text = "1000$"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/Mais/ComprarPeca"]
+position = Vector2( 33.4991, 13.4502 )
+shape = SubResource( 41 )
+
 [node name="Menos" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 126.708, 280 )
 normal = ExtResource( 24 )
 nome = "-"
 imagem = ExtResource( 24 )
 idOperacao = 1
 
+[node name="ComprarPeca" type="ColorRect" parent="Operacoes/Menos"]
+visible = false
+margin_left = -9.92422
+margin_top = -24.8418
+margin_right = 57.0758
+margin_bottom = 0.158211
+color = Color( 0.498039, 0.8, 0.85098, 1 )
+
+[node name="Label" type="Label" parent="Operacoes/Menos/ComprarPeca"]
+margin_left = 0.161789
+margin_top = 0.838226
+custom_fonts/font = SubResource( 9 )
+text = "1000$"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/Menos/ComprarPeca"]
+position = Vector2( 33.625, 12.3421 )
+shape = SubResource( 41 )
+
 [node name="Vezes" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 318.708, 280 )
+editor/display_folded = true
+position = Vector2( 294.591, 283.015 )
 normal = ExtResource( 25 )
 nome = "*"
 imagem = ExtResource( 25 )
 idOperacao = 2
 
+[node name="ComprarPeca" type="ColorRect" parent="Operacoes/Vezes"]
+visible = false
+margin_left = -4.69604
+margin_top = -29.0845
+margin_right = 62.304
+margin_bottom = -4.08453
+color = Color( 0.498039, 0.8, 0.85098, 1 )
+
+[node name="Label" type="Label" parent="Operacoes/Vezes/ComprarPeca"]
+margin_left = 0.161789
+margin_top = 0.838226
+custom_fonts/font = SubResource( 9 )
+text = "1000$"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/Vezes/ComprarPeca"]
+position = Vector2( 33.3671, 13.5699 )
+shape = SubResource( 41 )
+
 [node name="Divisao" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 222.708, 280 )
 normal = ExtResource( 26 )
 nome = "/"
 imagem = ExtResource( 26 )
 idOperacao = 3
 
+[node name="ComprarPeca" type="ColorRect" parent="Operacoes/Divisao"]
+visible = false
+margin_left = -8.93285
+margin_top = -26.0695
+margin_right = 58.0672
+margin_bottom = -1.06951
+color = Color( 0.498039, 0.8, 0.85098, 1 )
+
+[node name="Label" type="Label" parent="Operacoes/Divisao/ComprarPeca"]
+margin_left = 0.161789
+margin_top = 0.838226
+custom_fonts/font = SubResource( 9 )
+text = "1000$"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/Divisao/ComprarPeca"]
+position = Vector2( 33.0325, 12.4618 )
+shape = SubResource( 41 )
+
 [node name="TetoB" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 608, 392 )
 normal = ExtResource( 27 )
 nome = "]"
 imagem = ExtResource( 27 )
 complexidade = 2
 idOperacao = 9
+disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/TetoB"]
 visible = false
@@ -576,19 +764,25 @@ color = Color( 0.498039, 0.8, 0.85098, 1 )
 [node name="Label" type="Label" parent="Operacoes/TetoB/ComprarPeca"]
 margin_left = 0.161789
 margin_top = 0.838226
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "1000$"
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/TetoB/ComprarPeca"]
+position = Vector2( 32.178, 12.9869 )
+shape = SubResource( 41 )
+
 [node name="TetoA" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 512, 392 )
 normal = ExtResource( 28 )
 nome = "["
 imagem = ExtResource( 28 )
 complexidade = 2
 idOperacao = 9
+disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/TetoA"]
 visible = false
@@ -601,19 +795,25 @@ color = Color( 0.498039, 0.8, 0.85098, 1 )
 [node name="Label" type="Label" parent="Operacoes/TetoA/ComprarPeca"]
 margin_left = 0.161789
 margin_top = 0.838226
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "1000$"
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/TetoA/ComprarPeca"]
+position = Vector2( 33.0474, 13.2963 )
+shape = SubResource( 41 )
+
 [node name="Elevado" parent="Operacoes" instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 608, 280 )
 normal = ExtResource( 29 )
 nome = "^"
 imagem = ExtResource( 29 )
 complexidade = 1
 idOperacao = 4
+disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/Elevado"]
 visible = false
@@ -626,11 +826,22 @@ color = Color( 0.498039, 0.8, 0.85098, 1 )
 [node name="Label" type="Label" parent="Operacoes/Elevado/ComprarPeca"]
 margin_left = 0.161789
 margin_top = 0.838226
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "1000$"
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="comprar" type="TouchScreenButton" parent="Operacoes/Elevado/ComprarPeca"]
+position = Vector2( 34.394, 11.82 )
+shape = SubResource( 41 )
+
+[node name="Igual" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 708, 256 )
+normal = ExtResource( 30 )
+nome = "="
+imagem = ExtResource( 30 )
+idOperacao = 11
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -645,7 +856,7 @@ margin_left = -120.0
 margin_top = -104.0
 margin_right = 144.0
 margin_bottom = 104.0
-custom_styles/panel = SubResource( 9 )
+custom_styles/panel = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -655,18 +866,15 @@ margin_left = 5.0
 margin_top = 153.0
 margin_right = 259.0
 margin_bottom = 203.0
-custom_fonts/font = SubResource( 11 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "Menu Principal"
 align = 1
 valign = 1
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="MenuLayer/BackOP/VoltarMenuText"]
-position = Vector2( -4, 0 )
-shape = SubResource( 12 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( 127.857, 24.6132 )
+shape = SubResource( 13 )
 
 [node name="Tutorial" type="Label" parent="MenuLayer/BackOP"]
 anchor_top = 0.5
@@ -676,18 +884,15 @@ margin_left = 5.0
 margin_top = -25.0
 margin_right = -5.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 11 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "Tutorial"
 align = 1
 valign = 1
 
 [node name="AbrirTutorial" type="TouchScreenButton" parent="MenuLayer/BackOP/Tutorial"]
-position = Vector2( 0, -1 )
-shape = SubResource( 12 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( 126.582, 23.6133 )
+shape = SubResource( 13 )
 
 [node name="FecharMText" type="Label" parent="MenuLayer/BackOP"]
 anchor_left = 1.0
@@ -696,8 +901,8 @@ margin_left = -56.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = 56.0
-custom_fonts/font = SubResource( 11 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "X"
 align = 1
 valign = 1
@@ -706,18 +911,16 @@ __meta__ = {
 }
 
 [node name="FecharM" type="TouchScreenButton" parent="MenuLayer/BackOP/FecharMText"]
-position = Vector2( -1, 2 )
-shape = SubResource( 13 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( 25.3713, 26.7983 )
+shape = SubResource( 14 )
 
 [node name="MutarMusica" type="TouchScreenButton" parent="MenuLayer/BackOP"]
 position = Vector2( 5, 5 )
-normal = ExtResource( 30 )
-shape = SubResource( 14 )
+normal = ExtResource( 31 )
+shape = SubResource( 15 )
 
 [node name="TutorialLayer Velho" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 3
 
 [node name="Tutorial" type="Panel" parent="TutorialLayer Velho"]
@@ -730,8 +933,8 @@ margin_left = -368.0
 margin_top = -208.0
 margin_right = 368.0
 margin_bottom = 208.0
-custom_styles/panel = SubResource( 15 )
-script = ExtResource( 31 )
+custom_styles/panel = SubResource( 16 )
+script = ExtResource( 32 )
 
 [node name="ItemList" type="ItemList" parent="TutorialLayer Velho/Tutorial"]
 anchor_top = 0.5
@@ -740,10 +943,10 @@ margin_left = 3.17334
 margin_top = -200.0
 margin_right = 71.1733
 margin_bottom = 200.0
-custom_styles/selected_focus = SubResource( 16 )
-custom_styles/selected = SubResource( 16 )
-custom_styles/bg = SubResource( 17 )
-items = [ "+", ExtResource( 23 ), false, "-", ExtResource( 24 ), false, "*", ExtResource( 25 ), false, "/", ExtResource( 26 ), false, "Item 4", ExtResource( 32 ), false, "Item 5", ExtResource( 17 ), false, "Item 6", ExtResource( 16 ), false, "Item 7", ExtResource( 15 ), false ]
+custom_styles/selected_focus = SubResource( 17 )
+custom_styles/selected = SubResource( 17 )
+custom_styles/bg = SubResource( 18 )
+items = [ "+", ExtResource( 23 ), false, "-", ExtResource( 24 ), false, "*", ExtResource( 25 ), false, "/", ExtResource( 26 ), false, "Item 4", ExtResource( 33 ), false, "Item 5", ExtResource( 18 ), false, "Item 6", ExtResource( 16 ), false, "Item 7", ExtResource( 15 ), false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -753,8 +956,8 @@ margin_left = 192.0
 margin_top = 64.0
 margin_right = 688.0
 margin_bottom = 384.0
-custom_fonts/normal_font = SubResource( 2 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 19 )
 text = "	Selecione um dos simbolos ao lado."
 __meta__ = {
 "_edit_use_anchors_": false
@@ -767,8 +970,8 @@ margin_left = -64.0
 margin_top = 8.0
 margin_right = -13.0
 margin_bottom = 59.0
-custom_fonts/font = SubResource( 11 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "X"
 align = 1
 valign = 1
@@ -778,9 +981,10 @@ __meta__ = {
 
 [node name="FecharTuM" type="TouchScreenButton" parent="TutorialLayer Velho/Tutorial/FecharTuText2"]
 position = Vector2( 25, 25 )
-shape = SubResource( 13 )
+shape = SubResource( 14 )
 
 [node name="VioriaLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="TelaVitoria" type="Panel" parent="VioriaLayer"]
 visible = false
@@ -792,7 +996,7 @@ margin_left = -298.0
 margin_top = -22.0
 margin_right = 287.0
 margin_bottom = 107.0
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 20 )
 
 [node name="TextoPontuacao" type="RichTextLabel" parent="VioriaLayer/TelaVitoria"]
 anchor_right = 1.0
@@ -804,7 +1008,7 @@ margin_bottom = -78.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 19 )
+custom_fonts/normal_font = SubResource( 21 )
 bbcode_enabled = true
 tab_size = 2
 text = "Pontuação:
@@ -821,7 +1025,7 @@ margin_bottom = -8.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 19 )
+custom_fonts/normal_font = SubResource( 21 )
 bbcode_enabled = true
 tab_size = 2
 text = "Resultado Correto:"
@@ -837,7 +1041,7 @@ margin_bottom = -8.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 20 )
+custom_fonts/normal_font = SubResource( 22 )
 bbcode_enabled = true
 scroll_active = false
 __meta__ = {
@@ -854,7 +1058,7 @@ margin_bottom = -77.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 20 )
+custom_fonts/normal_font = SubResource( 22 )
 bbcode_enabled = true
 scroll_active = false
 __meta__ = {
@@ -866,32 +1070,33 @@ margin_left = 4.36035
 margin_top = 126.482
 margin_right = 276.36
 margin_bottom = 186.482
-custom_fonts/font = SubResource( 11 )
-custom_styles/normal = SubResource( 21 )
+custom_styles/normal = SubResource( 23 )
+custom_fonts/font = SubResource( 12 )
 text = "Voltar ao Menu"
 align = 1
 valign = 1
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="VioriaLayer/TelaVitoria/VoltarMenuText2"]
-position = Vector2( -2.36035, -1.48199 )
-shape = SubResource( 22 )
+position = Vector2( 136.436, 29.9785 )
+shape = SubResource( 24 )
 
 [node name="Continuar" type="Label" parent="VioriaLayer/TelaVitoria"]
 margin_left = 303.947
 margin_top = 123.965
 margin_right = 575.947
 margin_bottom = 183.965
-custom_fonts/font = SubResource( 11 )
-custom_styles/normal = SubResource( 21 )
+custom_styles/normal = SubResource( 23 )
+custom_fonts/font = SubResource( 12 )
 text = "Proximo Nivel"
 align = 1
 valign = 1
 
 [node name="Continuar" type="TouchScreenButton" parent="VioriaLayer/TelaVitoria/Continuar"]
-position = Vector2( -0.947021, 1.035 )
-shape = SubResource( 22 )
+position = Vector2( 134.148, 32.4955 )
+shape = SubResource( 24 )
 
 [node name="DerrotaLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="TelaErro" type="Panel" parent="DerrotaLayer"]
 visible = false
@@ -903,7 +1108,7 @@ margin_left = -379.0
 margin_top = 13.0
 margin_right = 383.0
 margin_bottom = 165.0
-custom_styles/panel = SubResource( 23 )
+custom_styles/panel = SubResource( 25 )
 
 [node name="TextoErro" type="RichTextLabel" parent="DerrotaLayer/TelaErro"]
 anchor_right = 1.0
@@ -912,7 +1117,7 @@ margin_right = -445.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 24 )
+custom_fonts/normal_font = SubResource( 26 )
 bbcode_enabled = true
 text = "Esquerda do igual:
 
@@ -930,7 +1135,7 @@ margin_bottom = -80.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 25 )
+custom_fonts/normal_font = SubResource( 27 )
 bbcode_enabled = true
 scroll_active = false
 
@@ -944,7 +1149,7 @@ margin_bottom = -4.0
 rect_pivot_offset = Vector2( 435, 28.415 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/normal_font = SubResource( 26 )
+custom_fonts/normal_font = SubResource( 28 )
 bbcode_enabled = true
 scroll_active = false
 __meta__ = {
@@ -956,17 +1161,18 @@ margin_left = 244.0
 margin_top = 150.0
 margin_right = 500.0
 margin_bottom = 197.0
-custom_fonts/font = SubResource( 11 )
-custom_styles/normal = SubResource( 27 )
+custom_styles/normal = SubResource( 29 )
+custom_fonts/font = SubResource( 12 )
 text = "Fechar mensagem"
 align = 1
 valign = 1
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="DerrotaLayer/TelaErro/Fechar Erro"]
 position = Vector2( 128, 25 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="DicaLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="DicaFundo" type="Panel" parent="DicaLayer"]
 visible = false
@@ -978,8 +1184,8 @@ margin_left = -120.0
 margin_top = -104.0
 margin_right = 144.0
 margin_bottom = 164.0
-custom_styles/panel = SubResource( 9 )
-script = ExtResource( 33 )
+custom_styles/panel = SubResource( 10 )
+script = ExtResource( 35 )
 
 [node name="Dica1" type="Label" parent="DicaLayer/DicaFundo"]
 anchor_top = 0.5
@@ -989,8 +1195,8 @@ margin_left = 5.0
 margin_top = -56.0
 margin_right = -5.0
 margin_bottom = -1.0
-custom_fonts/font = SubResource( 28 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 30 )
 text = "Mostrar um resultado possivel"
 align = 1
 valign = 1
@@ -1001,7 +1207,7 @@ __meta__ = {
 
 [node name="AbrirTutorial" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica1"]
 position = Vector2( 130, 27 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="Dica2" type="Label" parent="DicaLayer/DicaFundo"]
 margin_left = 7.0
@@ -1009,8 +1215,8 @@ margin_top = 144.0
 margin_right = 261.0
 margin_bottom = 199.0
 rect_pivot_offset = Vector2( -40, 73 )
-custom_fonts/font = SubResource( 29 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 31 )
 text = "Completar primeira metade"
 align = 1
 valign = 1
@@ -1021,7 +1227,7 @@ __meta__ = {
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica2"]
 position = Vector2( 127, 27 )
-shape = SubResource( 30 )
+shape = SubResource( 32 )
 
 [node name="Dica3" type="Label" parent="DicaLayer/DicaFundo"]
 margin_left = 6.0
@@ -1029,8 +1235,8 @@ margin_top = 211.0
 margin_right = 260.0
 margin_bottom = 261.0
 rect_pivot_offset = Vector2( -40, 73 )
-custom_fonts/font = SubResource( 31 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 33 )
 text = "Completar segunda metade"
 align = 1
 valign = 1
@@ -1041,7 +1247,7 @@ __meta__ = {
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica3"]
 position = Vector2( 127, 28 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="FecharMText" type="Label" parent="DicaLayer/DicaFundo"]
 anchor_left = 1.0
@@ -1050,8 +1256,8 @@ margin_left = -56.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = 56.0
-custom_fonts/font = SubResource( 11 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "X"
 align = 1
 valign = 1
@@ -1061,12 +1267,13 @@ __meta__ = {
 
 [node name="FecharM" type="TouchScreenButton" parent="DicaLayer/DicaFundo/FecharMText"]
 position = Vector2( 25, 25 )
-shape = SubResource( 13 )
+shape = SubResource( 14 )
 
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 4
 
-[node name="Tutorial" parent="TutorialLayer" instance=ExtResource( 34 )]
+[node name="Tutorial" parent="TutorialLayer" instance=ExtResource( 36 )]
 visible = false
 light_mask = 2
 margin_left = 88.6108
@@ -1075,6 +1282,7 @@ margin_right = 703.611
 margin_bottom = 412.258
 
 [node name="PauseButton" type="Button" parent="."]
+visible = false
 margin_left = 298.0
 margin_top = 217.0
 margin_right = 475.0
@@ -1083,13 +1291,28 @@ text = "Pause"
 __meta__ = {
 "_edit_lock_": true
 }
-
 [connection signal="timeout" from="HUD/TimerHud/Timer" to="AreaNumeros" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
 [connection signal="pressed" from="Enviar" to="Enviar" method="_on_Enviar_pressed"]
 [connection signal="pressed" from="Config" to="Config" method="_on_config_pressed"]
 [connection signal="pressed" from="Dica" to="DicaLayer/DicaFundo" method="_on_Dica_pressed"]
+[connection signal="released" from="Operacoes/ChaoA/ComprarPeca/comprar" to="Operacoes/ChaoA" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/ParentA/ComprarPeca/comprar" to="Operacoes/ParentA" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/ParentB/ComprarPeca/comprar" to="Operacoes/ParentB" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/Fatorial/ComprarPeca/comprar" to="Operacoes/Fatorial" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/Raiz/ComprarPeca/comprar" to="Operacoes/Raiz" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/RaizCub/ComprarPeca/comprar" to="Operacoes/RaizCub" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/ChaoB/ComprarPeca/comprar" to="Operacoes/ChaoB" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/ModuloA/ComprarPeca/comprar" to="Operacoes/ModuloA" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/ModuloB/ComprarPeca/comprar" to="Operacoes/ModuloB" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/Mais/ComprarPeca/comprar" to="Operacoes/Mais" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/Menos/ComprarPeca/comprar" to="Operacoes/Menos" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/Vezes/ComprarPeca/comprar" to="Operacoes/Vezes" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/Divisao/ComprarPeca/comprar" to="Operacoes/Divisao" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/TetoB/ComprarPeca/comprar" to="Operacoes/TetoB" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/TetoA/ComprarPeca/comprar" to="Operacoes/TetoA" method="_on_comprar_released"]
+[connection signal="released" from="Operacoes/Elevado/ComprarPeca/comprar" to="Operacoes/Elevado" method="_on_comprar_released"]
 [connection signal="pressed" from="MenuLayer/BackOP/VoltarMenuText/VoltarMenu" to="Config" method="_on_VoltarMenu_pressed"]
 [connection signal="pressed" from="MenuLayer/BackOP/Tutorial/AbrirTutorial" to="Config" method="_on_AbrirTutorial_pressed"]
 [connection signal="pressed" from="MenuLayer/BackOP/FecharMText/FecharM" to="Config" method="_on_FecharM_pressed"]

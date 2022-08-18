@@ -5,6 +5,7 @@ export (Vector3) var posiIni = Vector3(0,0,0)
 var nodeArea
 var posicaoEqua
 var remove = 0
+var pathCriador = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

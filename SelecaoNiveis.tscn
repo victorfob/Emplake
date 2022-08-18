@@ -1,38 +1,38 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://selecaoLevel.gd" type="Script" id=1]
-[ext_resource path="res://level.gd" type="Script" id=2]
-[ext_resource path="res://assets/imgs/voltar.png" type="Texture" id=3]
-[ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://desafioNiveis.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/imgs/voltar.png" type="Texture" id=4]
 [ext_resource path="res://Voltar.gd" type="Script" id=5]
 [ext_resource path="res://assets/imgs/confirma.png" type="Texture" id=6]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.054902, 0.27451, 0.635294, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.52549, 0.52549, 0.52549, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 30
-font_data = ExtResource( 4 )
+font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=5]
 size = 57
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_top = 1
-font_data = ExtResource( 4 )
+font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -49,34 +49,37 @@ margin_left = 79.0
 margin_top = 31.0
 margin_right = 721.0
 margin_bottom = 100.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="Niveis" type="Panel" parent="HUD"]
 margin_left = 80.0
 margin_top = 100.0
 margin_right = 720.0
 margin_bottom = 440.0
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 2 )
 
 [node name="Facil 1" type="Node2D" parent="HUD/Niveis"]
 position = Vector2( -80, -100 )
 
 [node name="1" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 180.0
 margin_top = 150.0
 margin_right = 230.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
+numero = "3210"
+opNivel = [ 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 ]
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/1"]
 margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "1"
 align = 1
 valign = 1
@@ -85,12 +88,13 @@ __meta__ = {
 }
 
 [node name="2" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 280.0
 margin_top = 150.0
 margin_right = 330.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/2"]
@@ -98,8 +102,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "2"
 align = 1
 valign = 1
@@ -108,12 +112,13 @@ __meta__ = {
 }
 
 [node name="3" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 380.0
 margin_top = 147.492
 margin_right = 430.0
 margin_bottom = 187.492
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/3"]
@@ -121,8 +126,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "3"
 align = 1
 valign = 1
@@ -131,12 +136,13 @@ __meta__ = {
 }
 
 [node name="4" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 480.0
 margin_top = 150.0
 margin_right = 530.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/4"]
@@ -144,8 +150,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "4"
 align = 1
 valign = 1
@@ -154,12 +160,13 @@ __meta__ = {
 }
 
 [node name="5" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 580.0
 margin_top = 150.0
 margin_right = 630.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/5"]
@@ -167,8 +174,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "5"
 align = 1
 valign = 1
@@ -177,12 +184,13 @@ __meta__ = {
 }
 
 [node name="6" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 180.0
 margin_top = 240.0
 margin_right = 230.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/6"]
@@ -190,8 +198,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "6"
 align = 1
 valign = 1
@@ -200,12 +208,13 @@ __meta__ = {
 }
 
 [node name="7" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 280.0
 margin_top = 240.0
 margin_right = 330.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/7"]
@@ -213,8 +222,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "7"
 align = 1
 valign = 1
@@ -223,12 +232,13 @@ __meta__ = {
 }
 
 [node name="8" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 380.0
 margin_top = 240.0
 margin_right = 430.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/8"]
@@ -236,8 +246,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "8"
 align = 1
 valign = 1
@@ -246,12 +256,13 @@ __meta__ = {
 }
 
 [node name="9" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 480.0
 margin_top = 240.0
 margin_right = 530.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/9"]
@@ -259,8 +270,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "9"
 align = 1
 valign = 1
@@ -269,12 +280,13 @@ __meta__ = {
 }
 
 [node name="10" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 580.0
 margin_top = 240.0
 margin_right = 630.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/10"]
@@ -283,8 +295,8 @@ margin_right = 48.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "10"
 align = 1
 valign = 1
@@ -293,12 +305,13 @@ __meta__ = {
 }
 
 [node name="11" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 180.0
 margin_top = 330.0
 margin_right = 230.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/11"]
@@ -307,8 +320,8 @@ margin_right = 48.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "11"
 align = 1
 valign = 1
@@ -317,12 +330,13 @@ __meta__ = {
 }
 
 [node name="12" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 280.0
 margin_top = 330.0
 margin_right = 330.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/12"]
@@ -331,8 +345,8 @@ margin_right = 48.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "12"
 align = 1
 valign = 1
@@ -341,12 +355,13 @@ __meta__ = {
 }
 
 [node name="13" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 380.0
 margin_top = 330.0
 margin_right = 430.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/13"]
@@ -355,8 +370,8 @@ margin_right = 48.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "13"
 align = 1
 valign = 1
@@ -365,12 +380,13 @@ __meta__ = {
 }
 
 [node name="14" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 480.0
 margin_top = 330.0
 margin_right = 530.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/14"]
@@ -379,8 +395,8 @@ margin_right = 48.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "14"
 align = 1
 valign = 1
@@ -389,12 +405,13 @@ __meta__ = {
 }
 
 [node name="15" type="Panel" parent="HUD/Niveis/Facil 1"]
+editor/display_folded = true
 margin_left = 580.0
 margin_top = 330.0
 margin_right = 630.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Facil 1/15"]
@@ -403,8 +420,8 @@ margin_right = 48.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "15"
 align = 1
 valign = 1
@@ -417,12 +434,13 @@ visible = false
 position = Vector2( -80, -100 )
 
 [node name="1" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 180.0
 margin_top = 150.0
 margin_right = 230.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/1"]
@@ -430,8 +448,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "16"
 align = 1
 valign = 1
@@ -440,12 +458,13 @@ __meta__ = {
 }
 
 [node name="2" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 280.0
 margin_top = 150.0
 margin_right = 330.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/2"]
@@ -453,8 +472,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "17"
 align = 1
 valign = 1
@@ -463,12 +482,13 @@ __meta__ = {
 }
 
 [node name="3" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 380.0
 margin_top = 147.492
 margin_right = 430.0
 margin_bottom = 187.492
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/3"]
@@ -476,8 +496,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "18"
 align = 1
 valign = 1
@@ -486,12 +506,13 @@ __meta__ = {
 }
 
 [node name="4" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 480.0
 margin_top = 150.0
 margin_right = 530.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/4"]
@@ -499,8 +520,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "19"
 align = 1
 valign = 1
@@ -509,12 +530,13 @@ __meta__ = {
 }
 
 [node name="5" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 580.0
 margin_top = 150.0
 margin_right = 630.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/5"]
@@ -522,8 +544,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "20"
 align = 1
 valign = 1
@@ -532,12 +554,13 @@ __meta__ = {
 }
 
 [node name="6" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 180.0
 margin_top = 240.0
 margin_right = 230.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/6"]
@@ -545,8 +568,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "21"
 align = 1
 valign = 1
@@ -555,12 +578,13 @@ __meta__ = {
 }
 
 [node name="7" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 280.0
 margin_top = 240.0
 margin_right = 330.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/7"]
@@ -568,8 +592,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "22"
 align = 1
 valign = 1
@@ -578,12 +602,13 @@ __meta__ = {
 }
 
 [node name="8" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 380.0
 margin_top = 240.0
 margin_right = 430.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/8"]
@@ -591,8 +616,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "23"
 align = 1
 valign = 1
@@ -601,12 +626,13 @@ __meta__ = {
 }
 
 [node name="9" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 480.0
 margin_top = 240.0
 margin_right = 530.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/9"]
@@ -614,8 +640,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "24"
 align = 1
 valign = 1
@@ -624,12 +650,13 @@ __meta__ = {
 }
 
 [node name="10" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 580.0
 margin_top = 240.0
 margin_right = 630.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/10"]
@@ -637,8 +664,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "25"
 align = 1
 valign = 1
@@ -647,12 +674,13 @@ __meta__ = {
 }
 
 [node name="11" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 180.0
 margin_top = 330.0
 margin_right = 230.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/11"]
@@ -660,19 +688,20 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "26"
 align = 1
 valign = 1
 
 [node name="12" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 280.0
 margin_top = 330.0
 margin_right = 330.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/12"]
@@ -680,8 +709,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "27"
 align = 1
 valign = 1
@@ -690,12 +719,13 @@ __meta__ = {
 }
 
 [node name="13" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 380.0
 margin_top = 330.0
 margin_right = 430.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/13"]
@@ -703,8 +733,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "28"
 align = 1
 valign = 1
@@ -713,12 +743,13 @@ __meta__ = {
 }
 
 [node name="14" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 480.0
 margin_top = 330.0
 margin_right = 530.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/14"]
@@ -726,8 +757,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "29"
 align = 1
 valign = 1
@@ -736,12 +767,13 @@ __meta__ = {
 }
 
 [node name="15" type="Panel" parent="HUD/Niveis/Medio 1"]
+editor/display_folded = true
 margin_left = 580.0
 margin_top = 330.0
 margin_right = 630.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Medio 1/15"]
@@ -749,8 +781,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "30"
 align = 1
 valign = 3
@@ -763,12 +795,13 @@ visible = false
 position = Vector2( -80, -100 )
 
 [node name="1" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 180.0
 margin_top = 150.0
 margin_right = 230.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/1"]
@@ -776,8 +809,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "31"
 align = 1
 valign = 1
@@ -786,12 +819,13 @@ __meta__ = {
 }
 
 [node name="2" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 280.0
 margin_top = 150.0
 margin_right = 330.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/2"]
@@ -799,8 +833,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "32"
 align = 1
 valign = 1
@@ -809,12 +843,13 @@ __meta__ = {
 }
 
 [node name="3" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 380.0
 margin_top = 147.492
 margin_right = 430.0
 margin_bottom = 187.492
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/3"]
@@ -822,8 +857,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "33"
 align = 1
 valign = 1
@@ -832,12 +867,13 @@ __meta__ = {
 }
 
 [node name="4" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 480.0
 margin_top = 150.0
 margin_right = 530.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/4"]
@@ -845,8 +881,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "34"
 align = 1
 valign = 1
@@ -855,12 +891,13 @@ __meta__ = {
 }
 
 [node name="5" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 580.0
 margin_top = 150.0
 margin_right = 630.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/5"]
@@ -868,8 +905,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "35"
 align = 1
 valign = 1
@@ -878,12 +915,13 @@ __meta__ = {
 }
 
 [node name="6" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 180.0
 margin_top = 240.0
 margin_right = 230.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/6"]
@@ -891,8 +929,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "36"
 align = 1
 valign = 1
@@ -901,12 +939,13 @@ __meta__ = {
 }
 
 [node name="7" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 280.0
 margin_top = 240.0
 margin_right = 330.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/7"]
@@ -914,8 +953,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "37"
 align = 1
 valign = 1
@@ -924,12 +963,13 @@ __meta__ = {
 }
 
 [node name="8" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 380.0
 margin_top = 240.0
 margin_right = 430.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/8"]
@@ -937,8 +977,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "38"
 align = 1
 valign = 1
@@ -947,12 +987,13 @@ __meta__ = {
 }
 
 [node name="9" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 480.0
 margin_top = 240.0
 margin_right = 530.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/9"]
@@ -960,8 +1001,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "39"
 align = 1
 valign = 1
@@ -970,12 +1011,13 @@ __meta__ = {
 }
 
 [node name="10" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 580.0
 margin_top = 240.0
 margin_right = 630.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/10"]
@@ -983,8 +1025,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "40"
 align = 1
 valign = 1
@@ -993,12 +1035,13 @@ __meta__ = {
 }
 
 [node name="11" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 180.0
 margin_top = 330.0
 margin_right = 230.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/11"]
@@ -1006,8 +1049,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "41"
 align = 1
 valign = 1
@@ -1016,12 +1059,13 @@ __meta__ = {
 }
 
 [node name="12" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 280.0
 margin_top = 330.0
 margin_right = 330.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/12"]
@@ -1029,8 +1073,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "42"
 align = 1
 valign = 1
@@ -1039,12 +1083,13 @@ __meta__ = {
 }
 
 [node name="13" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 380.0
 margin_top = 330.0
 margin_right = 430.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/13"]
@@ -1052,8 +1097,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "43"
 align = 1
 valign = 1
@@ -1062,12 +1107,13 @@ __meta__ = {
 }
 
 [node name="14" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 480.0
 margin_top = 330.0
 margin_right = 530.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/14"]
@@ -1075,8 +1121,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "44"
 align = 1
 valign = 1
@@ -1085,12 +1131,13 @@ __meta__ = {
 }
 
 [node name="15" type="Panel" parent="HUD/Niveis/Dificil 1"]
+editor/display_folded = true
 margin_left = 580.0
 margin_top = 330.0
 margin_right = 630.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HUD/Niveis/Dificil 1/15"]
@@ -1098,8 +1145,8 @@ margin_right = 50.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 text = "45"
 align = 1
 valign = 1
@@ -1112,7 +1159,7 @@ margin_left = 208.0
 margin_top = 32.0
 margin_right = 588.0
 margin_bottom = 103.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
 text = "Fácil"
 align = 1
 valign = 1
@@ -1120,7 +1167,7 @@ valign = 1
 [node name="Voltar" type="TouchScreenButton" parent="HUD"]
 position = Vector2( 4, 23 )
 scale = Vector2( 1.50517, 1.48399 )
-normal = ExtResource( 3 )
+normal = ExtResource( 4 )
 script = ExtResource( 5 )
 
 [node name="Proximo" type="TouchScreenButton" parent="HUD"]
@@ -1134,7 +1181,6 @@ position = Vector2( 71.8178, 370.78 )
 rotation = 3.14159
 scale = Vector2( 1, 4.17334 )
 normal = ExtResource( 6 )
-
 [connection signal="gui_input" from="HUD/Niveis/Facil 1/1" to="HUD/Niveis/Facil 1/1" method="_on_1_gui_input"]
 [connection signal="gui_input" from="HUD/Niveis/Facil 1/2" to="HUD/Niveis/Facil 1/2" method="_on_1_gui_input"]
 [connection signal="gui_input" from="HUD/Niveis/Facil 1/3" to="HUD/Niveis/Facil 1/3" method="_on_1_gui_input"]
