@@ -502,7 +502,7 @@ shape = SubResource( 38 )
 [node name="RaizCub" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 468, 296 )
 normal = ExtResource( 37 )
-nome = "R"
+nome = "C"
 imagem = ExtResource( 37 )
 idOperacao = 10
 disponivel = 0
