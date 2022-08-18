@@ -22,14 +22,14 @@ func _on_BG_gui_input(event):
 		get_tree().change_scene(\"res://MainMenu.tscn\")
 "
 
+[sub_resource type="DynamicFont" id=3]
+size = 85
+font_data = ExtResource( 2 )
+
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.054902, 0.27451, 0.635294, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
-
-[sub_resource type="DynamicFont" id=3]
-size = 85
-font_data = ExtResource( 2 )
 
 [sub_resource type="Theme" id=4]
 Label/colors/font_color = Color( 1, 1, 1, 1 )
@@ -42,14 +42,14 @@ Label/constants/shadow_offset_y = 1
 Label/fonts/font = null
 Label/styles/normal = null
 
+[sub_resource type="DynamicFont" id=6]
+size = 175
+font_data = ExtResource( 2 )
+
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="DynamicFont" id=6]
-size = 175
-font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 37
@@ -77,9 +77,9 @@ margin_left = -312.0
 margin_top = 56.0
 margin_right = 304.0
 margin_bottom = 147.0
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 2 )
 text = "Brasil"
 align = 1
 valign = 1
@@ -94,10 +94,10 @@ margin_top = -96.0
 margin_right = 304.0
 margin_bottom = 133.0
 theme = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_styles/normal = SubResource( 5 )
 text = "3MPL4K3"
 align = 1
 valign = 1
@@ -110,8 +110,8 @@ margin_left = -1.0
 margin_top = -68.0
 margin_right = -1.0
 margin_bottom = -22.0
-custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.054902, 0.27451, 0.635294, 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Toque na tela para prosseguir..."
 align = 1
 
@@ -124,4 +124,5 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
 [connection signal="gui_input" from="HUD/BG" to="." method="_on_BG_gui_input"]

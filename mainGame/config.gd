@@ -7,6 +7,8 @@ extends TouchScreenButton
 var musicaON = preload("res://assets/imgs/musica.png")
 var musicaOFF = preload("res://assets/imgs/no_musica.png")
 
+onready var timer = get_parent().get_node("HUD/TimerHud/Timer")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -75,6 +77,8 @@ func _on_Continuar_released():
 		updateBotao()
 	else:
 		get_parent().get_node("VioriaLayer/TelaVitoria/Continuar").visible = false
+	timer.start(30)
+	timer.set_paused(0)
 	pass # Replace with function body.
 
 func updateBotao():
