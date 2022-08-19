@@ -34,6 +34,8 @@ func _on_Enviar_pressed():
 				resultadoVitoria.get_node("Continuar").visible = true
 			elif Load.modo == 0 or Load.modo == 4:
 				resultadoVitoria.get_node("Continuar").visible = true
+			else:
+				resultadoVitoria.get_node("Continuar").visible = false
 		else:
 			resultadoErro.visible = true
 			var valorMetade1 = mainArea.getValoreMetade1()
