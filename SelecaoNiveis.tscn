@@ -62,7 +62,6 @@ custom_styles/panel = SubResource( 2 )
 position = Vector2( -80, -100 )
 
 [node name="1" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 180.0
 margin_top = 150.0
 margin_right = 230.0
@@ -88,7 +87,6 @@ __meta__ = {
 }
 
 [node name="2" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 280.0
 margin_top = 150.0
 margin_right = 330.0
@@ -112,7 +110,6 @@ __meta__ = {
 }
 
 [node name="3" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 380.0
 margin_top = 147.492
 margin_right = 430.0
@@ -136,7 +133,6 @@ __meta__ = {
 }
 
 [node name="4" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 480.0
 margin_top = 150.0
 margin_right = 530.0
@@ -160,7 +156,6 @@ __meta__ = {
 }
 
 [node name="5" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 580.0
 margin_top = 150.0
 margin_right = 630.0
@@ -184,7 +179,6 @@ __meta__ = {
 }
 
 [node name="6" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 180.0
 margin_top = 240.0
 margin_right = 230.0
@@ -208,7 +202,6 @@ __meta__ = {
 }
 
 [node name="7" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 280.0
 margin_top = 240.0
 margin_right = 330.0
@@ -232,7 +225,6 @@ __meta__ = {
 }
 
 [node name="8" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 380.0
 margin_top = 240.0
 margin_right = 430.0
@@ -256,7 +248,6 @@ __meta__ = {
 }
 
 [node name="9" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 480.0
 margin_top = 240.0
 margin_right = 530.0
@@ -280,7 +271,6 @@ __meta__ = {
 }
 
 [node name="10" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 580.0
 margin_top = 240.0
 margin_right = 630.0
@@ -305,7 +295,6 @@ __meta__ = {
 }
 
 [node name="11" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 180.0
 margin_top = 330.0
 margin_right = 230.0
@@ -330,7 +319,6 @@ __meta__ = {
 }
 
 [node name="12" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 280.0
 margin_top = 330.0
 margin_right = 330.0
@@ -355,7 +343,6 @@ __meta__ = {
 }
 
 [node name="13" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 380.0
 margin_top = 330.0
 margin_right = 430.0
@@ -380,7 +367,6 @@ __meta__ = {
 }
 
 [node name="14" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 480.0
 margin_top = 330.0
 margin_right = 530.0
@@ -405,7 +391,6 @@ __meta__ = {
 }
 
 [node name="15" type="Panel" parent="HUD/Niveis/Facil 1"]
-editor/display_folded = true
 margin_left = 580.0
 margin_top = 330.0
 margin_right = 630.0
@@ -434,7 +419,6 @@ visible = false
 position = Vector2( -80, -100 )
 
 [node name="1" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 180.0
 margin_top = 150.0
 margin_right = 230.0
@@ -458,7 +442,6 @@ __meta__ = {
 }
 
 [node name="2" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 280.0
 margin_top = 150.0
 margin_right = 330.0
@@ -482,7 +465,6 @@ __meta__ = {
 }
 
 [node name="3" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 380.0
 margin_top = 147.492
 margin_right = 430.0
@@ -506,7 +488,6 @@ __meta__ = {
 }
 
 [node name="4" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 480.0
 margin_top = 150.0
 margin_right = 530.0
@@ -530,7 +511,6 @@ __meta__ = {
 }
 
 [node name="5" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 580.0
 margin_top = 150.0
 margin_right = 630.0
@@ -554,7 +534,6 @@ __meta__ = {
 }
 
 [node name="6" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 180.0
 margin_top = 240.0
 margin_right = 230.0
@@ -578,7 +557,6 @@ __meta__ = {
 }
 
 [node name="7" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 280.0
 margin_top = 240.0
 margin_right = 330.0
@@ -602,7 +580,6 @@ __meta__ = {
 }
 
 [node name="8" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 380.0
 margin_top = 240.0
 margin_right = 430.0
@@ -626,7 +603,6 @@ __meta__ = {
 }
 
 [node name="9" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 480.0
 margin_top = 240.0
 margin_right = 530.0
@@ -650,7 +626,6 @@ __meta__ = {
 }
 
 [node name="10" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 580.0
 margin_top = 240.0
 margin_right = 630.0
@@ -674,7 +649,6 @@ __meta__ = {
 }
 
 [node name="11" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 180.0
 margin_top = 330.0
 margin_right = 230.0
@@ -695,7 +669,6 @@ align = 1
 valign = 1
 
 [node name="12" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 280.0
 margin_top = 330.0
 margin_right = 330.0
@@ -719,7 +692,6 @@ __meta__ = {
 }
 
 [node name="13" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 380.0
 margin_top = 330.0
 margin_right = 430.0
@@ -743,7 +715,6 @@ __meta__ = {
 }
 
 [node name="14" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 480.0
 margin_top = 330.0
 margin_right = 530.0
@@ -767,7 +738,6 @@ __meta__ = {
 }
 
 [node name="15" type="Panel" parent="HUD/Niveis/Medio 1"]
-editor/display_folded = true
 margin_left = 580.0
 margin_top = 330.0
 margin_right = 630.0
@@ -795,7 +765,6 @@ visible = false
 position = Vector2( -80, -100 )
 
 [node name="1" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 180.0
 margin_top = 150.0
 margin_right = 230.0
@@ -819,7 +788,6 @@ __meta__ = {
 }
 
 [node name="2" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 280.0
 margin_top = 150.0
 margin_right = 330.0
@@ -843,7 +811,6 @@ __meta__ = {
 }
 
 [node name="3" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 380.0
 margin_top = 147.492
 margin_right = 430.0
@@ -867,7 +834,6 @@ __meta__ = {
 }
 
 [node name="4" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 480.0
 margin_top = 150.0
 margin_right = 530.0
@@ -891,7 +857,6 @@ __meta__ = {
 }
 
 [node name="5" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 580.0
 margin_top = 150.0
 margin_right = 630.0
@@ -915,7 +880,6 @@ __meta__ = {
 }
 
 [node name="6" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 180.0
 margin_top = 240.0
 margin_right = 230.0
@@ -939,7 +903,6 @@ __meta__ = {
 }
 
 [node name="7" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 280.0
 margin_top = 240.0
 margin_right = 330.0
@@ -963,7 +926,6 @@ __meta__ = {
 }
 
 [node name="8" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 380.0
 margin_top = 240.0
 margin_right = 430.0
@@ -987,7 +949,6 @@ __meta__ = {
 }
 
 [node name="9" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 480.0
 margin_top = 240.0
 margin_right = 530.0
@@ -1011,7 +972,6 @@ __meta__ = {
 }
 
 [node name="10" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 580.0
 margin_top = 240.0
 margin_right = 630.0
@@ -1035,7 +995,6 @@ __meta__ = {
 }
 
 [node name="11" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 180.0
 margin_top = 330.0
 margin_right = 230.0
@@ -1059,7 +1018,6 @@ __meta__ = {
 }
 
 [node name="12" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 280.0
 margin_top = 330.0
 margin_right = 330.0
@@ -1083,7 +1041,6 @@ __meta__ = {
 }
 
 [node name="13" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 380.0
 margin_top = 330.0
 margin_right = 430.0
@@ -1107,7 +1064,6 @@ __meta__ = {
 }
 
 [node name="14" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 480.0
 margin_top = 330.0
 margin_right = 530.0
@@ -1131,7 +1087,6 @@ __meta__ = {
 }
 
 [node name="15" type="Panel" parent="HUD/Niveis/Dificil 1"]
-editor/display_folded = true
 margin_left = 580.0
 margin_top = 330.0
 margin_right = 630.0

@@ -26,6 +26,7 @@ default_bus_layout=""
 [autoload]
 
 Load="*res://Load.gd"
+Music="*res://Music.tscn"
 
 [display]
 

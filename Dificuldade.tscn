@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/imgs/vermelho.png" type="Texture" id=1]
 [ext_resource path="res://assets/imgs/voltar.png" type="Texture" id=2]
@@ -7,40 +7,42 @@
 [ext_resource path="res://NumTex.gd" type="Script" id=5]
 [ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://Voltar.gd" type="Script" id=7]
+[ext_resource path="res://assets/imgs/musica.png" type="Texture" id=8]
+[ext_resource path="res://mainGame/MutarMusica.gd" type="Script" id=9]
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.054902, 0.27451, 0.635294, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 30
 font_data = ExtResource( 6 )
 
-[sub_resource type="Theme" id=3]
+[sub_resource type="Theme" id=4]
 CheckBox/icons/selecionado = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=5]
 size = 43
 font_data = ExtResource( 6 )
 
-[sub_resource type="StyleBoxFlat" id=20]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 38
 font_data = ExtResource( 6 )
 
-[sub_resource type="ButtonGroup" id=7]
+[sub_resource type="ButtonGroup" id=8]
 
-[sub_resource type="StyleBoxFlat" id=21]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -59,13 +61,6 @@ font_path = "res://assets/fonts/Xolonium-Regular.ttf"
 size = 19
 font_data = SubResource( 11 )
 
-[sub_resource type="DynamicFontData" id=15]
-font_path = "res://assets/fonts/Xolonium-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=16]
-size = 27
-font_data = SubResource( 15 )
-
 [sub_resource type="StyleBoxFlat" id=13]
 
 [sub_resource type="StyleBoxFlat" id=14]
@@ -75,6 +70,16 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="DynamicFontData" id=15]
+font_path = "res://assets/fonts/Xolonium-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=16]
+size = 27
+font_data = SubResource( 15 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 27, 25 )
+
 [node name="MainMenu" type="Node2D"]
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -83,6 +88,9 @@ corner_radius_bottom_left = 10
 margin_right = 800.0
 margin_bottom = 480.0
 color = Color( 0.654902, 0.654902, 0.654902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Descricao" type="CanvasLayer" parent="HUD"]
 
@@ -91,32 +99,32 @@ margin_left = 411.0
 margin_top = 57.0
 margin_right = 711.0
 margin_bottom = 106.0
-custom_styles/panel = SubResource( 17 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="BG2" type="Panel" parent="HUD/Descricao"]
 margin_left = 410.536
 margin_top = 104.882
 margin_right = 710.536
 margin_bottom = 344.882
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 2 )
 
 [node name="Descricao" type="RichTextLabel" parent="HUD/Descricao/BG2"]
 margin_left = 8.46399
 margin_top = 2.118
 margin_right = 292.464
 margin_bottom = 231.118
+custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 2 )
 
 [node name="Titulo2" type="Label" parent="HUD/Descricao"]
 margin_left = 337.358
 margin_top = 41.1346
 margin_right = 765.358
 margin_bottom = 129.135
-theme = SubResource( 3 )
+theme = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 19 )
 text = "Descrição"
 align = 1
 valign = 1
@@ -128,27 +136,27 @@ margin_left = 84.0
 margin_top = 56.0
 margin_right = 384.0
 margin_bottom = 105.0
-custom_styles/panel = SubResource( 17 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="BG" type="Panel" parent="HUD/Dificuldade"]
 margin_left = 83.9052
 margin_top = 104.882
 margin_right = 383.905
 margin_bottom = 344.882
-custom_styles/panel = SubResource( 20 )
+custom_styles/panel = SubResource( 6 )
 
 [node name="Facil" type="CheckBox" parent="HUD/Dificuldade/BG"]
 margin_left = 9.0
 margin_right = 292.0
 margin_bottom = 71.0
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
 pressed = true
-group = SubResource( 7 )
+group = SubResource( 8 )
 text = "Elementar"
 
 [node name="Medio" type="CheckBox" parent="HUD/Dificuldade/BG"]
@@ -156,13 +164,13 @@ margin_left = 9.0
 margin_top = 88.0
 margin_right = 326.0
 margin_bottom = 148.0
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
-group = SubResource( 7 )
+group = SubResource( 8 )
 text = "Intermediario"
 
 [node name="Dificil" type="CheckBox" parent="HUD/Dificuldade/BG"]
@@ -170,13 +178,13 @@ margin_left = 9.0
 margin_top = 175.0
 margin_right = 292.0
 margin_bottom = 235.0
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
-group = SubResource( 7 )
+group = SubResource( 8 )
 text = "Completo"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -187,10 +195,10 @@ margin_left = 23.7563
 margin_top = 41.1346
 margin_right = 451.756
 margin_bottom = 129.135
-theme = SubResource( 3 )
+theme = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 19 )
 text = "Complexidade"
 align = 1
 valign = 1
@@ -200,14 +208,14 @@ margin_left = 468.0
 margin_top = 386.0
 margin_right = 665.0
 margin_bottom = 426.0
-custom_styles/panel = SubResource( 21 )
+custom_styles/panel = SubResource( 9 )
 script = ExtResource( 3 )
 
 [node name="botaoTexto" type="Label" parent="HUD/BG_botao"]
 margin_right = 112.0
 margin_bottom = 40.0
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 19 )
 text = "Selecionar"
 __meta__ = {
 "_edit_lock_": true,
@@ -221,7 +229,7 @@ margin_left = 82.0
 margin_top = 362.0
 margin_right = 385.0
 margin_bottom = 466.0
-custom_styles/panel = SubResource( 21 )
+custom_styles/panel = SubResource( 9 )
 script = ExtResource( 4 )
 
 [node name="Num" type="Label" parent="HUD/NumeroEcolha/NumBG"]
@@ -229,10 +237,10 @@ margin_left = -15.449
 margin_top = 5.27209
 margin_right = 205.551
 margin_bottom = 96.2721
-theme = SubResource( 3 )
+theme = SubResource( 4 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 10 )
 text = "Escolha um numero"
 align = 1
 valign = 1
@@ -244,10 +252,10 @@ margin_left = 394.0
 margin_top = 70.0
 margin_right = 565.0
 margin_bottom = 94.0
-theme = SubResource( 3 )
+theme = SubResource( 4 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 12 )
 text = "Digite 4 numeros"
 align = 1
 valign = 1
@@ -260,9 +268,9 @@ margin_left = 190.0
 margin_top = 26.0
 margin_right = 286.0
 margin_bottom = 68.0
-custom_fonts/font = SubResource( 16 )
 custom_styles/read_only = SubResource( 13 )
 custom_styles/normal = SubResource( 14 )
+custom_fonts/font = SubResource( 16 )
 script = ExtResource( 5 )
 
 [node name="Voltar" type="TouchScreenButton" parent="HUD"]
@@ -271,9 +279,15 @@ scale = Vector2( 1.26305, 1.23144 )
 normal = ExtResource( 2 )
 script = ExtResource( 7 )
 
+[node name="MutarMusica" type="TouchScreenButton" parent="HUD"]
+position = Vector2( 724.807, 35.2723 )
+normal = ExtResource( 8 )
+shape = SubResource( 17 )
+script = ExtResource( 9 )
 [connection signal="pressed" from="HUD/Dificuldade/BG/Facil" to="HUD/BG_botao" method="_on_Facil_pressed"]
 [connection signal="pressed" from="HUD/Dificuldade/BG/Medio" to="HUD/BG_botao" method="_on_Medio_pressed"]
 [connection signal="pressed" from="HUD/Dificuldade/BG/Dificil" to="HUD/BG_botao" method="_on_Dificil_pressed"]
 [connection signal="gui_input" from="HUD/BG_botao" to="HUD/BG_botao" method="_on_BG_botao_gui_input"]
 [connection signal="text_changed" from="HUD/NumeroEcolha/NumBG/Numeros" to="HUD/NumeroEcolha/NumBG/Numeros" method="_on_TextEdit_text_changed"]
 [connection signal="released" from="HUD/Voltar" to="HUD/Voltar" method="_on_Voltar_released"]
+[connection signal="pressed" from="HUD/MutarMusica" to="HUD/MutarMusica" method="_on_MutarMusica_pressed"]

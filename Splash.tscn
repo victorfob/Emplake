@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://House_In_a_Forest_Loop.ogg" type="AudioStream" id=3]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -114,14 +113,4 @@ custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.054902, 0.27451, 0.635294, 1 )
 text = "Toque na tela para prosseguir..."
 align = 1
-
-[node name="Test" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
 [connection signal="gui_input" from="HUD/BG" to="." method="_on_BG_gui_input"]

@@ -36,21 +36,28 @@ var finalResult = null
 #variaveis usadas como saida da função que resolve a operação
 var valorMetade1
 var valorMetade2
+var money = 2000
+var scoreAdventure = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	timer = get_parent().get_node("HUD/TimerHud/Timer")
-	timer.start(30)
-
 	timerText = get_parent().get_node("HUD/TimerHud/TimerTxt")
 	
 	#faz o regex aceitar apenas numeros
 	regex.compile("^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$")
+	
+	if Load.modo == 4:
+		timerText.text = str("Dinheiro: " + str(money) + "$")
+		get_parent().get_node("HUD/ScoreHud/ScoreTxt").text = str("Score: " + str(scoreAdventure))
+	else:
+		timer = get_parent().get_node("HUD/TimerHud/Timer")
+		timer.start(30)
 	pass # Replace with function body.
 
-# warning-ignore:unused_argument
+
 func _process(delta):
-	timerText.text = str("Tempo: "+ str(round(timer.time_left)))
+	if Load.modo != 4:
+		timerText.text = str("Tempo: "+ str(round(timer.time_left)))
 
 #função que reajusta a posição de todos os elementos da função na tela
 #usa as posição do vetor equação[] para determinar as posições
@@ -202,7 +209,8 @@ func comecarPrint():
 	if (resultado1 == true && resultado2 == true):
 		if(valorMetade1 == valorMetade2):
 			finalResult = valorMetade1
-			timer.stop()
+			if Load.modo != 4:
+				timer.stop()
 			return true
 	return false
 
@@ -622,19 +630,20 @@ func fatorial(n):
 
 
 func calcScore():
-	var i = 0
-	var score = scoreBase
-	while i < equacao.size():
-		match equacao[i].nome:
-			"*", "+", "-", "/":
-				score += 100
-			"R", "^", "!":
-				score += 200
-			"{","[":
-				score -= 200
-		i += 1
-	get_parent().get_node("HUD/ScoreHud/ScoreTxt").text = str("Score: " + str(score))
-	return score
+	if Load.modo != 4:
+		var i = 0
+		var score = scoreBase
+		while i < equacao.size():
+			match equacao[i].nome:
+				"*", "+", "-", "/":
+					score += 100
+				"R", "^", "!":
+					score += 200
+				"{","[":
+					score -= 200
+			i += 1
+		get_parent().get_node("HUD/ScoreHud/ScoreTxt").text = str("Score: " + str(score))
+		return score
 
 func _on_Timer_timeout():
 	scoreBase -= 50
@@ -644,11 +653,25 @@ func getFinalResult():
 	return finalResult
 	
 func getFinalScore():
-	var score = calcScore()
-	return score
+	if Load.modo == 4:
+		return scoreAdventure
+	else:
+		var score = calcScore()
+		return score
 
 func getValoreMetade1():
 	return valorMetade1
 	
 func getValoreMetade2():
 	return valorMetade2
+
+func getMoney():
+	return money
+
+func atualizarPreco(var preco):
+	money = money + preco
+	timerText.text = str("Dinheiro: " + str(money) + "$")
+
+func addScore():
+	scoreAdventure = scoreAdventure + 1
+	get_parent().get_node("HUD/ScoreHud/ScoreTxt").text = str("Score: " + str(scoreAdventure))

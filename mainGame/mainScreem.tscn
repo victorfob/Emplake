@@ -30,12 +30,13 @@
 [ext_resource path="res://assets/imgs/teto_a.png" type="Texture" id=28]
 [ext_resource path="res://assets/imgs/elevado.png" type="Texture" id=29]
 [ext_resource path="res://assets/imgs/igual.png" type="Texture" id=30]
-[ext_resource path="res://assets/imgs/musica.png" type="Texture" id=31]
+[ext_resource path="res://MutarMusica.tscn" type="PackedScene" id=31]
 [ext_resource path="res://mainGame/Tutorial.gd" type="Script" id=32]
 [ext_resource path="res://assets/imgs/modulo.png" type="Texture" id=33]
 [ext_resource path="res://assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=34]
 [ext_resource path="res://mainGame/DicaFundo.gd" type="Script" id=35]
 [ext_resource path="res://Tutorial.tscn" type="PackedScene" id=36]
+[ext_resource path="res://assets/imgs/errado.png" type="Texture" id=37]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
@@ -107,10 +108,10 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 130, 27 )
 
-[sub_resource type="StyleBoxFlat" id=19]
+[sub_resource type="StyleBoxFlat" id=20]
 bg_color = Color( 0.054902, 0.27451, 0.635294, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -122,15 +123,12 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=21]
 size = 25
 font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 25, 25 )
-
-[sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 27, 25 )
 
 [sub_resource type="StyleBoxFlat" id=24]
 bg_color = Color( 0.054902, 0.27451, 0.635294, 1 )
@@ -171,10 +169,10 @@ font_data = ExtResource( 2 )
 size = 40
 font_data = ExtResource( 34 )
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 136, 30 )
 
-[sub_resource type="StyleBoxFlat" id=31]
+[sub_resource type="StyleBoxFlat" id=32]
 bg_color = Color( 0.266667, 0.639216, 0.282353, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -236,7 +234,6 @@ font_data = ExtResource( 34 )
 script = ExtResource( 1 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="HUD"]
@@ -263,7 +260,6 @@ __meta__ = {
 }
 
 [node name="ScoreHud" type="CanvasLayer" parent="HUD"]
-editor/display_folded = true
 
 [node name="ScoreTxt" type="RichTextLabel" parent="HUD/ScoreHud"]
 margin_left = 392.0
@@ -276,7 +272,6 @@ text = "Score:"
 scroll_active = false
 
 [node name="TimerHud" type="CanvasLayer" parent="HUD"]
-editor/display_folded = true
 
 [node name="TimerTxt" type="RichTextLabel" parent="HUD/TimerHud"]
 margin_left = 170.19
@@ -290,12 +285,10 @@ text = "Timer:"
 [node name="Timer" type="Timer" parent="HUD/TimerHud"]
 
 [node name="AreaNumeros" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 384, 160 )
 script = ExtResource( 3 )
 
 [node name="ANumeros" type="Area2D" parent="AreaNumeros"]
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -307,7 +300,6 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="AreaNumeros"]
-editor/display_folded = true
 margin_left = -319.0
 margin_top = -88.0
 margin_right = 322.0
@@ -349,6 +341,7 @@ normal = ExtResource( 9 )
 script = ExtResource( 10 )
 
 [node name="Dica" type="TextureButton" parent="."]
+visible = false
 margin_left = 73.0
 margin_top = 13.0
 margin_right = 128.0
@@ -356,11 +349,13 @@ margin_bottom = 63.0
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Operacoes" type="Node2D" parent="."]
 
 [node name="ChaoA" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 127.972, 393.896 )
 normal = ExtResource( 14 )
 nome = "{"
@@ -389,9 +384,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/ChaoA/ComprarPeca"]
 position = Vector2( 34.295, 12.0032 )
 shape = SubResource( 10 )
+shape_centered = false
 
 [node name="ParentA" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 320, 392 )
 normal = ExtResource( 15 )
 nome = "("
@@ -419,9 +414,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/ParentA/ComprarPeca"]
 position = Vector2( 32.6788, 12.7886 )
 shape = SubResource( 11 )
+shape_centered = false
 
 [node name="ParentB" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 416, 392 )
 normal = ExtResource( 16 )
 nome = ")"
@@ -449,9 +444,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/ParentB/ComprarPeca"]
 position = Vector2( 33.338, 12.9868 )
 shape = SubResource( 12 )
+shape_centered = false
 
 [node name="Fatorial" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 556, 296 )
 normal = ExtResource( 17 )
 nome = "!"
@@ -479,9 +474,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/Fatorial/ComprarPeca"]
 position = Vector2( 34.0657, 13.3273 )
 shape = SubResource( 13 )
+shape_centered = false
 
 [node name="Raiz" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 379, 296 )
 normal = ExtResource( 18 )
 nome = "R"
@@ -509,9 +504,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/Raiz/ComprarPeca"]
 position = Vector2( 34.5069, 13.327 )
 shape = SubResource( 14 )
+shape_centered = false
 
 [node name="RaizCub" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 468, 296 )
 normal = ExtResource( 19 )
 nome = "C"
@@ -539,9 +534,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/RaizCub/ComprarPeca"]
 position = Vector2( 34.1761, 13.327 )
 shape = SubResource( 15 )
+shape_centered = false
 
 [node name="ChaoB" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 224, 392 )
 normal = ExtResource( 20 )
 nome = "}"
@@ -570,9 +565,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/ChaoB/ComprarPeca"]
 position = Vector2( 34.2782, 12.1882 )
 shape = SubResource( 16 )
+shape_centered = false
 
 [node name="ModuloA" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 32, 392 )
 normal = ExtResource( 21 )
 nome = "|"
@@ -601,9 +596,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/ModuloA/ComprarPeca"]
 position = Vector2( 34.33, 13.2963 )
 shape = SubResource( 17 )
+shape_centered = false
 
 [node name="ModuloB" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 692, 390 )
 normal = ExtResource( 22 )
 nome = "I"
@@ -632,9 +627,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/ModuloB/ComprarPeca"]
 position = Vector2( 32.3769, 12.2781 )
 shape = SubResource( 17 )
+shape_centered = false
 
 [node name="Mais" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 25, 296 )
 normal = ExtResource( 23 )
 imagem = ExtResource( 23 )
@@ -659,9 +654,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/Mais/ComprarPeca"]
 position = Vector2( 33.4991, 13.4502 )
 shape = SubResource( 17 )
+shape_centered = false
 
 [node name="Menos" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 112, 296 )
 normal = ExtResource( 24 )
 nome = "-"
@@ -688,9 +683,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/Menos/ComprarPeca"]
 position = Vector2( 33.625, 12.3421 )
 shape = SubResource( 17 )
+shape_centered = false
 
 [node name="Vezes" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 290, 296 )
 normal = ExtResource( 25 )
 nome = "*"
@@ -717,9 +712,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/Vezes/ComprarPeca"]
 position = Vector2( 33.3671, 13.5699 )
 shape = SubResource( 17 )
+shape_centered = false
 
 [node name="Divisao" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 199, 296 )
 normal = ExtResource( 26 )
 nome = "/"
@@ -746,9 +741,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/Divisao/ComprarPeca"]
 position = Vector2( 33.0325, 12.4618 )
 shape = SubResource( 17 )
+shape_centered = false
 
 [node name="TetoB" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 608, 392 )
 normal = ExtResource( 27 )
 nome = "]"
@@ -777,9 +772,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/TetoB/ComprarPeca"]
 position = Vector2( 32.178, 12.9869 )
 shape = SubResource( 17 )
+shape_centered = false
 
 [node name="TetoA" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 512, 392 )
 normal = ExtResource( 28 )
 nome = "["
@@ -808,9 +803,9 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/TetoA/ComprarPeca"]
 position = Vector2( 33.0474, 13.2963 )
 shape = SubResource( 17 )
+shape_centered = false
 
 [node name="Elevado" parent="Operacoes" instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 644, 296 )
 normal = ExtResource( 29 )
 nome = "^"
@@ -839,20 +834,19 @@ __meta__ = {
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/Elevado/ComprarPeca"]
 position = Vector2( 34.394, 11.82 )
 shape = SubResource( 17 )
+shape_centered = false
 
 [node name="Igual" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 697, 231 )
+position = Vector2( 729.457, 237.314 )
 normal = ExtResource( 30 )
 nome = "="
 imagem = ExtResource( 30 )
 idOperacao = 11
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 2
 
 [node name="BackOP" type="Panel" parent="MenuLayer"]
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -869,22 +863,24 @@ __meta__ = {
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="MenuLayer/BackOP"]
 position = Vector2( 131.808, 174 )
-shape = SubResource( 21 )
+shape = SubResource( 19 )
+shape_centered = false
 
 [node name="VoltarMenuText" type="Label" parent="MenuLayer/BackOP/VoltarMenu"]
 margin_left = -127.3
 margin_top = -26.0
 margin_right = 126.7
 margin_bottom = 24.0
-custom_styles/normal = SubResource( 19 )
-custom_fonts/font = SubResource( 20 )
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
 text = "Menu Principal"
 align = 1
 valign = 1
 
 [node name="AbrirTutorial" type="TouchScreenButton" parent="MenuLayer/BackOP"]
 position = Vector2( 131.808, 95 )
-shape = SubResource( 21 )
+shape = SubResource( 19 )
+shape_centered = false
 
 [node name="Tutorial" type="Label" parent="MenuLayer/BackOP/AbrirTutorial"]
 anchor_top = 0.5
@@ -894,8 +890,8 @@ margin_left = -126.808
 margin_top = -21.0
 margin_right = 126.192
 margin_bottom = 29.0
-custom_styles/normal = SubResource( 19 )
-custom_fonts/font = SubResource( 20 )
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
 text = "Tutorial"
 align = 1
 valign = 1
@@ -903,14 +899,15 @@ valign = 1
 [node name="FecharM" type="TouchScreenButton" parent="MenuLayer/BackOP"]
 position = Vector2( 230, 34 )
 shape = SubResource( 22 )
+shape_centered = false
 
 [node name="FecharMText" type="Label" parent="MenuLayer/BackOP/FecharM"]
 margin_left = -23.0
 margin_top = -26.537
 margin_right = 28.0
 margin_bottom = 24.463
-custom_styles/normal = SubResource( 19 )
-custom_fonts/font = SubResource( 20 )
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
 text = "X"
 align = 1
 valign = 1
@@ -918,13 +915,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="MutarMusica" type="TouchScreenButton" parent="MenuLayer/BackOP"]
-position = Vector2( 5, 5 )
-normal = ExtResource( 31 )
-shape = SubResource( 23 )
+[node name="MutarMusica" parent="MenuLayer/BackOP" instance=ExtResource( 31 )]
 
 [node name="TutorialLayer Velho" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 3
 
 [node name="Tutorial" type="Panel" parent="TutorialLayer Velho"]
@@ -974,8 +967,8 @@ margin_left = -64.0
 margin_top = 8.0
 margin_right = -13.0
 margin_bottom = 59.0
-custom_styles/normal = SubResource( 19 )
-custom_fonts/font = SubResource( 20 )
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
 text = "X"
 align = 1
 valign = 1
@@ -986,9 +979,9 @@ __meta__ = {
 [node name="FecharTuM" type="TouchScreenButton" parent="TutorialLayer Velho/Tutorial/FecharTuText2"]
 position = Vector2( 25, 25 )
 shape = SubResource( 22 )
+shape_centered = false
 
 [node name="VioriaLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="TelaVitoria" type="Panel" parent="VioriaLayer"]
 visible = false
@@ -1034,6 +1027,9 @@ bbcode_enabled = true
 tab_size = 2
 text = "Resultado Correto:"
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ValorVitoria" type="RichTextLabel" parent="VioriaLayer/TelaVitoria"]
 anchor_right = 1.0
@@ -1071,15 +1067,16 @@ __meta__ = {
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="VioriaLayer/TelaVitoria"]
 position = Vector2( 158, 150.954 )
-shape = SubResource( 32 )
+shape = SubResource( 31 )
+shape_centered = false
 
 [node name="VoltarMenuText2" type="Label" parent="VioriaLayer/TelaVitoria/VoltarMenu"]
 margin_left = -135.0
 margin_top = -26.0
 margin_right = 137.0
 margin_bottom = 34.0
-custom_styles/normal = SubResource( 31 )
-custom_fonts/font = SubResource( 20 )
+custom_styles/normal = SubResource( 32 )
+custom_fonts/font = SubResource( 21 )
 text = "Voltar ao Menu"
 align = 1
 valign = 1
@@ -1089,15 +1086,16 @@ __meta__ = {
 
 [node name="Continuar" type="TouchScreenButton" parent="VioriaLayer/TelaVitoria"]
 position = Vector2( 437, 152 )
-shape = SubResource( 32 )
+shape = SubResource( 31 )
+shape_centered = false
 
 [node name="Continuar" type="Label" parent="VioriaLayer/TelaVitoria/Continuar"]
 margin_left = -134.986
 margin_top = -30.0349
 margin_right = 137.014
 margin_bottom = 29.9651
-custom_styles/normal = SubResource( 31 )
-custom_fonts/font = SubResource( 20 )
+custom_styles/normal = SubResource( 32 )
+custom_fonts/font = SubResource( 21 )
 text = "Proximo Nivel"
 align = 1
 valign = 1
@@ -1106,7 +1104,6 @@ __meta__ = {
 }
 
 [node name="DerrotaLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="TelaErro" type="Panel" parent="DerrotaLayer"]
 visible = false
@@ -1168,7 +1165,8 @@ __meta__ = {
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="DerrotaLayer/TelaErro"]
 position = Vector2( 341, 167 )
-shape = SubResource( 21 )
+shape = SubResource( 19 )
+shape_centered = false
 __meta__ = {
 "_edit_group_": true
 }
@@ -1179,13 +1177,12 @@ margin_top = -24.1105
 margin_right = 130.701
 margin_bottom = 22.8895
 custom_styles/normal = SubResource( 37 )
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
 text = "Fechar mensagem"
 align = 1
 valign = 1
 
 [node name="DicaLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="DicaFundo" type="Panel" parent="DicaLayer"]
 visible = false
@@ -1208,7 +1205,7 @@ margin_left = 5.0
 margin_top = -56.0
 margin_right = -5.0
 margin_bottom = -1.0
-custom_styles/normal = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
 custom_fonts/font = SubResource( 38 )
 text = "Mostrar um resultado possivel"
 align = 1
@@ -1220,7 +1217,8 @@ __meta__ = {
 
 [node name="AbrirTutorial" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica1"]
 position = Vector2( 130, 27 )
-shape = SubResource( 21 )
+shape = SubResource( 19 )
+shape_centered = false
 
 [node name="Dica2" type="Label" parent="DicaLayer/DicaFundo"]
 margin_left = 7.0
@@ -1228,7 +1226,7 @@ margin_top = 144.0
 margin_right = 261.0
 margin_bottom = 199.0
 rect_pivot_offset = Vector2( -40, 73 )
-custom_styles/normal = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
 custom_fonts/font = SubResource( 39 )
 text = "Completar primeira metade"
 align = 1
@@ -1241,6 +1239,7 @@ __meta__ = {
 [node name="VoltarMenu" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica2"]
 position = Vector2( 127, 27 )
 shape = SubResource( 40 )
+shape_centered = false
 
 [node name="Dica3" type="Label" parent="DicaLayer/DicaFundo"]
 margin_left = 6.0
@@ -1248,7 +1247,7 @@ margin_top = 211.0
 margin_right = 260.0
 margin_bottom = 261.0
 rect_pivot_offset = Vector2( -40, 73 )
-custom_styles/normal = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
 custom_fonts/font = SubResource( 41 )
 text = "Completar segunda metade"
 align = 1
@@ -1260,7 +1259,8 @@ __meta__ = {
 
 [node name="VoltarMenu" type="TouchScreenButton" parent="DicaLayer/DicaFundo/Dica3"]
 position = Vector2( 127, 28 )
-shape = SubResource( 21 )
+shape = SubResource( 19 )
+shape_centered = false
 
 [node name="FecharMText" type="Label" parent="DicaLayer/DicaFundo"]
 anchor_left = 1.0
@@ -1269,8 +1269,8 @@ margin_left = -56.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = 56.0
-custom_styles/normal = SubResource( 19 )
-custom_fonts/font = SubResource( 20 )
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
 text = "X"
 align = 1
 valign = 1
@@ -1281,9 +1281,9 @@ __meta__ = {
 [node name="FecharM" type="TouchScreenButton" parent="DicaLayer/DicaFundo/FecharMText"]
 position = Vector2( 25, 25 )
 shape = SubResource( 22 )
+shape_centered = false
 
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 4
 
 [node name="Tutorial" parent="TutorialLayer" instance=ExtResource( 36 )]
@@ -1294,15 +1294,9 @@ margin_top = 52.2577
 margin_right = 703.611
 margin_bottom = 412.258
 
-[node name="PauseButton" type="Button" parent="."]
-margin_left = 298.0
-margin_top = 217.0
-margin_right = 475.0
-margin_bottom = 267.0
-text = "Pause"
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="PauseButton" type="TouchScreenButton" parent="."]
+position = Vector2( 9.43872, 64.1834 )
+normal = ExtResource( 37 )
 [connection signal="timeout" from="HUD/TimerHud/Timer" to="AreaNumeros" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
 [connection signal="released" from="Restart" to="Restart" method="_on_Restart_released"]
@@ -1328,7 +1322,6 @@ __meta__ = {
 [connection signal="pressed" from="MenuLayer/BackOP/VoltarMenu" to="Config" method="_on_VoltarMenu_pressed"]
 [connection signal="pressed" from="MenuLayer/BackOP/AbrirTutorial" to="Config" method="_on_AbrirTutorial_pressed"]
 [connection signal="pressed" from="MenuLayer/BackOP/FecharM" to="Config" method="_on_FecharM_pressed"]
-[connection signal="pressed" from="MenuLayer/BackOP/MutarMusica" to="Config" method="_on_MutarMusica_pressed"]
 [connection signal="item_selected" from="TutorialLayer Velho/Tutorial/ItemList" to="TutorialLayer Velho/Tutorial" method="_on_ItemList_item_selected"]
 [connection signal="pressed" from="TutorialLayer Velho/Tutorial/FecharTuText2/FecharTuM" to="TutorialLayer Velho/Tutorial" method="_on_FecharTuM_pressed"]
 [connection signal="pressed" from="VioriaLayer/TelaVitoria/VoltarMenu" to="Config" method="_on_VoltarMenu_pressed"]

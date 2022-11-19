@@ -5,26 +5,29 @@
 [ext_resource path="res://assets/imgs/errado.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.otf" type="DynamicFontData" id=4]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.109804, 0.439216, 0.447059, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 25
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 25
 font_data = ExtResource( 4 )
 
 [node name="Hud" type="Panel"]
 margin_right = 615.0
 margin_bottom = 360.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Tutorial controles 1" type="Node2D" parent="."]
 visible = false
@@ -34,7 +37,7 @@ margin_left = 146.542
 margin_top = 21.2053
 margin_right = 472.542
 margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Tutorial Controles 1"
 scroll_active = false
 
@@ -43,7 +46,7 @@ margin_left = 78.0
 margin_top = 78.0
 margin_right = 527.0
 margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Mova as peças arrastando elas para a posição desejada nos numeros.
 Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
 Para testar sua resposta basta clicar na seta verde.
@@ -57,7 +60,7 @@ margin_left = 146.542
 margin_top = 21.2053
 margin_right = 472.542
 margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Tutorial Controles 2"
 scroll_active = false
 
@@ -66,7 +69,7 @@ margin_left = 78.0
 margin_top = 78.0
 margin_right = 527.0
 margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Texto para mostrar o programa funcionando"
 
 [node name="Tutorial controles 3" type="Node2D" parent="."]
@@ -77,7 +80,7 @@ margin_left = 146.542
 margin_top = 21.2053
 margin_right = 472.542
 margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Tutorial Controles 3"
 scroll_active = false
 
@@ -86,7 +89,7 @@ margin_left = 78.0
 margin_top = 78.0
 margin_right = 527.0
 margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Mova as peças arrastando elas para a posição desejada nos numeros.
 Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
 Para testar sua resposta basta clicar na seta verde.
@@ -100,7 +103,7 @@ margin_left = 146.542
 margin_top = 21.2053
 margin_right = 472.542
 margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Basico 1"
 scroll_active = false
 
@@ -109,7 +112,7 @@ margin_left = 78.0
 margin_top = 78.0
 margin_right = 527.0
 margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Mova as peças arrastando elas para a posição desejada nos numeros.
 Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
 Para testar sua resposta basta clicar na seta verde.
@@ -123,7 +126,7 @@ margin_left = 146.542
 margin_top = 21.2053
 margin_right = 472.542
 margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Basico 2"
 scroll_active = false
 
@@ -132,7 +135,7 @@ margin_left = 78.0
 margin_top = 78.0
 margin_right = 527.0
 margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Mova as peças arrastando elas para a posição desejada nos numeros.
 Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
 Para testar sua resposta basta clicar na seta verde.
@@ -146,7 +149,7 @@ margin_left = 146.542
 margin_top = 21.2053
 margin_right = 472.542
 margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Basico 3"
 scroll_active = false
 
@@ -155,7 +158,7 @@ margin_left = 78.0
 margin_top = 78.0
 margin_right = 527.0
 margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Mova as peças arrastando elas para a posição desejada nos numeros.
 Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
 Para testar sua resposta basta clicar na seta verde.
@@ -169,7 +172,7 @@ margin_left = 146.542
 margin_top = 21.2053
 margin_right = 472.542
 margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Intermediario 1"
 scroll_active = false
 
@@ -178,7 +181,7 @@ margin_left = 78.0
 margin_top = 78.0
 margin_right = 527.0
 margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Mova as peças arrastando elas para a posição desejada nos numeros.
 Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
 Para testar sua resposta basta clicar na seta verde.
@@ -192,7 +195,7 @@ margin_left = 146.542
 margin_top = 21.2053
 margin_right = 472.542
 margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Intermediario 2"
 scroll_active = false
 
@@ -201,7 +204,7 @@ margin_left = 78.0
 margin_top = 78.0
 margin_right = 527.0
 margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Mova as peças arrastando elas para a posição desejada nos numeros.
 Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
 Para testar sua resposta basta clicar na seta verde.
@@ -215,7 +218,7 @@ margin_left = 146.542
 margin_top = 21.2053
 margin_right = 472.542
 margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Intermediario 3"
 scroll_active = false
 
@@ -224,7 +227,7 @@ margin_left = 78.0
 margin_top = 78.0
 margin_right = 527.0
 margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Mova as peças arrastando elas para a posição desejada nos numeros.
 Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
 Para testar sua resposta basta clicar na seta verde.
@@ -238,7 +241,7 @@ margin_left = 146.542
 margin_top = 21.2053
 margin_right = 472.542
 margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Profissional 1"
 scroll_active = false
 
@@ -247,7 +250,7 @@ margin_left = 78.0
 margin_top = 78.0
 margin_right = 527.0
 margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Mova as peças arrastando elas para a posição desejada nos numeros.
 Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
 Para testar sua resposta basta clicar na seta verde.
@@ -261,7 +264,7 @@ margin_left = 146.542
 margin_top = 21.2053
 margin_right = 472.542
 margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "profissional 2"
 scroll_active = false
 
@@ -270,7 +273,7 @@ margin_left = 78.0
 margin_top = 78.0
 margin_right = 527.0
 margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Mova as peças arrastando elas para a posição desejada nos numeros.
 Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
 Para testar sua resposta basta clicar na seta verde.
@@ -284,7 +287,7 @@ margin_left = 146.542
 margin_top = 21.2053
 margin_right = 472.542
 margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "profissional 3"
 scroll_active = false
 
@@ -293,7 +296,7 @@ margin_left = 78.0
 margin_top = 78.0
 margin_right = 527.0
 margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Mova as peças arrastando elas para a posição desejada nos numeros.
 Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
 Para testar sua resposta basta clicar na seta verde.
@@ -313,7 +316,6 @@ normal = ExtResource( 2 )
 [node name="Fechar" type="TouchScreenButton" parent="."]
 position = Vector2( 559.072, 1.75809 )
 normal = ExtResource( 3 )
-
 [connection signal="released" from="Proximo" to="." method="_on_Proximo_released"]
 [connection signal="released" from="Anterior" to="." method="_on_Anterior_released"]
 [connection signal="released" from="Fechar" to="." method="_on_Fechar_released"]

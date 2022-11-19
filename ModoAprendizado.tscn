@@ -107,6 +107,9 @@ font_data = ExtResource( 2 )
 margin_right = 800.0
 margin_bottom = 480.0
 color = Color( 0.654902, 0.654902, 0.654902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = SubResource( 1 )

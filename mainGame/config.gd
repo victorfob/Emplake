@@ -4,9 +4,6 @@ extends TouchScreenButton
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var musicaON = preload("res://assets/imgs/musica.png")
-var musicaOFF = preload("res://assets/imgs/no_musica.png")
-
 onready var timer = get_parent().get_node("HUD/TimerHud/Timer")
 
 # Called when the node enters the scene tree for the first time.
@@ -46,14 +43,6 @@ func _on_AbrirTutorial_pressed():
 	get_parent().get_node("TutorialLayer/Tutorial").visible = true
 
 
-func _on_MutarMusica_pressed():
-	var imgMusica = get_parent().get_node("MenuLayer/BackOP/MutarMusica")
-	if imgMusica.normal == musicaON:
-		imgMusica.normal = musicaOFF
-	else:
-		imgMusica.normal = musicaON
-
-
 func _on_Continuar_released():
 	if Load.modo == 3:
 		get_parent().get_node("TutorialLayer/Tutorial").visible = true
@@ -74,6 +63,8 @@ func _on_Continuar_released():
 		Load.numeros = num
 		get_parent().gerar_numeros()
 		get_parent().get_node("VioriaLayer/TelaVitoria").visible = false
+		get_parent().get_node("AreaNumeros").addScore();
+		get_parent().get_node("AreaNumeros").atualizarPreco(1000)
 		updateBotao()
 	else:
 		get_parent().get_node("VioriaLayer/TelaVitoria/Continuar").visible = false

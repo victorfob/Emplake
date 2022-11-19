@@ -9,6 +9,7 @@ export var complexidade = 0
 export var idOperacao = 0
 export var disponivel = -1
 export var criados = 0
+export var preco = 1000
 
 #export var Imagem = preload("res://pixil-frame-2.png")
 # Called when the node enters the scene tree for the first time.
@@ -62,9 +63,27 @@ func _on_ButtonSummon_released():
 	checaMouse = 1
 
 func _on_comprar_released():
-	if disponivel != -1:
-		self.self_modulate = Color("ffffff")
-		disponivel += 1;
+	var money = get_parent().get_parent().get_node("AreaNumeros").getMoney()
+	if disponivel != -1 and money >= preco:
+		match nome:
+			"{":
+				get_parent().get_node("ChaoB").comprarItem()
+			"}":
+				get_parent().get_node("ChaoA").comprarItem()
+			"(":
+				get_parent().get_node("ParentB").comprarItem()
+			")":
+				get_parent().get_node("ParentA").comprarItem()
+			"|":
+				get_parent().get_node("ModuloB").comprarItem()
+			"I":
+				get_parent().get_node("ModuloA").comprarItem()
+			"[":
+				get_parent().get_node("TetoB").comprarItem()
+			"]":
+				get_parent().get_node("TetoA").comprarItem()
+		get_parent().get_parent().get_node("AreaNumeros").atualizarPreco(preco * -1)
+		comprarItem()
 
 func proximoNivel():
 	if disponivel != -1:
@@ -86,3 +105,6 @@ func removeEle():
 			if criados < disponivel:
 				self.self_modulate = Color("ffffff")
 
+func comprarItem():
+	self.self_modulate = Color("ffffff")
+	disponivel += 1;
