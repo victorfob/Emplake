@@ -54,7 +54,7 @@ func _on_PauseButton_pressed():
 	# pauses timer
 	timer.set_paused(1)
 	# waits 30 secs to write answer
-	var aux_timer = get_tree().create_timer(30)
+	var aux_timer = get_tree().create_timer(10)
 	# once 30 seconds have passed, resume timer
 	yield(aux_timer, "timeout")
 	timer.set_paused(0)

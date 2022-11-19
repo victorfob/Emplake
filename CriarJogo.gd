@@ -36,7 +36,7 @@ func _on_Aleatorio_pressed():
 
 
 func _on_Especifico_pressed():
-	descricao.text = "Os numeros serão escolhidos pelo usuario";
+	descricao.text = "Os numeros serão escolhidos pelo jogador";
 	modo = 1
 	
 

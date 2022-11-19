@@ -16,6 +16,7 @@ func _ready():
 	modo = Load.modo
 	dif = Load.dificuldade.Facil
 	descricao = get_parent().get_node("Descricao/BG2/Descricao")
+	descricao.text = "Apenas os sinais primarios +, -, *, / e parenteses";
 	pass
 
 
@@ -52,5 +53,5 @@ func _on_Medio_pressed():
 
 
 func _on_Dificil_pressed():
-	descricao.text = "";
+	descricao.text = "Todos os sinais estarão disponiveis";
 	dif = Load.dificuldade.Dificil

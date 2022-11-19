@@ -25,7 +25,7 @@ var total = 0
 #variavel usada achar os numeros na string
 var regex = RegEx.new()
 #varivel que guarda o espaçamento entre elementos da equação
-export (int) var deslocamento = 60
+export (int) var deslocamento = 58
 #timer
 var timer
 #timer txt
@@ -80,34 +80,37 @@ func atualizarFunc():
 
 #função que adiciona elementos a equação
 func novoElem(node):
-	#inicia o elemento com seus respectivos valores
-	var novoEle = valoresEquacao.new()
-	novoEle.patch = node
-	novoEle.nome = node.nome
-	
-	#busca a posição que o elemento realmente deveria estar
-	var i = 0
-	var xPosi = node.get_global_position().x
-	while i < equacao.size():
-		#basea-se na posição do elemento na hora que o mouse libera o elemento
-		if  xPosi < equacao[i].x:
-			break
-		i += 1
-	
-	#salva a posição que o elemento esta
-	novoEle.patch.setPosiEqua(i)
-	novoEle.x = xPosi
-	#insere o elemento na equacao[]
-	equacao.insert(i,novoEle)
-	#salva o patch para o botao que criou a operacao
-	novoEle.pathCriador = node.pathCriador
-	if node.pathCriador != null: #em caso de ser um numero
-		#atualiza o numero de operacoes criadas desse tipo
-		novoEle.pathCriador.addNovoEle()
-	#aumenta o total de elementos
-	total += 1
-	#atualiza a posição na tela
-	atualizarFunc()
+	if total < 13:
+		#inicia o elemento com seus respectivos valores
+		var novoEle = valoresEquacao.new()
+		novoEle.patch = node
+		novoEle.nome = node.nome
+		
+		#busca a posição que o elemento realmente deveria estar
+		var i = 0
+		var xPosi = node.get_global_position().x
+		while i < equacao.size():
+			#basea-se na posição do elemento na hora que o mouse libera o elemento
+			if  xPosi < equacao[i].x:
+				break
+			i += 1
+		
+		#salva a posição que o elemento esta
+		novoEle.patch.setPosiEqua(i)
+		novoEle.x = xPosi
+		#insere o elemento na equacao[]
+		equacao.insert(i,novoEle)
+		#salva o patch para o botao que criou a operacao
+		novoEle.pathCriador = node.pathCriador
+		if node.pathCriador != null: #em caso de ser um numero
+			#atualiza o numero de operacoes criadas desse tipo
+			novoEle.pathCriador.addNovoEle()
+		#aumenta o total de elementos
+		total += 1
+		#atualiza a posição na tela
+		atualizarFunc()
+	else:
+		node.free()
 
 #função usada para reposicionar 1 elemento
 func novaPosiElem(node):

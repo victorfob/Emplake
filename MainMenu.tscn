@@ -215,6 +215,9 @@ margin_top = 105.0
 margin_right = 711.0
 margin_bottom = 390.0
 custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel" type="Panel" parent="HUD/Descricao"]
 margin_left = 411.0
