@@ -37,16 +37,16 @@
 [ext_resource path="res://mainGame/DicaFundo.gd" type="Script" id=35]
 [ext_resource path="res://Tutorial.tscn" type="PackedScene" id=36]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.298039, 0.670588, 0.678431, 1 )
 draw_center = false
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 25
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.866667, 0.866667, 0.866667, 1 )
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
@@ -254,8 +254,8 @@ margin_left = 392.0
 margin_top = 8.0
 margin_right = 688.0
 margin_bottom = 40.0
-custom_styles/normal = SubResource( 2 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Score:"
 scroll_active = false
 
@@ -266,8 +266,8 @@ margin_left = 170.19
 margin_top = 11.3404
 margin_right = 387.19
 margin_bottom = 43.3404
-custom_styles/normal = SubResource( 2 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Timer:"
 
 [node name="Timer" type="Timer" parent="HUD/TimerHud"]
@@ -285,7 +285,7 @@ margin_left = -364.0
 margin_top = -63.0
 margin_right = 363.0
 margin_bottom = 50.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -695,7 +695,7 @@ position = Vector2( 290, 296 )
 normal = ExtResource( 25 )
 nome = "*"
 imagem = ExtResource( 25 )
-idOperacao = 2
+idOperacao = 3
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/Vezes"]
 visible = false
@@ -724,7 +724,7 @@ position = Vector2( 199, 296 )
 normal = ExtResource( 26 )
 nome = "/"
 imagem = ExtResource( 26 )
-idOperacao = 3
+idOperacao = 2
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/Divisao"]
 visible = false
@@ -958,7 +958,7 @@ margin_left = 192.0
 margin_top = 64.0
 margin_right = 688.0
 margin_bottom = 384.0
-custom_styles/normal = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
 custom_fonts/normal_font = SubResource( 26 )
 text = "	Selecione um dos simbolos ao lado."
 __meta__ = {

@@ -49,6 +49,7 @@ func _ready():
 	if Load.modo == 4:
 		timerText.text = str("Dinheiro: " + str(money) + "$")
 		get_parent().get_node("HUD/ScoreHud/ScoreTxt").text = str("Score: " + str(scoreAdventure))
+		get_parent().get_node("PauseButton").visible = false
 	else:
 		timer = get_parent().get_node("HUD/TimerHud/Timer")
 		timer.start(30)

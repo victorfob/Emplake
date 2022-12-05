@@ -15,7 +15,7 @@ export var preco = 1000
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = true
-	if Load.modo == 2 or Load.modo == 3:
+	if (Load.modo == 2 or Load.modo == 3) and idOperacao != 11:
 		if Load.operacoes[idOperacao] != 1:
 			visible = false
 	elif Load.modo == 4:
