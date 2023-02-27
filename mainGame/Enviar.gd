@@ -33,6 +33,9 @@ func _on_Enviar_pressed():
 			if Load.modo == 3 and Load.tutorialNum != 11:
 				resultadoVitoria.get_node("Continuar").visible = true
 			elif Load.modo == 0 or Load.modo == 4:
+				get_parent().get_node("Operacoes/ParentB/ComprarPeca").visible = false
+				get_parent().get_node("Operacoes/TetoA/ComprarPeca").visible = false
+				get_parent().get_node("Operacoes/TetoB/ComprarPeca").visible = false
 				resultadoVitoria.get_node("Continuar").visible = true
 			else:
 				resultadoVitoria.get_node("Continuar").visible = false

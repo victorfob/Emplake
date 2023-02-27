@@ -61,4 +61,3 @@ func _on_Anterior_released():
 
 func _on_Fechar_released():
 	self.visible = false
-	pass # Replace with function body.

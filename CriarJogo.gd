@@ -16,7 +16,6 @@ func _ready():
 
 
 func _on_BG_botao_gui_input(event):
-	var valido = 0
 	if event is InputEventScreenTouch:
 		Load.modo = modo
 		if modo == 2:
