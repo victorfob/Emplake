@@ -17,6 +17,7 @@ func _on_1_gui_input(event):
 	if event is InputEventScreenTouch:
 		Load.modo = 2
 		#Load.tutorialNum = numTutorial
+		Load.desafioID = self.get_node("Label").text
 		Load.operacoes = opNivel
 		Load.numeros = numero
 		get_tree().change_scene("res://mainGame/mainScreem.tscn")

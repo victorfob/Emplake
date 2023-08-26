@@ -7,6 +7,7 @@ var resultadoErro
 
 # gets timer node
 onready var timer = get_parent().get_node("HUD/TimerHud/Timer")
+onready var file = 'res://Desafios.txt'
 
 func _ready():
 	mainArea = get_parent().get_node("AreaNumeros")
@@ -44,6 +45,18 @@ func _on_Enviar_pressed():
 				resultadoVitoria.get_node("Continuar").visible = true
 			else:
 				resultadoVitoria.get_node("Continuar").visible = false
+			if Load.modo == 2:
+				var f = File.new()
+				var textoFile
+				f.open(file, File.READ)
+				textoFile = f.get_as_text()
+				textoFile = textoFile.replace("0"+str(Load.desafioID)+"=0","0"+str(Load.desafioID)+"=1")
+				print(textoFile)
+				f.close()
+				f.open(file, File.WRITE)
+				f.store_string(textoFile)
+				f.close()
+				pass # Replace with function body.
 		else:
 			resultadoErro.visible = true
 			var valorMetade1 = mainArea.getValoreMetade1()

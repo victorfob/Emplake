@@ -18,7 +18,6 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.52549, 0.52549, 0.52549, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -119,9 +118,6 @@ margin_bottom = 187.492
 rect_pivot_offset = Vector2( 21.7376, 49.2459 )
 custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 numero = "8222"
 opNivel = [ 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 ]
 
