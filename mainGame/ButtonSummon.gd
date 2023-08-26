@@ -19,14 +19,14 @@ func _ready():
 		if Load.operacoes[idOperacao] != 1:
 			visible = false
 	elif Load.modo == 4:
-		if nome != "=":
+		if nome == "{" or nome == "!" or nome == "R" or nome == "C" or nome == "|" or nome == "[" or nome == "^":
 			get_node("ComprarPeca").visible = true
-			if disponivel == 0:
-				self.self_modulate = Color("c0c0c0")
-			elif disponivel != -1:
+			if disponivel != -1:
 				get_node("ComprarPeca").visible = true
 			else:
 				get_node("ComprarPeca").visible = false
+		if disponivel == 0:
+			self.self_modulate = Color("c0c0c0")
 	elif Load.dif < complexidade:
 		visible = false
 
@@ -68,20 +68,10 @@ func _on_comprar_released():
 		match nome:
 			"{":
 				get_parent().get_node("ChaoB").comprarItem()
-			"}":
-				get_parent().get_node("ChaoA").comprarItem()
-			"(":
-				get_parent().get_node("ParentB").comprarItem()
-			")":
-				get_parent().get_node("ParentA").comprarItem()
 			"|":
 				get_parent().get_node("ModuloB").comprarItem()
-			"I":
-				get_parent().get_node("ModuloA").comprarItem()
 			"[":
 				get_parent().get_node("TetoB").comprarItem()
-			"]":
-				get_parent().get_node("TetoA").comprarItem()
 		get_parent().get_parent().get_node("AreaNumeros").atualizarPreco(preco * -1)
 		comprarItem()
 

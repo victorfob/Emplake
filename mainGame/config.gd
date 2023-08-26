@@ -1,9 +1,6 @@
 extends TouchScreenButton
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 onready var timer = get_parent().get_node("HUD/TimerHud/Timer")
 
 # Called when the node enters the scene tree for the first time.
@@ -34,8 +31,6 @@ func _on_VoltarMenu_pressed():
 	Load.pause = false
 	if Load.modo == 2:
 		get_tree().change_scene("res://SelecaoNiveis.tscn")
-	elif Load.modo == 3:
-		get_tree().change_scene("res://ModoAprendizado.tscn")
 	else:
 		get_tree().change_scene("res://MainMenu.tscn")
 
@@ -77,6 +72,7 @@ func updateBotao():
 	get_parent().get_node("Operacoes/ChaoB")._ready()
 	get_parent().get_node("Operacoes/Divisao")._ready()
 	get_parent().get_node("Operacoes/Elevado")._ready()
+	get_parent().get_node("Operacoes/RaizCub")._ready()
 	get_parent().get_node("Operacoes/Fatorial")._ready()
 	get_parent().get_node("Operacoes/Igual")._ready()
 	get_parent().get_node("Operacoes/Mais")._ready()

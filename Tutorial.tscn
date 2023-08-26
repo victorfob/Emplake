@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tutorial.gd" type="Script" id=1]
-[ext_resource path="res://assets/imgs/confirma.png" type="Texture" id=2]
 [ext_resource path="res://assets/imgs/errado.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.otf" type="DynamicFontData" id=4]
 
@@ -13,11 +12,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="DynamicFont" id=2]
-size = 25
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 25
+size = 20
 font_data = ExtResource( 4 )
 
 [node name="Hud" type="Panel"]
@@ -29,293 +24,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tutorial controles 1" type="Node2D" parent="."]
-visible = false
+[node name="Tutorial" type="Node2D" parent="."]
 
-[node name="Titulo" type="RichTextLabel" parent="Tutorial controles 1"]
-margin_left = 146.542
-margin_top = 21.2053
-margin_right = 472.542
-margin_bottom = 63.2053
+[node name="Titulo" type="RichTextLabel" parent="Tutorial"]
+margin_left = 266.0
+margin_top = 17.0
+margin_right = 337.0
+margin_bottom = 59.0
 custom_fonts/normal_font = SubResource( 2 )
-text = "Tutorial Controles 1"
+text = "Tutorial"
 scroll_active = false
 
-[node name="Texto Tutorial" type="RichTextLabel" parent="Tutorial controles 1"]
-margin_left = 78.0
-margin_top = 78.0
-margin_right = 527.0
-margin_bottom = 329.0
+[node name="Texto Tutorial" type="RichTextLabel" parent="Tutorial"]
+margin_left = 28.0
+margin_top = 57.0
+margin_right = 595.0
+margin_bottom = 344.0
 custom_fonts/normal_font = SubResource( 2 )
-text = "Mova as peças arrastando elas para a posição desejada nos numeros.
+text = "O objetivo do jogo é criar uma igualdade usando as operações e os numeros fornecidos como exemplo: 3 * 2 = 3 +3
+
+Mova as peças arrastando elas para a posição desejada nos numeros.
+
 Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
+
 Para testar sua resposta basta clicar na seta verde.
+
 Ao inserir uma resposta correta o jogo automaticamente irá informalo da resposta."
-
-[node name="Tutorial controles 2" type="Node2D" parent="."]
-visible = false
-
-[node name="Titulo" type="RichTextLabel" parent="Tutorial controles 2"]
-margin_left = 146.542
-margin_top = 21.2053
-margin_right = 472.542
-margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 3 )
-text = "Tutorial Controles 2"
-scroll_active = false
-
-[node name="Texto Tutorial" type="RichTextLabel" parent="Tutorial controles 2"]
-margin_left = 78.0
-margin_top = 78.0
-margin_right = 527.0
-margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Texto para mostrar o programa funcionando"
-
-[node name="Tutorial controles 3" type="Node2D" parent="."]
-visible = false
-
-[node name="Titulo" type="RichTextLabel" parent="Tutorial controles 3"]
-margin_left = 146.542
-margin_top = 21.2053
-margin_right = 472.542
-margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 3 )
-text = "Tutorial Controles 3"
-scroll_active = false
-
-[node name="Texto Tutorial" type="RichTextLabel" parent="Tutorial controles 3"]
-margin_left = 78.0
-margin_top = 78.0
-margin_right = 527.0
-margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Mova as peças arrastando elas para a posição desejada nos numeros.
-Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
-Para testar sua resposta basta clicar na seta verde.
-Ao inserir uma resposta correta o jogo automaticamente irá informalo da resposta."
-
-[node name="Nivel 11" type="Node2D" parent="."]
-visible = false
-
-[node name="Titulo" type="RichTextLabel" parent="Nivel 11"]
-margin_left = 146.542
-margin_top = 21.2053
-margin_right = 472.542
-margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 3 )
-text = "Basico 1"
-scroll_active = false
-
-[node name="Texto Tutorial" type="RichTextLabel" parent="Nivel 11"]
-margin_left = 78.0
-margin_top = 78.0
-margin_right = 527.0
-margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Mova as peças arrastando elas para a posição desejada nos numeros.
-Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
-Para testar sua resposta basta clicar na seta verde.
-Ao inserir uma resposta correta o jogo automaticamente irá informalo da resposta."
-
-[node name="Nivel 12" type="Node2D" parent="."]
-visible = false
-
-[node name="Titulo" type="RichTextLabel" parent="Nivel 12"]
-margin_left = 146.542
-margin_top = 21.2053
-margin_right = 472.542
-margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 3 )
-text = "Basico 2"
-scroll_active = false
-
-[node name="Texto Tutorial" type="RichTextLabel" parent="Nivel 12"]
-margin_left = 78.0
-margin_top = 78.0
-margin_right = 527.0
-margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Mova as peças arrastando elas para a posição desejada nos numeros.
-Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
-Para testar sua resposta basta clicar na seta verde.
-Ao inserir uma resposta correta o jogo automaticamente irá informalo da resposta."
-
-[node name="Nivel 13" type="Node2D" parent="."]
-visible = false
-
-[node name="Titulo" type="RichTextLabel" parent="Nivel 13"]
-margin_left = 146.542
-margin_top = 21.2053
-margin_right = 472.542
-margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 3 )
-text = "Basico 3"
-scroll_active = false
-
-[node name="Texto Tutorial" type="RichTextLabel" parent="Nivel 13"]
-margin_left = 78.0
-margin_top = 78.0
-margin_right = 527.0
-margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Mova as peças arrastando elas para a posição desejada nos numeros.
-Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
-Para testar sua resposta basta clicar na seta verde.
-Ao inserir uma resposta correta o jogo automaticamente irá informalo da resposta."
-
-[node name="Nivel 21" type="Node2D" parent="."]
-visible = false
-
-[node name="Titulo" type="RichTextLabel" parent="Nivel 21"]
-margin_left = 146.542
-margin_top = 21.2053
-margin_right = 472.542
-margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 3 )
-text = "Intermediario 1"
-scroll_active = false
-
-[node name="Texto Tutorial" type="RichTextLabel" parent="Nivel 21"]
-margin_left = 78.0
-margin_top = 78.0
-margin_right = 527.0
-margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Mova as peças arrastando elas para a posição desejada nos numeros.
-Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
-Para testar sua resposta basta clicar na seta verde.
-Ao inserir uma resposta correta o jogo automaticamente irá informalo da resposta."
-
-[node name="Nivel 22" type="Node2D" parent="."]
-visible = false
-
-[node name="Titulo" type="RichTextLabel" parent="Nivel 22"]
-margin_left = 146.542
-margin_top = 21.2053
-margin_right = 472.542
-margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 3 )
-text = "Intermediario 2"
-scroll_active = false
-
-[node name="Texto Tutorial" type="RichTextLabel" parent="Nivel 22"]
-margin_left = 78.0
-margin_top = 78.0
-margin_right = 527.0
-margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Mova as peças arrastando elas para a posição desejada nos numeros.
-Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
-Para testar sua resposta basta clicar na seta verde.
-Ao inserir uma resposta correta o jogo automaticamente irá informalo da resposta."
-
-[node name="Nivel 23" type="Node2D" parent="."]
-visible = false
-
-[node name="Titulo" type="RichTextLabel" parent="Nivel 23"]
-margin_left = 146.542
-margin_top = 21.2053
-margin_right = 472.542
-margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 3 )
-text = "Intermediario 3"
-scroll_active = false
-
-[node name="Texto Tutorial" type="RichTextLabel" parent="Nivel 23"]
-margin_left = 78.0
-margin_top = 78.0
-margin_right = 527.0
-margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Mova as peças arrastando elas para a posição desejada nos numeros.
-Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
-Para testar sua resposta basta clicar na seta verde.
-Ao inserir uma resposta correta o jogo automaticamente irá informalo da resposta."
-
-[node name="Nivel 31" type="Node2D" parent="."]
-visible = false
-
-[node name="Titulo" type="RichTextLabel" parent="Nivel 31"]
-margin_left = 146.542
-margin_top = 21.2053
-margin_right = 472.542
-margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 3 )
-text = "Profissional 1"
-scroll_active = false
-
-[node name="Texto Tutorial" type="RichTextLabel" parent="Nivel 31"]
-margin_left = 78.0
-margin_top = 78.0
-margin_right = 527.0
-margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Mova as peças arrastando elas para a posição desejada nos numeros.
-Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
-Para testar sua resposta basta clicar na seta verde.
-Ao inserir uma resposta correta o jogo automaticamente irá informalo da resposta."
-
-[node name="Nivel 32" type="Node2D" parent="."]
-visible = false
-
-[node name="Titulo" type="RichTextLabel" parent="Nivel 32"]
-margin_left = 146.542
-margin_top = 21.2053
-margin_right = 472.542
-margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 3 )
-text = "profissional 2"
-scroll_active = false
-
-[node name="Texto Tutorial" type="RichTextLabel" parent="Nivel 32"]
-margin_left = 78.0
-margin_top = 78.0
-margin_right = 527.0
-margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Mova as peças arrastando elas para a posição desejada nos numeros.
-Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
-Para testar sua resposta basta clicar na seta verde.
-Ao inserir uma resposta correta o jogo automaticamente irá informalo da resposta."
-
-[node name="Nivel 33" type="Node2D" parent="."]
-visible = false
-
-[node name="Titulo" type="RichTextLabel" parent="Nivel 33"]
-margin_left = 146.542
-margin_top = 21.2053
-margin_right = 472.542
-margin_bottom = 63.2053
-custom_fonts/normal_font = SubResource( 3 )
-text = "profissional 3"
-scroll_active = false
-
-[node name="Texto Tutorial" type="RichTextLabel" parent="Nivel 33"]
-margin_left = 78.0
-margin_top = 78.0
-margin_right = 527.0
-margin_bottom = 329.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Mova as peças arrastando elas para a posição desejada nos numeros.
-Para remover uma peça basta arrastar a mesma para fora do espaço em branco.
-Para testar sua resposta basta clicar na seta verde.
-Ao inserir uma resposta correta o jogo automaticamente irá informalo da resposta."
-
-[node name="Proximo" type="TouchScreenButton" parent="."]
-position = Vector2( 532.964, 81.9945 )
-scale = Vector2( 1, 4.16898 )
-normal = ExtResource( 2 )
-
-[node name="Anterior" type="TouchScreenButton" parent="."]
-position = Vector2( 67.59, 282.548 )
-rotation = -3.14159
-scale = Vector2( 1, 4.16898 )
-normal = ExtResource( 2 )
 
 [node name="Fechar" type="TouchScreenButton" parent="."]
 position = Vector2( 559.072, 1.75809 )
 normal = ExtResource( 3 )
-[connection signal="released" from="Proximo" to="." method="_on_Proximo_released"]
-[connection signal="released" from="Anterior" to="." method="_on_Anterior_released"]
+
 [connection signal="released" from="Fechar" to="." method="_on_Fechar_released"]

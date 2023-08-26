@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://mainGame/GerarJogo.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/GL-Nummernschild-Mtl.otf" type="DynamicFontData" id=2]
@@ -79,12 +79,6 @@ font_data = SubResource( 8 )
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 34, 13 )
 
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 34, 13 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 34, 13 )
-
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 34, 13 )
 
@@ -92,9 +86,6 @@ extents = Vector2( 34, 13 )
 extents = Vector2( 34, 13 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 34, 13 )
-
-[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 34, 13 )
 
 [sub_resource type="RectangleShape2D" id=17]
@@ -165,7 +156,7 @@ size = 40
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=29]
-size = 40
+size = 38
 font_data = ExtResource( 34 )
 
 [sub_resource type="RectangleShape2D" id=30]
@@ -361,7 +352,7 @@ __meta__ = {
 [node name="Operacoes" type="Node2D" parent="."]
 
 [node name="ChaoA" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 127.972, 393.896 )
+position = Vector2( 406.972, 392 )
 normal = ExtResource( 14 )
 nome = "{"
 imagem = ExtResource( 14 )
@@ -371,10 +362,10 @@ disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/ChaoA"]
 visible = false
-margin_left = -8.58821
-margin_top = -25.7806
-margin_right = 58.4118
-margin_bottom = -0.780579
+margin_left = 42.028
+margin_top = -26.0
+margin_right = 109.028
+margin_bottom = -0.999971
 color = Color( 0.498039, 0.8, 0.85098, 1 )
 
 [node name="Label" type="Label" parent="Operacoes/ChaoA/ComprarPeca"]
@@ -382,74 +373,34 @@ margin_left = 0.161789
 margin_top = 0.838226
 custom_fonts/font = SubResource( 9 )
 text = "1000$"
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="comprar" type="TouchScreenButton" parent="Operacoes/ChaoA/ComprarPeca"]
 position = Vector2( 34.295, 12.0032 )
 shape = SubResource( 10 )
 shape_centered = false
 
+[node name="ChaoB" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 503, 392 )
+normal = ExtResource( 20 )
+nome = "}"
+imagem = ExtResource( 20 )
+complexidade = 2
+idOperacao = 9
+disponivel = 0
+
 [node name="ParentA" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 320, 392 )
+position = Vector2( 50, 392 )
 normal = ExtResource( 15 )
 nome = "("
 imagem = ExtResource( 15 )
 idOperacao = 7
-disponivel = 0
-
-[node name="ComprarPeca" type="ColorRect" parent="Operacoes/ParentA"]
-visible = false
-margin_left = -7.67661
-margin_top = -28.8991
-margin_right = 59.3234
-margin_bottom = -3.89914
-color = Color( 0.498039, 0.8, 0.85098, 1 )
-
-[node name="Label" type="Label" parent="Operacoes/ParentA/ComprarPeca"]
-margin_left = 0.161789
-margin_top = 0.838226
-custom_fonts/font = SubResource( 9 )
-text = "1000$"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="comprar" type="TouchScreenButton" parent="Operacoes/ParentA/ComprarPeca"]
-position = Vector2( 32.6788, 12.7886 )
-shape = SubResource( 11 )
-shape_centered = false
 
 [node name="ParentB" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 416, 392 )
+position = Vector2( 146, 392 )
 normal = ExtResource( 16 )
 nome = ")"
 imagem = ExtResource( 16 )
 idOperacao = 7
-disponivel = 0
-
-[node name="ComprarPeca" type="ColorRect" parent="Operacoes/ParentB"]
-visible = false
-margin_left = -4.19217
-margin_top = -28.8991
-margin_right = 62.8078
-margin_bottom = -3.89914
-color = Color( 0.498039, 0.8, 0.85098, 1 )
-
-[node name="Label" type="Label" parent="Operacoes/ParentB/ComprarPeca"]
-margin_left = 0.161789
-margin_top = 0.838226
-custom_fonts/font = SubResource( 9 )
-text = "1000$"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="comprar" type="TouchScreenButton" parent="Operacoes/ParentB/ComprarPeca"]
-position = Vector2( 33.338, 12.9868 )
-shape = SubResource( 12 )
-shape_centered = false
 
 [node name="Fatorial" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 556, 296 )
@@ -541,39 +492,8 @@ position = Vector2( 34.1761, 13.327 )
 shape = SubResource( 15 )
 shape_centered = false
 
-[node name="ChaoB" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 224, 392 )
-normal = ExtResource( 20 )
-nome = "}"
-imagem = ExtResource( 20 )
-complexidade = 2
-idOperacao = 9
-disponivel = 0
-
-[node name="ComprarPeca" type="ColorRect" parent="Operacoes/ChaoB"]
-visible = false
-margin_left = -8.14639
-margin_top = -25.8845
-margin_right = 58.8536
-margin_bottom = -0.88446
-color = Color( 0.498039, 0.8, 0.85098, 1 )
-
-[node name="Label" type="Label" parent="Operacoes/ChaoB/ComprarPeca"]
-margin_left = 0.161789
-margin_top = 0.838226
-custom_fonts/font = SubResource( 9 )
-text = "1000$"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="comprar" type="TouchScreenButton" parent="Operacoes/ChaoB/ComprarPeca"]
-position = Vector2( 34.2782, 12.1882 )
-shape = SubResource( 16 )
-shape_centered = false
-
 [node name="ModuloA" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 32, 392 )
+position = Vector2( 235, 392 )
 normal = ExtResource( 21 )
 nome = "|"
 imagem = ExtResource( 21 )
@@ -583,10 +503,10 @@ disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/ModuloA"]
 visible = false
-margin_left = -4.56393
-margin_top = -25.8845
-margin_right = 62.4361
-margin_bottom = -0.88446
+margin_left = 39.0
+margin_top = -26.0
+margin_right = 106.0
+margin_bottom = -0.999968
 color = Color( 0.498039, 0.8, 0.85098, 1 )
 
 [node name="Label" type="Label" parent="Operacoes/ModuloA/ComprarPeca"]
@@ -604,7 +524,7 @@ shape = SubResource( 17 )
 shape_centered = false
 
 [node name="ModuloB" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 692, 390 )
+position = Vector2( 322, 392 )
 normal = ExtResource( 22 )
 nome = "I"
 imagem = ExtResource( 22 )
@@ -612,54 +532,10 @@ complexidade = 1
 idOperacao = 8
 disponivel = 0
 
-[node name="ComprarPeca" type="ColorRect" parent="Operacoes/ModuloB"]
-visible = false
-margin_left = -8.87073
-margin_top = -28.4065
-margin_right = 58.1293
-margin_bottom = -3.40649
-color = Color( 0.498039, 0.8, 0.85098, 1 )
-
-[node name="Label" type="Label" parent="Operacoes/ModuloB/ComprarPeca"]
-margin_left = 0.161789
-margin_top = 0.838226
-custom_fonts/font = SubResource( 9 )
-text = "1000$"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="comprar" type="TouchScreenButton" parent="Operacoes/ModuloB/ComprarPeca"]
-position = Vector2( 32.3769, 12.2781 )
-shape = SubResource( 17 )
-shape_centered = false
-
 [node name="Mais" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 25, 296 )
 normal = ExtResource( 23 )
 imagem = ExtResource( 23 )
-
-[node name="ComprarPeca" type="ColorRect" parent="Operacoes/Mais"]
-visible = false
-margin_left = -6.84116
-margin_top = -24.8418
-margin_right = 60.1588
-margin_bottom = 0.158211
-color = Color( 0.498039, 0.8, 0.85098, 1 )
-
-[node name="Label" type="Label" parent="Operacoes/Mais/ComprarPeca"]
-margin_left = 0.161789
-margin_top = 0.838226
-custom_fonts/font = SubResource( 9 )
-text = "1000$"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="comprar" type="TouchScreenButton" parent="Operacoes/Mais/ComprarPeca"]
-position = Vector2( 33.4991, 13.4502 )
-shape = SubResource( 17 )
-shape_centered = false
 
 [node name="Menos" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 112, 296 )
@@ -668,56 +544,12 @@ nome = "-"
 imagem = ExtResource( 24 )
 idOperacao = 1
 
-[node name="ComprarPeca" type="ColorRect" parent="Operacoes/Menos"]
-visible = false
-margin_left = -9.92422
-margin_top = -24.8418
-margin_right = 57.0758
-margin_bottom = 0.158211
-color = Color( 0.498039, 0.8, 0.85098, 1 )
-
-[node name="Label" type="Label" parent="Operacoes/Menos/ComprarPeca"]
-margin_left = 0.161789
-margin_top = 0.838226
-custom_fonts/font = SubResource( 9 )
-text = "1000$"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="comprar" type="TouchScreenButton" parent="Operacoes/Menos/ComprarPeca"]
-position = Vector2( 33.625, 12.3421 )
-shape = SubResource( 17 )
-shape_centered = false
-
 [node name="Vezes" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 290, 296 )
 normal = ExtResource( 25 )
 nome = "*"
 imagem = ExtResource( 25 )
 idOperacao = 3
-
-[node name="ComprarPeca" type="ColorRect" parent="Operacoes/Vezes"]
-visible = false
-margin_left = -4.69604
-margin_top = -29.0845
-margin_right = 62.304
-margin_bottom = -4.08453
-color = Color( 0.498039, 0.8, 0.85098, 1 )
-
-[node name="Label" type="Label" parent="Operacoes/Vezes/ComprarPeca"]
-margin_left = 0.161789
-margin_top = 0.838226
-custom_fonts/font = SubResource( 9 )
-text = "1000$"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="comprar" type="TouchScreenButton" parent="Operacoes/Vezes/ComprarPeca"]
-position = Vector2( 33.3671, 13.5699 )
-shape = SubResource( 17 )
-shape_centered = false
 
 [node name="Divisao" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 199, 296 )
@@ -726,61 +558,8 @@ nome = "/"
 imagem = ExtResource( 26 )
 idOperacao = 2
 
-[node name="ComprarPeca" type="ColorRect" parent="Operacoes/Divisao"]
-visible = false
-margin_left = -8.93285
-margin_top = -26.0695
-margin_right = 58.0672
-margin_bottom = -1.06951
-color = Color( 0.498039, 0.8, 0.85098, 1 )
-
-[node name="Label" type="Label" parent="Operacoes/Divisao/ComprarPeca"]
-margin_left = 0.161789
-margin_top = 0.838226
-custom_fonts/font = SubResource( 9 )
-text = "1000$"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="comprar" type="TouchScreenButton" parent="Operacoes/Divisao/ComprarPeca"]
-position = Vector2( 33.0325, 12.4618 )
-shape = SubResource( 17 )
-shape_centered = false
-
-[node name="TetoB" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 608, 392 )
-normal = ExtResource( 27 )
-nome = "]"
-imagem = ExtResource( 27 )
-complexidade = 2
-idOperacao = 9
-disponivel = 0
-
-[node name="ComprarPeca" type="ColorRect" parent="Operacoes/TetoB"]
-visible = false
-margin_left = -7.77441
-margin_top = -28.8992
-margin_right = 59.2256
-margin_bottom = -3.89917
-color = Color( 0.498039, 0.8, 0.85098, 1 )
-
-[node name="Label" type="Label" parent="Operacoes/TetoB/ComprarPeca"]
-margin_left = 0.161789
-margin_top = 0.838226
-custom_fonts/font = SubResource( 9 )
-text = "1000$"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="comprar" type="TouchScreenButton" parent="Operacoes/TetoB/ComprarPeca"]
-position = Vector2( 32.178, 12.9869 )
-shape = SubResource( 17 )
-shape_centered = false
-
 [node name="TetoA" parent="Operacoes" instance=ExtResource( 13 )]
-position = Vector2( 512, 392 )
+position = Vector2( 588, 392 )
 normal = ExtResource( 28 )
 nome = "["
 imagem = ExtResource( 28 )
@@ -790,10 +569,9 @@ disponivel = 0
 
 [node name="ComprarPeca" type="ColorRect" parent="Operacoes/TetoA"]
 visible = false
-margin_left = -11.2589
-margin_top = -25.8845
-margin_right = 55.7411
-margin_bottom = -0.884491
+margin_left = 40.0
+margin_top = -25.0
+margin_right = 107.0
 color = Color( 0.498039, 0.8, 0.85098, 1 )
 
 [node name="Label" type="Label" parent="Operacoes/TetoA/ComprarPeca"]
@@ -809,6 +587,15 @@ __meta__ = {
 position = Vector2( 33.0474, 13.2963 )
 shape = SubResource( 17 )
 shape_centered = false
+
+[node name="TetoB" parent="Operacoes" instance=ExtResource( 13 )]
+position = Vector2( 684, 392 )
+normal = ExtResource( 27 )
+nome = "]"
+imagem = ExtResource( 27 )
+complexidade = 2
+idOperacao = 9
+disponivel = 0
 
 [node name="Elevado" parent="Operacoes" instance=ExtResource( 13 )]
 position = Vector2( 644, 296 )
@@ -1030,7 +817,7 @@ size_flags_vertical = 0
 custom_fonts/normal_font = SubResource( 28 )
 bbcode_enabled = true
 tab_size = 2
-text = "Resultado Correto:"
+text = "A igualdade está correta:"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1049,14 +836,11 @@ size_flags_vertical = 0
 custom_fonts/normal_font = SubResource( 29 )
 bbcode_enabled = true
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ValorPontuacao" type="RichTextLabel" parent="VioriaLayer/TelaVitoria"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 264.0
+margin_left = 187.0
 margin_top = 2.0
 margin_right = -21.0
 margin_bottom = -77.0
@@ -1101,7 +885,7 @@ margin_right = 137.014
 margin_bottom = 29.9651
 custom_fonts/font = SubResource( 21 )
 custom_styles/normal = SubResource( 31 )
-text = "Proximo Nivel"
+text = "Proximo"
 align = 1
 valign = 1
 __meta__ = {
@@ -1328,19 +1112,10 @@ __meta__ = {
 [connection signal="pressed" from="Config" to="Config" method="_on_config_pressed"]
 [connection signal="pressed" from="Dica" to="DicaLayer/DicaFundo" method="_on_Dica_pressed"]
 [connection signal="released" from="Operacoes/ChaoA/ComprarPeca/comprar" to="Operacoes/ChaoA" method="_on_comprar_released"]
-[connection signal="released" from="Operacoes/ParentA/ComprarPeca/comprar" to="Operacoes/ParentA" method="_on_comprar_released"]
-[connection signal="released" from="Operacoes/ParentB/ComprarPeca/comprar" to="Operacoes/ParentB" method="_on_comprar_released"]
 [connection signal="released" from="Operacoes/Fatorial/ComprarPeca/comprar" to="Operacoes/Fatorial" method="_on_comprar_released"]
 [connection signal="released" from="Operacoes/Raiz/ComprarPeca/comprar" to="Operacoes/Raiz" method="_on_comprar_released"]
 [connection signal="released" from="Operacoes/RaizCub/ComprarPeca/comprar" to="Operacoes/RaizCub" method="_on_comprar_released"]
-[connection signal="released" from="Operacoes/ChaoB/ComprarPeca/comprar" to="Operacoes/ChaoB" method="_on_comprar_released"]
 [connection signal="released" from="Operacoes/ModuloA/ComprarPeca/comprar" to="Operacoes/ModuloA" method="_on_comprar_released"]
-[connection signal="released" from="Operacoes/ModuloB/ComprarPeca/comprar" to="Operacoes/ModuloB" method="_on_comprar_released"]
-[connection signal="released" from="Operacoes/Mais/ComprarPeca/comprar" to="Operacoes/Mais" method="_on_comprar_released"]
-[connection signal="released" from="Operacoes/Menos/ComprarPeca/comprar" to="Operacoes/Menos" method="_on_comprar_released"]
-[connection signal="released" from="Operacoes/Vezes/ComprarPeca/comprar" to="Operacoes/Vezes" method="_on_comprar_released"]
-[connection signal="released" from="Operacoes/Divisao/ComprarPeca/comprar" to="Operacoes/Divisao" method="_on_comprar_released"]
-[connection signal="released" from="Operacoes/TetoB/ComprarPeca/comprar" to="Operacoes/TetoB" method="_on_comprar_released"]
 [connection signal="released" from="Operacoes/TetoA/ComprarPeca/comprar" to="Operacoes/TetoA" method="_on_comprar_released"]
 [connection signal="released" from="Operacoes/Elevado/ComprarPeca/comprar" to="Operacoes/Elevado" method="_on_comprar_released"]
 [connection signal="pressed" from="MenuLayer/BackOP/VoltarMenu" to="Config" method="_on_VoltarMenu_pressed"]

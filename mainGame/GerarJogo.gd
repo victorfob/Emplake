@@ -11,7 +11,7 @@ func _ready():
 	gerar_numeros();
 	if Load.modo == 3:
 		get_node("TutorialLayer/Tutorial").visible = true
-		get_node("TutorialLayer/Tutorial").mostrarTutorial(Load.tutorialNum)
+		#get_node("TutorialLayer/Tutorial").mostrarTutorial(Load.tutorialNum)
 	if Load.modo == 4:
 		mostrarPreco()
 
@@ -64,13 +64,9 @@ func gerar_numeros():
 
 func mostrarPreco():
 	get_node("Operacoes/ChaoA/ComprarPeca").visible = true
-	get_node("Operacoes/ChaoB/ComprarPeca").visible = true
 	get_node("Operacoes/Elevado/ComprarPeca").visible = true
 	get_node("Operacoes/Fatorial/ComprarPeca").visible = true
 	get_node("Operacoes/ModuloA/ComprarPeca").visible = true
-	get_node("Operacoes/ModuloB/ComprarPeca").visible = true
-	get_node("Operacoes/ParentA/ComprarPeca").visible = true
-	get_node("Operacoes/ParentB/ComprarPeca").visible = true
 	get_node("Operacoes/Raiz/ComprarPeca").visible = true
 	get_node("Operacoes/TetoA/ComprarPeca").visible = true
-	get_node("Operacoes/TetoB/ComprarPeca").visible = true
+

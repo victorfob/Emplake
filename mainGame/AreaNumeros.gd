@@ -50,6 +50,9 @@ func _ready():
 		timerText.text = str("Dinheiro: " + str(money) + "$")
 		get_parent().get_node("HUD/ScoreHud/ScoreTxt").text = str("Score: " + str(scoreAdventure))
 		get_parent().get_node("PauseButton").visible = false
+	elif Load.modo == 3:
+		get_parent().get_node("PauseButton").visible = false
+		get_parent().get_node("HUD/ScoreHud/ScoreTxt").visible = false 
 	else:
 		timer = get_parent().get_node("HUD/TimerHud/Timer")
 		timer.start(30)
@@ -57,7 +60,7 @@ func _ready():
 
 
 func _process(delta):
-	if Load.modo != 4:
+	if Load.modo != 4 and Load.modo != 3:
 		timerText.text = str("Tempo: "+ str(round(timer.time_left)))
 
 #função que reajusta a posição de todos os elementos da função na tela
@@ -213,7 +216,7 @@ func comecarPrint():
 	if (resultado1 == true && resultado2 == true):
 		if(valorMetade1 == valorMetade2):
 			finalResult = valorMetade1
-			if Load.modo != 4:
+			if Load.modo != 4 and Load.modo != 3:
 				timer.stop()
 			return true
 	return false
@@ -650,7 +653,7 @@ func calcScore():
 		return score
 
 func _on_Timer_timeout():
-	scoreBase -= 50
+	scoreBase -= 20
 	calcScore()
 
 func getFinalResult():
